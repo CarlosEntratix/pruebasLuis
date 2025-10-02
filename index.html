@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GQTicket – Boletera</title>
+  <style>
+    :root {
+      --color-primario: #000000;
+      --color-secundario: #ffffff;
+      --color-acento: #ffcc00;
+      --color-fondo: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-primario);
+    }
+
+    a {
+      color: var(--color-primario);
+      text-decoration: none;
+    }
+
+    header {
+      background-color: var(--color-primario);
+      color: var(--color-secundario);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    header nav {
+      margin-top: 0.5rem;
+    }
+
+    header nav a {
+      margin: 0 1rem;
+      color: var(--color-secundario);
+    }
+
+    .hero {
+      position: relative;
+      height: 300px;
+      background-color: #333;
+      color: var(--color-secundario);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero .hero-text {
+      z-index: 1;
+      font-size: 2rem;
+      max-width: 90%;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      /* Imagen de fondo del hero */
+      background: url('ruta/a/la-imagen-hero.jpg') center/cover no-repeat;
+      opacity: 0.6;
+    }
+
+    .seccion-eventos {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .seccion-eventos h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .eventos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centra los eventos */
+      gap: 2rem;
+    }
+
+    .evento-card {
+      background-color: var(--color-secundario);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .evento-card .imagen {
+      height: 160px;
+      background-color: #ccc;
+      background-size: cover;
+      background-position: center;
+      /* Imagen del evento */
+      /* Ejemplo: background-image: url('ruta/a/imagen.jpg'); */
+    }
+
+    .evento-card .contenido {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .evento-card .contenido h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .evento-card .contenido p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+
+    .evento-card .btn {
+      margin-top: auto;
+      padding: 0.6rem;
+      background-color: var(--color-acento);
+      color: var(--color-primario);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: var(--color-primario);
+      color: var(--color-secundario);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--color-acento);
+      margin: 0 0.5rem;
+    }
+  </style>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">GQTicket</div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Eventos</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Ayuda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">Tus Eventos Favoritos Sin Cargos por Servicio</div>
+    <!-- Imagen de fondo se define en CSS -->
+  </section>
+
+  <section class="seccion-eventos">
+    <h2>Próximos Eventos</h2>
+    <div class="eventos-grid">
+
+      <!-- Evento 1 -->
+      <div class="evento-card">
+        <div class="imagen" style="background-image: url('alicia.jpg');">
+          <!-- Espacio para imagen del evento 1 -->
+        </div>
+        <div class="contenido">
+          <h3>ALICIA Y LAS MARAVILLAS DEL BORDERLINE</h3>
+          <p>Fecha: 3 de noviembre 2025</p>
+          <p>Hora: 8:30 pm</p>
+          <p>Lugar: Teatro Centenario 2</p>
+          <a class="btn" href="https://tickets.payuticket.com/event/alicia-y-las-maravillas-del-borderline-gtfl9b?useEmbed=true">Comprar Boletos</a>
+        </div>
+      </div>
+
+      <!-- Evento 2 -->
+      <div class="evento-card">
+        <div class="imagen" style="background-image: url('frida.jpg');">
+          <!-- Espacio para imagen del evento 2 -->
+        </div>
+        <div class="contenido">
+          <h3>FRIDA KAHLO: EL MUSICAL LA VIDA DE UN ÍCONO</h3>
+          <p>Fecha: 4 de noviembre 2025</p>
+          <p>Hora: 1:00 pm</p>
+	  <p>Hora: 5:00 pm</p>
+          <p>Lugar: Teatro Centenario 2</p>
+          <a class="btn" href="https://tickets.payuticket.com/event/frida-kahlo-el-musical-la-vida-de-un-icono-wltpzq?recurrenceSelection=true">Comprar Boletos</a>
+        </div>
+      </div>
+
+      <!-- Evento 3 -->
+      <div class="evento-card">
+        <div class="imagen" style="background-image: url('sere.jpg');">
+          <!-- Espacio para imagen del evento 3 -->
+        </div>
+        <div class="contenido">
+          <h3>SERENATA A MIS MUERTOS</h3>
+          <p>Fecha: 9 de nov 2025</p>
+          <p>Hora: 8:30 pm</p>
+          <p>Lugar: Auditorio Nacional</p>
+          <a class="btn" href="https://tickets.payuticket.com/event/serenata-a-mis-muertos-6wleeb?useEmbed=true">Comprar Boletos</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 GQ Ticket. Todos los derechos reservados.<br />
+    <a href="#">Política de Privacidad</a> |
+    <a href="#">Términos y Condiciones</a>
+  </footer>
+
+</body>
+</html>
