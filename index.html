@@ -2,211 +2,148 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Boletos Frida Kahlo</title>
+  <title>Granja Las Américas – Diversión para toda la familia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-image: url('fri.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #222;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
     }
 
     header {
-      background: rgba(34, 34, 34, 0.8);
-      color: #fff;
+      background: #FF9D40;
+      color: white;
       padding: 20px;
       text-align: center;
     }
 
-    nav {
-      background: rgba(51, 51, 51, 0.8);
-      padding: 10px;
-      text-align: center;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
 
-    nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: 30px auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-    }
-
-    .calendar {
+    /* --- SECCIÓN HERO MEJORADA --- */
+    .hero {
+      position: relative;
       width: 100%;
-      max-width: 400px;
-      margin: 20px auto;
-      border: 1px solid #ccc;
+      height: 60vh; /* ocupa el 60% de la altura de la pantalla */
+      min-height: 300px;
+      max-height: 600px;
+      overflow: hidden;
     }
 
-    .calendar table {
+    .hero img {
       width: 100%;
-      border-collapse: collapse;
-    }
-
-    .calendar th,
-    .calendar td {
-      border: 1px solid #ccc;
-      width: 14.28%;
-      text-align: center;
-      padding: 8px;
-    }
-
-    .calendar th {
-      background: #eee;
-    }
-
-    /* Estilo para los enlaces dentro del calendario como botones */
-    .calendar a.calendar-link {
+      height: 100%;
+      object-fit: cover; /* mantiene proporción y llena el contenedor */
+      object-position: center; /* centra la imagen */
       display: block;
-      width: 100%;
-      padding: 5px;
-      background: #ff6f61;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      text-align: center;
-      font-weight: bold;
     }
 
-    .calendar a.calendar-link:hover {
-      background: #ff4a3a;
+    .content {
+      padding: 20px;
     }
 
-    /* Estilo para los dos botones nuevos */
-    .btn-container {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .btn-container a {
+    .cta-button {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: #ff6f61;
-      color: #fff;
+      background: #FF8C00;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1.2em;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 5px;
+      margin: 20px 0;
     }
 
-    .btn-container a:hover {
-      background: #ff4a3a;
+    .cta-button:hover {
+      background: #e07a00;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .feature img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .feature .desc {
+      padding: 15px;
     }
 
     footer {
+      background: #f4f4f4;
       text-align: center;
       padding: 20px;
-      background: rgba(34, 34, 34, 0.8);
-      color: #fff;
+      font-size: 0.9em;
     }
   </style>
   <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
 </head>
 <body>
 
-<header>
-  <h1>Exposición Frida Kahlo</h1>
-</header>
+  <header>
+    <h1>Granja Las Américas</h1>
+    <p>¡Vive la experiencia de la naturaleza y la diversión en familia!</p>
+  </header>
 
-<nav>
-  <a href="#">Inicio</a>
-  <a href="#">Boletos</a>
-  <a href="#">Información</a>
-  <a href="#">Contacto</a>
-</nav>
+  <section class="hero">
+    <img src="gran.png" alt="Vista de Granja Las Américas">
+  </section>
 
-<main>
-  <h2>Selecciona el mes</h2>
-  <div class="calendar">
-    <table>
-      <thead>
-        <tr>
-          <th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> </td><td> </td><td><a class="calendar-link" href="#">1</a></td>
-          <td><a class="calendar-link" href="#">2</a></td>
-          <td><a class="calendar-link" href="#">3</a></td>
-          <td><a class="calendar-link" href="#">4</a></td>
-          <td><a class="calendar-link" href="#">5</a></td>
-        </tr>
-        <tr>
-          <td><a class="calendar-link" href="#">6</a></td>
-          <td><a class="calendar-link" href="#">7</a></td>
-          <td><a class="calendar-link" href="#">8</a></td>
-          <td><a class="calendar-link" href="#">9</a></td>
-          <td><a class="calendar-link" href="#">10</a></td>
-          <td><a class="calendar-link" href="#">11</a></td>
-          <td><a class="calendar-link" href="#">12</a></td>
-        </tr>
-        <tr>
-          <td><a class="calendar-link" href="#">13</a></td>
-          <td><a class="calendar-link" href="#">14</a></td>
-          <td><a class="calendar-link" href="#">15</a></td>
-          <td><a class="calendar-link" href="#">16</a></td>
-          <td><a class="calendar-link" href="#">17</a></td>
-          <td><a class="calendar-link" href="#">18</a></td>
-          <td><a class="calendar-link" href="#">19</a></td>
-        </tr>
-        <tr>
-          <td><a class="calendar-link" href="#">20</a></td>
-          <td><a class="calendar-link" href="#">21</a></td>
-          <td><a class="calendar-link" href="#">22</a></td>
-          <td><a class="calendar-link" href="#">23</a></td>
-          <td><a class="calendar-link" href="#">24</a></td>
-          <td><a class="calendar-link" href="#">25</a></td>
-          <td><a class="calendar-link" href="#">26</a></td>
-        </tr>
-        <tr>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-s0spox?recurrenceSelection=true">27</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-g48hh6?useEmbed=true">28</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-g9frms?useEmbed=true">29</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-9j5pup?useEmbed=true">30</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-amcd35?useEmbed=true">31</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-o30tr5?useEmbed=true">1</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/fryda-hky4x9?date=2">2</a></td>
-        </tr>
-        <tr>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-afj4tm?useEmbed=true">3</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-sebcv9?useEmbed=true">4</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-owdb9z?useEmbed=true">5</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-tcluik?useEmbed=true">6</a></td>
-          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-uv8drn?useEmbed=true">7</a></td>
-          <td> </td>
-          <td> </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="content">
+    <p>Bienvenido a Granja Las Américas, el parque temático ideal para disfrutar con tus seres queridos. Contamos con zonas de animales, atracciones familiares, juegos al aire libre y muchas sorpresas más.</p>
+
+    <h2>Nuestras atracciones</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="niña.jpg" alt="Zona de animales">
+        <div class="desc">
+          <h3>ZONA DE ANIMALES</h3>
+          <p>Conoce de cerca a nuestras ovejas, cabras, conejos y más en un ambiente seguro y divertido.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="juego.jpg" alt="Juegos familiares">
+        <div class="desc">
+          <h3>JUEGOS FAMILIARES</h3>
+          <p>Balanzas, columpios, pistas de aventura ligeras para que toda la familia participe.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="atra.jpg" alt="Área de picnic y relax">
+        <div class="desc">
+          <h3>ÁREA DE PICNIC Y RELAX</h3>
+          <p>Espacios verdes donde relajarte mientras los niños juegan, con sombra, mesas y naturaleza.</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="comprar-entradas">
+      <h2>Compra tus entradas</h2>
+      <p>Adquiere tus entradas en línea y asegúrate tu lugar en Granja Las Américas. ¡Te esperamos!</p>
+      <a href="https://tickets.payuticket.com/event/granja-knp7i9?useEmbed=true" class="cta-button">Comprar entradas ahora</a>
+    </section>
   </div>
 
-  <p>Aquí puedes elegir una fecha para tu visita y adquirir tu boleto.</p>
-  
-  <h3>Detalles de la exposición</h3>
-  <p>Visita la exposición de Frida Kahlo en un ambiente único y sumérgete en su obra, vida y legado.</p>
-  
-  <div class="btn-container">
-    <a href="https://prueba.tuticket.com.mx/event/museo-frida-s0spox?recurrenceSelection=true">Comprar Boleto</a>
-    <a href="https://prueba.tuticket.com.mx/event/museo-frida-khalo-gj7662?recurrenceSelection=true">Comprar Boleto</a>
-  </div>
-</main>
-
-<footer>
-  <p>&copy; 2025 Exposición Frida Kahlo. Todos los derechos reservados.</p>
-</footer>
+  <footer>
+    <p>© 2025 Granja Las Américas – Todos los derechos reservados.</p>
+    <p>Dirección: Ciudad Apodaca, Nuevo León, México</p>
+  </footer>
 
 </body>
 </html>
