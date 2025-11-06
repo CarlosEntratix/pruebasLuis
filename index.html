@@ -2,93 +2,141 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Granja Las Américas – Diversión para toda la familia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boletos PIXEL UNIVERSE</title>
   <style>
+    /* --- Estilo general inspirado en Pixel Universe --- */
     body {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
+      padding: 0;
+      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('pixel.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
     }
 
     header {
-      background: #FF9D40;
-      color: white;
-      padding: 20px;
+      background: rgba(10, 10, 10, 0.85);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1.8em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      background: rgba(30, 30, 30, 0.8);
+      text-align: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav a {
+      color: #bb86fc;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff79c6;
+    }
+
+    main {
+      background: rgba(20, 20, 20, 0.9);
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(187, 134, 252, 0.2);
+    }
+
+    h2, h3 {
+      color: #bb86fc;
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    p {
+      line-height: 1.6;
+      text-align: center;
+      color: #ddd;
     }
 
-    /* --- SECCIÓN HERO MEJORADA --- */
-    .hero {
-      position: relative;
+    /* --- Calendario --- */
+    .calendar {
       width: 100%;
-      height: 60vh; /* ocupa el 60% de la altura de la pantalla */
-      min-height: 300px;
-      max-height: 600px;
+      max-width: 500px;
+      margin: 30px auto;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
       overflow: hidden;
+      background: rgba(40, 40, 40, 0.8);
     }
 
-    .hero img {
+    .calendar table {
       width: 100%;
-      height: 100%;
-      object-fit: cover; /* mantiene proporción y llena el contenedor */
-      object-position: center; /* centra la imagen */
+      border-collapse: collapse;
+    }
+
+    .calendar th {
+      background: rgba(187, 134, 252, 0.2);
+      color: #bb86fc;
+      padding: 10px;
+    }
+
+    .calendar td {
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: center;
+      padding: 10px;
+      color: #ccc;
+    }
+
+    .calendar a.calendar-link {
       display: block;
-    }
-
-    .content {
-      padding: 20px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: #FF8C00;
-      color: white;
-      padding: 15px 25px;
-      font-size: 1.2em;
+      background: #bb86fc;
+      color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      margin: 20px 0;
+      padding: 8px;
+      transition: background 0.3s ease;
     }
 
-    .cta-button:hover {
-      background: #e07a00;
+    .calendar a.calendar-link:hover {
+      background: #ff79c6;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    /* --- Botones de compra --- */
+    .btn-container {
+      text-align: center;
+      margin-top: 30px;
     }
 
-    .feature {
-      flex: 1 1 250px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-      background: #fff;
+    .btn-container a {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #bb86fc, #ff79c6);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
-    .feature img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .feature .desc {
-      padding: 15px;
+    .btn-container a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px #ff79c6;
     }
 
     footer {
-      background: #f4f4f4;
       text-align: center;
       padding: 20px;
+      background: rgba(10, 10, 10, 0.85);
+      color: #888;
       font-size: 0.9em;
     }
   </style>
@@ -96,54 +144,81 @@
 </head>
 <body>
 
-  <header>
-    <h1>Granja Las Américas</h1>
-    <p>¡Vive la experiencia de la naturaleza y la diversión en familia!</p>
-  </header>
+<header>
+  <h1>PIXEL UNIVERSE</h1>
+</header>
 
-  <section class="hero">
-    <img src="gran.png" alt="Vista de Granja Las Américas">
-  </section>
+<nav>
+  <a href="#">Inicio</a>
+  <a href="#">Boletos</a>
+  <a href="#">Información</a>
+  <a href="#">Contacto</a>
+</nav>
 
-  <div class="content">
-    <p>Bienvenido a Granja Las Américas, el parque temático ideal para disfrutar con tus seres queridos. Contamos con zonas de animales, atracciones familiares, juegos al aire libre y muchas sorpresas más.</p>
+<main>
+  <h2>Selecciona el mes</h2>
 
-    <h2>Nuestras atracciones</h2>
-    <div class="features">
-      <div class="feature">
-        <img src="niña.jpg" alt="Zona de animales">
-        <div class="desc">
-          <h3>ZONA DE ANIMALES</h3>
-          <p>Conoce de cerca a nuestras ovejas, cabras, conejos y más en un ambiente seguro y divertido.</p>
-        </div>
-      </div>
-      <div class="feature">
-        <img src="juego.jpg" alt="Juegos familiares">
-        <div class="desc">
-          <h3>JUEGOS FAMILIARES</h3>
-          <p>Balanzas, columpios, pistas de aventura ligeras para que toda la familia participe.</p>
-        </div>
-      </div>
-      <div class="feature">
-        <img src="atra.jpg" alt="Área de picnic y relax">
-        <div class="desc">
-          <h3>ÁREA DE PICNIC Y RELAX</h3>
-          <p>Espacios verdes donde relajarte mientras los niños juegan, con sombra, mesas y naturaleza.</p>
-        </div>
-      </div>
-    </div>
-
-    <section id="comprar-entradas">
-      <h2>Compra tus entradas</h2>
-      <p>Adquiere tus entradas en línea y asegúrate tu lugar en Granja Las Américas. ¡Te esperamos!</p>
-      <a href="https://tickets.payuticket.com/event/granja-knp7i9?useEmbed=true" class="cta-button">Comprar entradas ahora</a>
-    </section>
+  <div class="calendar">
+    <table>
+      <thead>
+        <tr>
+          <th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/pixel-universe-lieu46?useEmbed=true">6</a></td>
+          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/museo-frida-uv8drn?useEmbed=true">7</a></td>
+          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/pixel-universe-434npi?useEmbed=true">8</a></td>
+          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/pixel-universe-j1z17u?useEmbed=true">9</a></td>
+          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/pixel-universe-g0biph?useEmbed=true">10</a></td>
+          <td><a class="calendar-link" href="https://prueba.tuticket.com.mx/event/pixel-universe-3xj2rm?useEmbed=true">11</a></td>
+          <td><a class="calendar-link" href="">12</a></td>
+        </tr>
+        <tr>
+          <td><a class="calendar-link" href="#">13</a></td>
+          <td><a class="calendar-link" href="#">14</a></td>
+          <td><a class="calendar-link" href="#">15</a></td>
+          <td><a class="calendar-link" href="#">16</a></td>
+          <td><a class="calendar-link" href="#">17</a></td>
+          <td><a class="calendar-link" href="#">18</a></td>
+          <td><a class="calendar-link" href="#">19</a></td>
+        </tr>
+        <tr>
+          <td><a class="calendar-link" href="#">20</a></td>
+          <td><a class="calendar-link" href="#">21</a></td>
+          <td><a class="calendar-link" href="#">22</a></td>
+          <td><a class="calendar-link" href="#">23</a></td>
+          <td><a class="calendar-link" href="#">24</a></td>
+          <td><a class="calendar-link" href="#">25</a></td>
+          <td><a class="calendar-link" href="#">26</a></td>
+        </tr>
+        <tr>
+          <td><a class="calendar-link" href="#">27</a></td>
+          <td><a class="calendar-link" href="#">28</a></td>
+          <td><a class="calendar-link" href="#">29</a></td>
+          <td><a class="calendar-link" href="#">30</a></td>
+          <td><a class="calendar-link" href="#">31</a></td>
+          <td><a class="calendar-link" href="#">1</a></td>
+          <td><a class="calendar-link" href="#">2</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <footer>
-    <p>© 2025 Granja Las Américas – Todos los derechos reservados.</p>
-    <p>Dirección: Ciudad Apodaca, Nuevo León, México</p>
-  </footer>
+  <p>Selecciona una fecha para tu visita y adquiere tu boleto.</p>
+
+  <h3>Detalles de la exposición</h3>
+  <p>Vive la experiencia inmersiva de Frida Kahlo y descubre su vida, arte y legado en un entorno único.</p>
+
+  <div class="btn-container">
+    <a href="https://prueba.tuticket.com.mx/event/museo-frida-s0spox?recurrenceSelection=true">Comprar Boleto</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 PIXEL UNIVERSE. Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
