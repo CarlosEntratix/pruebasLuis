@@ -1,273 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Parque de Béisbol Kukulcán</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coliseo Maya Arena | Eventos Exclusivos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #c5a059;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-white: #ffffff;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      background: #ffffff;
-      color: #222;
-    }
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* NAVBAR */
-    header {
-      width: 100%;
-      padding: 18px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #eee;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+        }
 
-    header img {
-      height: 38px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
 
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
+        nav a:hover {
+            color: var(--primary-gold);
+        }
 
-    /* HERO */
-    .hero {
-      height: 75vh;
-      background-image:
-        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-        url("estadio.jpg");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding-left: 80px;
-    }
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1600'); /* Imagen de ejemplo */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-    .hero-content {
-      color: white;
-      max-width: 600px;
-    }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
 
-    .hero p {
-      margin-bottom: 30px;
-      font-size: 18px;
-    }
+        .btn-main {
+            background-color: var(--primary-gold);
+            color: black;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
 
-    /* BOTÓN PRINCIPAL */
-    .btn-primary {
-      display: inline-block;
-      padding: 14px 36px;
-      border-radius: 30px;
-      background: #ffcc00;
-      color: #111;
-      font-weight: 600;
-      letter-spacing: .5px;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0,0,0,.35);
-      transition: all .3s ease;
-    }
+        .btn-main:hover {
+            transform: scale(1.05);
+            background-color: #e0b86a;
+        }
 
-    .btn-primary:hover {
-      background: #ffd633;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.45);
-    }
+        /* Eventos */
+        .section-title {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 2.5rem;
+        }
 
-    /* EVENTS */
-    .events {
-      padding: 80px;
-      background: #f7f7f7;
-    }
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 100px;
+        }
 
-    .events h2 {
-      text-align: center;
-      font-size: 34px;
-      margin-bottom: 40px;
-    }
+        .event-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
 
-    .events-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
+        .event-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+        }
 
-    /* QUITAR ESTILO DE LINK */
-    .events-grid a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-    .events-grid a:visited,
-    .events-grid a:hover,
-    .events-grid a:active {
-      color: inherit;
-    }
+        .event-info {
+            padding: 20px;
+        }
 
-    .event-card {
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,.12);
-      transition: transform .3s, box-shadow .3s;
-      cursor: pointer;
-    }
+        .event-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
 
-    .event-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.18);
-    }
+        .event-date {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
 
-    .event-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
+        .btn-ticket {
+            display: block;
+            text-align: center;
+            background: transparent;
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold);
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
 
-    .event-info {
-      padding: 18px;
-    }
-
-    .event-info h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .event-info p {
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 1000px) {
-      .events-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      header {
-        padding: 18px 30px;
-      }
-
-      .hero {
-        padding: 40px;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .events {
-        padding: 60px 40px;
-      }
-
-      .events-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-
-  <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+        .btn-ticket:hover {
+            background: var(--primary-gold);
+            color: black;
+        }
+    </style>
 </head>
-
 <body>
 
-  <header>v
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Eventos</a>
-      <a href="#">Experiencias</a>
-      <a href="#">Galería</a>
+        <div class="logo">Coliseo Maya</div>
+        <div>
+            <a href="#">Inicio</a>
+            <a href="#">Eventos</a>
+            <a href="#">Experiencias</a>
+            <a href="#">Galería</a>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Parque de<br>Béisbol Kukulcan</h1>
-      <p>El lugar ideal para conciertos y eventos en Mérida</p>
+    <header class="hero">
+        <h1>Coliseo Maya Arena</h1>
+        <p>El epicentro de la emoción y el entretenimiento en el Sureste</p>
+        <a href="https://tickets.payuticket.com/event/pase-de-temporad-1nxrh3?useEmbed=true" class="btn-main">ADQUIRIR PASE DE TEMPORADA</a>
+    </header>
 
-      <a class="vivenu-btn btn-primary"
-         href="https://tickets.payuticket.com/event/pase-de-temporad-1nxrh3?useEmbed=true">
-        PASE DE TEMPORADA
-      </a>
-    </div>
-  </section>
-
-  <section class="events">
-    <h2>Próximos Eventos</h2>
+    <h2 class="section-title">Próximos Eventos</h2>
 
     <div class="events-grid">
-
-      <a class="vivenu-btn"
-         href="https://tickets.payuticket.com/event/beisbol-ku6g0o?useEmbed=true">
         <div class="event-card">
-          <img src="YANKEES.jpg">
-          <div class="event-info">
-            <h3>YANKEES VS METS</h3>
-            <p>Marzo 2026</p>
-          </div>
+            <img src="YANKEES.jpg" alt="Yankees vs Mets">
+            <div class="event-info">
+                <div class="event-date">Marzo 2026</div>
+                <h3>YANKEES VS METS</h3>
+                <a href="https://tickets.payuticket.com/event/beisbol-ku6g0o?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+            </div>
         </div>
-      </a>
 
-      <a class="vivenu-btn"
-         href="https://tickets.payuticket.com/event/concierto-6m6qae?useEmbed=true">
         <div class="event-card">
-          <img src="amanda.jpg">
-          <div class="event-info">
-            <h3>Concierto AMANDA</h3>
-            <p>Abril 2026</p>
-          </div>
+            <img src="amanda.jpg" alt="Concierto Amanda">
+            <div class="event-info">
+                <div class="event-date">Abril 2026</div>
+                <h3>CONCIERTO AMANDA: TOUR 2026</h3>
+                <a href="https://tickets.payuticket.com/event/concierto-6m6qae?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+            </div>
         </div>
-      </a>
 
-      <a class="vivenu-btn"
-         href="https://tickets.payuticket.com/event/beisbol-seatle-zikuar?useEmbed=true">
         <div class="event-card">
-          <img src="par.jpg">
-          <div class="event-info">
-            <h3>SEATTLE VS BLUE JAYS</h3>
-            <p>Mayo 2026</p>
-          </div>
+            <img src="par.jpg" alt="Seattle vs Blue Jays">
+            <div class="event-info">
+                <div class="event-date">Mayo 2026</div>
+                <h3>SEATTLE VS BLUE JAYS</h3>
+                <a href="https://tickets.payuticket.com/event/beisbol-seatle-zikuar?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+            </div>
         </div>
-      </a>
 
-      <a class="vivenu-btn"
-         href="https://tickets.payuticket.com/event/beisbol-dodgers-86gkrt?useEmbed=true">
         <div class="event-card">
-          <img src="DODG.jpg">
-          <div class="event-info">
-            <h3>DODGERS VS BLUE JAYS</h3>
-            <p>Junio 2026</p>
-          </div>
+            <img src="DODG.jpg" alt="Dodgers vs Blue Jays">
+            <div class="event-info">
+                <div class="event-date">Junio 2026</div>
+                <h3>DODGERS VS BLUE JAYS</h3>
+                <a href="https://tickets.payuticket.com/event/beisbol-dodgers-86gkrt?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+            </div>
         </div>
-      </a>
-
     </div>
-  </section>
 
 </body>
 </html>
-
-
-
-
