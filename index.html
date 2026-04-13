@@ -8,6 +8,7 @@
     <style>
         :root {
             --primary-gold: #c5a059;
+            --gold-hover: #e0b86a;
             --dark-bg: #121212;
             --card-bg: #1e1e1e;
             --text-white: #ffffff;
@@ -27,10 +28,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #333;
         }
 
         .logo {
@@ -38,6 +40,7 @@
             font-weight: bold;
             color: var(--primary-gold);
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         nav a {
@@ -45,6 +48,8 @@
             text-decoration: none;
             margin-left: 20px;
             transition: color 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
         }
 
         nav a:hover {
@@ -54,8 +59,8 @@
         /* Hero Section */
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1600'); /* Imagen de ejemplo */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=1600');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -63,44 +68,53 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 20px;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            max-width: 600px;
         }
 
+        /* ESTILO BOTÓN PRINCIPAL (HERO) */
         .btn-main {
             background-color: var(--primary-gold);
-            color: black;
-            padding: 15px 40px;
+            color: #000 !important;
+            padding: 18px 45px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             border-radius: 50px;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
         }
 
         .btn-main:hover {
-            transform: scale(1.05);
-            background-color: #e0b86a;
+            transform: translateY(-3px);
+            background-color: var(--gold-hover);
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.5);
         }
 
         /* Eventos */
         .section-title {
             text-align: center;
-            margin: 50px 0;
+            margin: 60px 0 40px;
             font-size: 2.5rem;
+            text-transform: uppercase;
         }
 
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 0 5%;
             margin-bottom: 100px;
@@ -108,57 +122,65 @@
 
         .event-card {
             background: var(--card-bg);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s;
-            border: 1px solid #333;
+            transition: all 0.4s ease;
+            border: 1px solid #2a2a2a;
         }
 
         .event-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .event-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
         }
 
         .event-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .event-info h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
+            margin: 0 0 12px 0;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
         }
 
         .event-date {
             color: var(--primary-gold);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
+        /* ESTILO BOTÓN TICKETS (CARDS) */
         .btn-ticket {
             display: block;
             text-align: center;
             background: transparent;
             color: var(--primary-gold);
-            border: 1px solid var(--primary-gold);
-            padding: 10px;
+            border: 2px solid var(--primary-gold);
+            padding: 12px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .btn-ticket:hover {
             background: var(--primary-gold);
-            color: black;
+            color: #000;
         }
     </style>
-</head>
     <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+</head>
 <body>
 
     <nav>
@@ -174,7 +196,8 @@
     <header class="hero">
         <h1>Coliseo Maya Arena</h1>
         <p>El epicentro de la emoción y el entretenimiento en el Sureste</p>
-        <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/pase-de-temporad-1nxrh3?useEmbed=true" class="btn-main">ADQUIRIR PASE DE TEMPORADA</a>
+        <a href="https://tickets.payuticket.com/event/pase-de-temporad-1nxrh3?useEmbed=true" 
+           class="vivenu-btn btn-main">ADQUIRIR PASE DE TEMPORADA</a>
     </header>
 
     <h2 class="section-title">Próximos Eventos</h2>
@@ -185,7 +208,8 @@
             <div class="event-info">
                 <div class="event-date">Marzo 2026</div>
                 <h3>YANKEES VS METS</h3>
-                <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/beisbol-ku6g0o?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+                <a href="https://tickets.payuticket.com/event/beisbol-ku6g0o?useEmbed=true" 
+                   class="vivenu-btn btn-ticket">Comprar Boletos</a>
             </div>
         </div>
 
@@ -194,7 +218,8 @@
             <div class="event-info">
                 <div class="event-date">Abril 2026</div>
                 <h3>CONCIERTO AMANDA: TOUR 2026</h3>
-                <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/concierto-6m6qae?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+                <a href="https://tickets.payuticket.com/event/concierto-6m6qae?useEmbed=true" 
+                   class="vivenu-btn btn-ticket">Comprar Boletos</a>
             </div>
         </div>
 
@@ -203,7 +228,8 @@
             <div class="event-info">
                 <div class="event-date">Mayo 2026</div>
                 <h3>SEATTLE VS BLUE JAYS</h3>
-                <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/beisbol-seatle-zikuar?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+                <a href="https://tickets.payuticket.com/event/beisbol-seatle-zikuar?useEmbed=true" 
+                   class="vivenu-btn btn-ticket">Comprar Boletos</a>
             </div>
         </div>
 
@@ -212,7 +238,8 @@
             <div class="event-info">
                 <div class="event-date">Junio 2026</div>
                 <h3>DODGERS VS BLUE JAYS</h3>
-                <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/beisbol-dodgers-86gkrt?useEmbed=true" class="btn-ticket">Comprar Boletos</a>
+                <a href="https://tickets.payuticket.com/event/beisbol-dodgers-86gkrt?useEmbed=true" 
+                   class="vivenu-btn btn-ticket">Comprar Boletos</a>
             </div>
         </div>
     </div>
