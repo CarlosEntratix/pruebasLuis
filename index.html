@@ -1,475 +1,328 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Demo Venta de Boletos</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-        <style>
-
-        :root{
-            --primary:#A93312;
-            --primary-dark:#8D2A10;
-            --beige:#F1EAD8;
-            --cream:#F8F5EF;
-            --text:#2F2F2F;
-            --border:#DDD4C1;
-        }
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family:'Montserrat',sans-serif;
-            background:var(--beige);
-            color:var(--text);
-        }
-
-        .experiencia-bottom{
-            display:flex;
-            gap:20px;
-            align-items:flex-start;
-            margin-top:20px;
-        }
-
-        .experiencia-calendar .calendar-card{
-            padding:10px;
-        }
-
-        .experiencia-calendar .calendar-card h3{
-            font-size:14px;
-            margin-bottom:8px;
-        }
-
-        .experiencia-calendar .calendar-grid{
-            gap:20px;
-        }
-
-        .experiencia-calendar .day-btn{
-            padding:20px 0;
-            width:50px;
-            font-size:25px;
-            border-radius:5px;
-        }
-
-        .experiencia-btn{
-            width:180px;
-            display:flex;
-            align-items:center;
-        }
-
-        .experiencia-btn .vivenu-btn{
-            margin-top:0;
-        }
-
-        /* TOP BAR */
-        .topbar{
-            background:var(--primary);
-            color:white;
-            font-size:12px;
-            font-weight:600;
-            padding:10px;
-            text-align:center;
-        }
-
-        /* HEADER */
-        header{
-            background:#f8f7f4;
-            height:120px;
-            position:relative;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-
-            border-bottom:1px solid var(--border);
-        }
-
-        .header-logo{
-            position:absolute;
-            left:40px;
-        }
-
-        .header-logo img{
-            height:80px;
-            width:auto;
-        }
-
-        .logo{
-            text-align:center;
-            color:var(--primary);
-            font-family:'Playfair Display',serif;
-            font-size:52px;
-            font-weight:bold;
-        }
-
-        .logo span{
-            display:block;
-            font-size:16px;
-            color:#3D7A34;
-            margin-top:-5px;
-        }
-
-        nav{
-            position:absolute;
-            right:40px;
-            display:flex;
-            gap:30px;
-        }
-
-        nav a{
-            text-decoration:none;
-            color:#333;
-            font-size:18px;
-        }
-
-        /* HERO */
-        .hero{
-            height:420px;
-            background:
-            linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
-            url('https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1600&q=80');
-            background-size:cover;
-            background-position:center;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
-
-        .hero h1{
-            color:white;
-            font-size:90px;
-            font-family:'Playfair Display',serif;
-            font-style:italic;
-        }
-
-        .elephant-ticket{
-            padding:0;
-            overflow:hidden;
-        }
-
-        .elephant-img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            display:block;
-        }
-
-        .calendar-card{
-            background:var(--cream);
-            padding:20px;
-            border-radius:12px;
-            box-shadow:0 8px 18px rgba(0,0,0,.08);
-        }
-
-        .calendar-card h3{
-            text-align:center;
-            margin-bottom:20px;
-            color:var(--primary);
-            font-family:'Playfair Display',serif;
-        }
-
-        .calendar-grid{
-            display:grid;
-            grid-template-columns:repeat(7,1fr);
-            gap:10px;
-        }
-
-        .day-btn{
-            width:auto;
-            margin-top:0;
-            padding:12px 0;
-            font-size:14px;
-        }
-
-        /* CONTENT */
-        .content{
-            max-width:1400px;
-            margin:auto;
-            padding:50px 30px;
-        }
-
-        .products{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:30px;
-        }
-
-        .product{
-            background:var(--cream);
-            padding:20px;
-            text-align:center;
-        }
-
-        /* TICKET */
-        .ticket{
-            width:220px;
-            height:320px;
-            margin:auto;
-            border-radius:12px;
-            background:linear-gradient(#f6d9b5,#efc79b);
-            border:4px solid #d2a575;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            box-shadow:0 10px 20px rgba(0,0,0,.15);
-        }
-
-        .ticket h3{
-            font-family:'Playfair Display',serif;
-            font-size:28px;
-            color:#7c3e15;
-        }
-
-        .ticket p{
-            font-size:18px;
-            margin-top:10px;
-        }
-
-        /* EXPERIENCIAS */
-
-        .experiencias{
-            max-width:1400px;
-            margin:80px auto;
-            padding:0 30px;
-        }
-
-        .experiencias h2{
-            text-align:center;
-            font-size:48px;
-            margin-bottom:40px;
-            color:var(--primary);
-            font-family:'Playfair Display',serif;
-        }
-
-        .experiencias-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:30px;
-        }
-
-        .experiencia-card{
-            background:var(--cream);
-            border-radius:15px;
-            overflow:hidden;
-            box-shadow:0 10px 20px rgba(0,0,0,.1);
-        }
-
-        .experiencia-card img{
-            width:100%;
-            height:250px;
-            object-fit:cover;
-        }
-
-        .experiencia-info{
-            padding:20px;
-        }
-
-        .experiencia-info h3{
-            color:var(--primary);
-            margin-bottom:10px;
-        }
-
-        .experiencia-info p{
-            margin-bottom:20px;
-            line-height:1.6;
-        }
-
-        /* 🔥 BOTÓN MEJORADO (SOLO ESTO CAMBIÓ) */
-        .vivenu-btn{
-            display:inline-block;
-            width:100%;
-            margin-top:18px;
-            padding:14px;
-            text-align:center;
-
-            background:var(--primary);
-            color:white;
-            text-decoration:none;
-
-            font-weight:600;
-            border-radius:10px;
-
-            transition:all .25s ease;
-            box-shadow:0 6px 15px rgba(0,0,0,.12);
-            position:relative;
-            overflow:hidden;
-        }
-
-        .vivenu-btn:hover{
-            background:var(--primary-dark);
-            transform:translateY(-2px);
-            box-shadow:0 10px 20px rgba(0,0,0,.18);
-        }
-
-        .vivenu-btn:active{
-            transform:translateY(0);
-        }
-
-        /* brillo animado */
-        .vivenu-btn::after{
-            content:"";
-            position:absolute;
-            top:0;
-            left:-100%;
-            width:100%;
-            height:100%;
-            background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
-            transition:.5s;
-        }
-
-        .vivenu-btn:hover::after{
-            left:100%;
-        }
-
-        /* CART */
-        .cart{
-            position:fixed;
-            right:-420px;
-            top:0;
-            width:400px;
-            height:100%;
-            background:white;
-            box-shadow:-10px 0 20px rgba(0,0,0,.2);
-            transition:.3s;
-            padding:25px;
-            z-index:999;
-        }
-
-        .cart.active{
-            right:0;
-        }
-
-        footer{
-            background:#F7F4EE;
-            margin-top:80px;
-            text-align:center;
-            padding:30px;
-            border-top:1px solid var(--border);
-        }
-
-        </style>
-    </head>
-    <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
-    <body>
-
-        <div class="topbar">
-            ABRIMOS LOS 365 DÍAS DEL AÑO · DE LUNES A DOMINGO DE 10 A 17 HRS.
-        </div>
-
-        <header>
-
-            <div class="header-logo">
-                <img src="logo.png" alt="Africam Safari">
-            </div>
-
-            <div class="logo">
-                Africam Safari
-                <span>BOLETOS ONLINE</span>
-            </div>
-
-            <nav>
-                <a href="#">INICIO</a>
-                <a href="pase-anual.html">PASE ANUAL</a>
-                <a href="experiencias.html">EXPERIENCIAS CON ANIMALES</a>
-            </nav>
-
-        </header>
-
-        <section class="hero">
-            <h1>BOLETOS</h1>
-        </section>
-
-        <div class="content">
-
-            <div class="products">
-
-                <div class="product">
-
-                    <div class="calendar-card">
-
-                        <h3>Julio 2025</h3>
-
-                        <div class="calendar-grid">
-
-                            <a class="vivenu-btn day-btn" href="#">1</a>
-                            <a class="vivenu-btn day-btn" href="#">2</a>
-                            <a class="vivenu-btn day-btn" href="#">3</a>
-                            <a class="vivenu-btn day-btn" href="#">4</a>
-                            <a class="vivenu-btn day-btn" href="#">5</a>
-                            <a class="vivenu-btn day-btn" href="#">6</a>
-                            <a class="vivenu-btn day-btn" href="#">7</a>
-
-                            <a class="vivenu-btn day-btn" href="#">8</a>
-                            <a class="vivenu-btn day-btn" href="#">9</a>
-                            <a class="vivenu-btn day-btn" href="#">10</a>
-                            <a class="vivenu-btn day-btn" href="#">11</a>
-                            <a class="vivenu-btn day-btn" href="#">12</a>
-                            <a class="vivenu-btn day-btn" href="#">13</a>
-                            <a class="vivenu-btn day-btn" href="#">14</a>
-
-                            <a class="vivenu-btn day-btn" href="#">15</a>
-                            <a class="vivenu-btn day-btn" href="#">16</a>
-                            <a class="vivenu-btn day-btn" href="#">17</a>
-                            <a class="vivenu-btn day-btn" href="#">18</a>
-                            <a class="vivenu-btn day-btn" href="#">19</a>
-                            <a class="vivenu-btn day-btn" href="https://prueba.tuticket.com.mx/checkout/africam-safari-calendario-186p5h?useEmbed=true">20</a>
-                            <a class="vivenu-btn day-btn" href="https://prueba.tuticket.com.mx/checkout/africam-safari-calendario-bjl3yo?useEmbed=true">21</a>
-
-                            <a class="vivenu-btn day-btn" href="https://prueba.tuticket.com.mx/checkout/africam-safari-calendario-ihmji2?useEmbed=true">22</a>
-                            <a class="vivenu-btn day-btn" href="https://prueba.tuticket.com.mx/checkout/africam-safari-calendario-jqwjfn?useEmbed=true">23</a>
-                            <a class="vivenu-btn day-btn" href="https://prueba.tuticket.com.mx/checkout/africam-safari-calendario-t4u444?useEmbed=true">24</a>
-                            <a class="vivenu-btn day-btn" href="#">25</a>
-                            <a class="vivenu-btn day-btn" href="#">26</a>
-                            <a class="vivenu-btn day-btn" href="#">27</a>
-                            <a class="vivenu-btn day-btn" href="#">28</a>
-
-                            <a class="vivenu-btn day-btn" href="#">29</a>
-                            <a class="vivenu-btn day-btn" href="#">30</a>
-                            <a class="vivenu-btn day-btn" href="#">31</a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="product">
-                    <div class="ticket elephant-ticket">
-                        <img
-                             src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=600&q=80"
-                             alt="Elefante"
-                             class="elephant-img">
-                    </div>
-
-                    <a class="vivenu-btn" href="https://prueba.tuticket.com.mx/event/africam-safari-regular-amluc2?useEmbed=true">Comprar boletos</a>
-                 </div>
-
-                <div class="product">
-                    <div class="ticket elephant-ticket">
-                        <img
-                            src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80"
-                            alt="León"
-                            class="animal-img">
-                    </div>
-                    <a class="vivenu-btn" href="https://prueba.tuticket.com.mx/event/africam-safari-calendario-xca6po?recurrenceSelection=true">Comprar boletos</a>
-                </div>
-            </div>
-
-        </div>
-
-        
-
-        <footer>
-        © 2025 Sistema Demo de Venta de Boletos
-        </footer>
-
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Congreso Empresarial 2026</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f5f5;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:bold;
+}
+
+.countdown{
+    font-size:2rem;
+    margin:30px 0;
+}
+
+.ticket-card{
+    transition:.3s;
+}
+
+.ticket-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+footer{
+    background:#111;
+    color:white;
+    padding:40px;
+}
+
+.ticket-card{
+    transition:.3s;
+    border-radius:15px;
+    overflow:hidden;
+    height:100%;
+}
+
+.ticket-card .card-body{
+    display:flex;
+    flex-direction:column;
+}
+
+.ticket-card ul{
+    text-align:left;
+    padding-left:20px;
+    margin-top:15px;
+    flex-grow:1;
+}
+
+.ticket-card ul li{
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.ticket-card button{
+    margin-top:auto;
+}
+
+.ticket-card h1{
+    color:#0d6efd;
+    font-size:2.2rem;
+    margin:15px 0;
+}
+
+</style>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+</head>
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Congreso Empresarial 2026</h1>
+
+<p class="lead">
+Impulsando el crecimiento de empresarios y emprendedores.
+</p>
+
+<div class="countdown" id="contador"></div>
+
+<a href="https://tickets.payuticket.com/event/congreso-bni-2026-wfyf5g?useEmbed=true" class="btn btn-warning btn-lg vivenu-btn yourStylingClass">
+Comprar boletos
+</a>
+
+</div>
+
+</section>
+
+<section class="container py-5">
+
+<h2 class="text-center mb-5">
+Ponentes Invitados
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="juan.jpg" class="card-img-top">
+
+<div class="card-body">
+
+<h4>Juan Lombana</h4>
+
+<p>Uno de los 30 mejores emprendedores según Forbes</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="ar.jpg" class="card-img-top">
+
+<div class="card-body">
+
+<h4>Arturo Elías Ayub</h4>
+
+<p>Empresario y voz clave del ecosistema emprendedor</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="si.jpg" class="card-img-top">
+
+<div class="card-body">
+
+<h4>Simón Cohen</h4>
+
+<p>Empresario e inversionista reconocido por su liderazgo y enfoque humano</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container py-5" id="boletos">
+
+<h2 class="text-center mb-5">
+
+Boletos
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="card ticket-card text-center">
+
+<div class="card-body">
+
+<h3>DIRECTOR</h3>
+
+<h1>$14,499.00</h1>
+
+<ul class="text-start">
+    <li>Todas las sesiones y actividades de aprendizaje.</li>
+    <li>Coffee break durante las sesiones.</li>
+    <li>Comidas de medio día.</li>
+    <li>Eventos sociales:
+        <ul>
+            <li>Cóctel de bienvenida.</li>
+            <li>Cena de clausura.</li>
+            <li>Cena de directores.</li>
+        </ul>
+    </li>
+    <li>Diferentes actividades en Chihuahua.</li>
+</ul>
+
+<button class="btn btn-primary w-100">
+    Comprar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card ticket-card text-center border-warning border-3">
+
+<div class="card-body">
+
+<h3>NETWORKER</h3>
+
+<h1>$9,999.00</h1>
+
+<ul class="text-start">
+    <li>Todas las sesiones y actividades de aprendizaje.</li>
+    <li>Coffee break durante las sesiones.</li>
+    <li>Comidas de medio día.</li>
+    <li>Eventos sociales:
+        <ul>
+            <li>Cóctel de bienvenida.</li>
+            <li>Cena de clausura.</li>
+        </ul>
+    </li>
+    <li>Diferentes actividades en Chihuahua.</li>
+</ul>
+
+<button class="btn btn-warning w-100">
+    Comprar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card ticket-card text-center">
+
+<div class="card-body">
+
+<h3>ACOMPAÑANTE DE DIRECTOR</h3>
+
+<h1>$5,299.00</h1>
+
+<ul class="text-start">
+    <li>Eventos sociales:
+        <ul>
+            <li>Cóctel de bienvenida.</li>
+            <li>Cena de clausura.</li>
+            <li>Cena de directores.</li>
+        </ul>
+    </li>
+</ul>
+
+<button class="btn btn-dark w-100">
+    Comprar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="text-center">
+
+<h4>Congreso Empresarial 2026</h4>
+
+<p>
+Sistema de demostración para venta de boletos.
+</p>
+
+</footer>
+
+<script>
+
+const fecha = new Date("March 20, 2027 09:00:00").getTime();
+
+setInterval(()=>{
+
+let ahora = new Date().getTime();
+
+let diferencia = fecha-ahora;
+
+let dias = Math.floor(diferencia/(1000*60*60*24));
+
+let horas = Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+
+let minutos = Math.floor((diferencia%(1000*60*60))/(1000*60));
+
+let segundos = Math.floor((diferencia%(1000*60))/1000);
+
+document.getElementById("contador").innerHTML =
+`${dias} días ${horas} h ${minutos} m ${segundos} s`;
+
+},1000);
+
+</script>
+
+</body>
 </html>
