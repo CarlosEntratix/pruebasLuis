@@ -1,391 +1,1820 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Caldera</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>ANAHUAC</title>
 
-<style>
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:var(--gris);
-    color:var(--texto);
-}
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-:root{
-    --naranja:#F58220;
-    --turquesa:#00B8C8;
-    --amarillo:#FFD54A;
-    --azul:#0089D0;
-    --verde:#56C271;
-    --gris:#F7F7F7;
-    --texto:#2D2D2D;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-.hero{
-    height:85vh;
-    background:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80") center/cover;
-    position:relative;
-}
+    <style>
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        rgba(0,140,208,.65),
-        rgba(0,184,200,.55)
-    );
-}
+        /* ==================================================
+           COLORES
+        ================================================== */
 
-.hero .contenido{
-    position:relative;
-    z-index:2;
-    color:white;
-}
+        :root {
+            --naranja: #E85D04;
+            --naranja-oscuro: #C24100;
+            --naranja-medio: #F48C06;
+            --naranja-claro: #FFBA66;
 
-.card{
-    border:none;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+            --crema: #FFF8F2;
+            --crema-oscuro: #F7E8D8;
 
-.card-body{
-    background:white;
-}
+            --blanco: #FFFFFF;
 
-.card h4{
-    color:var(--turquesa);
-}
+            --gris: #F5F5F5;
+            --gris-2: #E8E8E8;
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
-}
+            --texto: #292524;
+            --texto-suave: #78716C;
 
-.btn-ticket{
-    background:var(--naranja);
-    color:white;
-    border:none;
-    border-radius:50px;
-    padding:12px 28px;
-    font-weight:bold;
-}
+            --radio: 18px;
 
-.btn-ticket:hover{
-    background:#dd6f15;
-    transform:translateY(-2px);
-}
+            --sombra:
+                0 15px 40px rgba(232, 93, 4, 0.12);
+        }
 
-.section-beneficios{
-    background:linear-gradient(90deg,#00B8C8,#0089D0);
-    color:white;
-}
 
-.section-beneficios h2{
-    color:white;
-}
+        /* ==================================================
+           RESET
+        ================================================== */
 
-.section-beneficios .list-group-item{
-    background:transparent;
-    color:white;
-    border-color:rgba(255,255,255,.25);
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.calendario{
-    background:#fff;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.dia-card{
-    border:none;
-    border-radius:16px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-    transition:.3s;
-    height:100%;
-}
+        body {
+            font-family: "Montserrat", sans-serif;
+            color: var(--texto);
+            background: var(--blanco);
+            line-height: 1.6;
+        }
 
-.dia-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
-}
+        img {
+            width: 100%;
+            display: block;
+        }
 
-.dia-numero{
-    font-size:2.5rem;
-    font-weight:bold;
-    color:var(--azul);
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-.dia-semana{
-    color:#777;
-    text-transform:uppercase;
-    font-size:.9rem;
-    margin-bottom:10px;
-}
+        button {
+            font-family: inherit;
+        }
 
-.evento{
-    font-weight:bold;
-    color:var(--turquesa);
-    min-height:50px;
-}
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
 
-h1,h2,h3,h4{
-    color:var(--azul);
-}
 
-footer{
-    background:#111;
-    color:white;
-}
-</style>
-<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+        /* ==================================================
+           HEADER
+        ================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 1px solid var(--gris-2);
+        }
+
+        .topbar {
+            background: var(--naranja-oscuro);
+            color: white;
+            font-size: 13px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .topbar span {
+            opacity: .92;
+        }
+
+        .navbar {
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: var(--naranja-oscuro);
+
+            font-size: 20px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+        }
+
+        .logo span {
+            display: block;
+
+            color: var(--naranja);
+
+            font-size: 10px;
+            letter-spacing: 3px;
+
+            margin-top: -2px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            color: var(--texto);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: .25s;
+        }
+
+        nav a:hover {
+            color: var(--naranja);
+        }
+
+        .nav-button {
+            background: var(--naranja);
+
+            color: white !important;
+
+            padding: 12px 20px;
+
+            border-radius: 30px;
+        }
+
+        .nav-button:hover {
+            background: var(--naranja-oscuro);
+        }
+
+        .menu-button {
+            display: none;
+
+            border: 0;
+            background: none;
+
+            color: var(--naranja);
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .hero {
+            min-height: 680px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(120, 35, 0, .94) 0%,
+                    rgba(180, 65, 0, .76) 45%,
+                    rgba(232, 93, 4, .18) 100%
+                ),
+
+                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80")
+                center / cover;
+        }
+
+        .hero-content {
+            color: white;
+
+            max-width: 650px;
+
+            padding: 90px 0;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--naranja);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero .eyebrow {
+            color: var(--naranja-claro);
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 38px;
+            height: 2px;
+
+            background: currentColor;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(48px, 6vw, 78px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--naranja-claro);
+        }
+
+        .hero p {
+            max-width: 580px;
+
+            font-size: 18px;
+
+            opacity: .92;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* ==================================================
+           BOTONES
+        ================================================== */
+
+        .buttons {
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 24px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+            font-size: 14px;
+
+            transition: .25s;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--naranja);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--naranja-oscuro);
+
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,.7);
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+
+            color: var(--naranja-oscuro);
+        }
+
+
+        /* ==================================================
+           SECCIONES
+        ================================================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            max-width: 720px;
+
+            margin-bottom: 55px;
+        }
+
+        .section-heading.center {
+            margin-left: auto;
+            margin-right: auto;
+
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+
+            color: var(--naranja-oscuro);
+
+            font-size: clamp(36px, 4vw, 52px);
+
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--texto-suave);
+
+            font-size: 16px;
+        }
+
+
+        /* ==================================================
+           SOBRE NOSOTROS
+        ================================================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .about-image {
+            height: 520px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .about-image img {
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+
+            bottom: 25px;
+            left: 25px;
+
+            max-width: 280px;
+
+            background: white;
+
+            padding: 22px 25px;
+
+            border-radius: 15px;
+
+            box-shadow: var(--sombra);
+        }
+
+        .about-badge strong {
+            display: block;
+
+            color: var(--naranja-oscuro);
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+        }
+
+        .about-text h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 48px;
+
+            color: var(--naranja-oscuro);
+
+            line-height: 1.1;
+
+            margin-bottom: 22px;
+        }
+
+        .about-text p {
+            color: var(--texto-suave);
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ==================================================
+           HABILIDADES
+        ================================================== */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 13px;
+
+            margin-top: 30px;
+        }
+
+        .skill {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .skill-icon {
+            width: 35px;
+            height: 35px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: var(--crema-oscuro);
+
+            color: var(--naranja);
+
+            display: grid;
+
+            place-items: center;
+        }
+
+
+        /* ==================================================
+           OPORTUNIDADES
+        ================================================== */
+
+        .opportunities {
+            background: var(--crema);
+        }
+
+        .cards-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+
+            border: 1px solid var(--gris-2);
+
+            border-radius: var(--radio);
+
+            overflow: hidden;
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: var(--sombra);
+        }
+
+        .card-image {
+            height: 230px;
+
+            overflow: hidden;
+        }
+
+        .card-image img {
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform .4s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-label {
+            color: var(--naranja);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+        }
+
+        .card h3 {
+            color: var(--naranja-oscuro);
+
+            font-size: 20px;
+
+            margin: 8px 0;
+        }
+
+        .card p {
+            color: var(--texto-suave);
+
+            font-size: 14px;
+        }
+
+
+        /* ==================================================
+           EVENTOS
+        ================================================== */
+
+        .events {
+            background: var(--gris);
+        }
+
+        .events-list {
+            display: grid;
+
+            gap: 12px;
+        }
+
+        .event {
+            background: white;
+
+            padding: 22px 25px;
+
+            border-radius: 14px;
+
+            display: grid;
+
+            grid-template-columns: 85px 1fr auto;
+
+            gap: 25px;
+
+            align-items: center;
+
+            border: 1px solid var(--gris-2);
+        }
+
+        .event-date {
+            text-align: center;
+
+            color: var(--naranja-oscuro);
+        }
+
+        .event-date strong {
+            display: block;
+
+            font-size: 27px;
+
+            line-height: 1;
+        }
+
+        .event-date span {
+            color: var(--naranja);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+        }
+
+        .event-info small {
+            color: var(--naranja);
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+        }
+
+        .event-info h3 {
+            color: var(--naranja-oscuro);
+
+            margin-top: 3px;
+        }
+
+        .event-info p {
+            font-size: 13px;
+
+            color: var(--texto-suave);
+        }
+
+
+        /* ==================================================
+           CONTACTO
+        ================================================== */
+
+        .contact {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--naranja-oscuro),
+                    var(--naranja)
+                );
+
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .contact .eyebrow {
+            color: var(--naranja-claro);
+        }
+
+        .contact h2 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 50px;
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-grid > div > p {
+            color: rgba(255,255,255,.82);
+        }
+
+        .contact-card {
+            background: white;
+
+            color: var(--texto);
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            box-shadow: var(--sombra);
+        }
+
+        .contact-person {
+            display: flex;
+
+            gap: 18px;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-person img {
+            width: 75px;
+            height: 75px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+
+        .contact-person h3 {
+            color: var(--naranja-oscuro);
+        }
+
+        .contact-person p {
+            color: var(--texto-suave);
+
+            font-size: 13px;
+        }
+
+        .contact-data {
+            border-top: 1px solid var(--gris-2);
+
+            padding-top: 20px;
+
+            display: grid;
+
+            gap: 12px;
+
+            font-size: 14px;
+        }
+
+        .contact-data strong {
+            color: var(--naranja);
+
+            margin-right: 8px;
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+            background: #351000;
+
+            color: white;
+
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+            gap: 45px;
+
+            padding-bottom: 45px;
+        }
+
+        footer h3 {
+            margin-bottom: 18px;
+
+            font-size: 15px;
+
+            color: var(--naranja-claro);
+        }
+
+        footer p,
+        footer a {
+            color: rgba(255,255,255,.68);
+
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: var(--naranja-claro);
+        }
+
+        footer ul {
+            list-style: none;
+
+            display: grid;
+
+            gap: 9px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+
+            padding-top: 20px;
+
+            color: rgba(255,255,255,.45);
+
+            font-size: 12px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                left: 0;
+                right: 0;
+
+                top: 116px;
+
+                background: white;
+
+                padding: 25px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                border-bottom: 1px solid var(--gris-2);
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .topbar-inner {
+                justify-content: center;
+            }
+
+            .topbar-inner span:last-child {
+                display: none;
+            }
+
+            .navbar {
+                height: 70px;
+            }
+
+            nav {
+                top: 108px;
+            }
+
+            .hero {
+                min-height: 620px;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .about-text h2,
+            .contact h2 {
+                font-size: 38px;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event {
+                grid-template-columns: 65px 1fr;
+            }
+
+            .event .btn {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
 </head>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+
+
 <body>
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-<div class="container">
 
-<a class="navbar-brand fw-bold" href="#">
-La Caldera
-</a>
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
+    <header>
 
-<div class="collapse navbar-collapse" id="menu">
+        <div class="topbar">
 
-<ul class="navbar-nav ms-auto">
+            <div class="container topbar-inner">
 
-<li class="nav-item">
-<a class="nav-link" href="#">Inicio</a>
-</li>
+                <span>
+                    Universidad · Comunidad · Experiencias
+                </span>
 
-<li class="nav-item">
-<a class="nav-link" href="#">Experiencias</a>
-</li>
+                <span>
+                    Contacto · Información · Campus
+                </span>
 
-<li class="nav-item">
-<a class="nav-link" href="#">Promociones</a>
-</li>
+            </div>
 
-<li class="nav-item">
-<a class="nav-link" href="#">Contacto</a>
-</li>
+        </div>
 
-</ul>
 
-</div>
+        <div class="container navbar">
 
-</div>
-</nav>
+            <a href="#inicio" class="logo">
 
-<section class="hero d-flex align-items-center">
+                ANÁHUAC
 
-<div class="container contenido">
+                <span>
+                    PUEBLA
+                </span>
 
-<div class="row">
+            </a>
 
-<div class="col-lg-7">
 
-<h1 class="display-3 fw-bold">
-Compra tus boletos en línea
-</h1>
+            <button
+                class="menu-button"
+                onclick="toggleMenu()"
+                aria-label="Abrir menú">
 
-<p class="lead">
-Una plataforma moderna para administrar entradas, promociones y accesos mediante código QR.
-</p>
+                ☰
 
-<a href="https://prueba.tuticket.com.mx/event/la-calera-1qvnb2?recurrenceSelection=true" class="btn btn-ticket btn-lg">
-Comprar boletos
-</a>
+            </button>
 
-</div>
 
-</div>
+            <nav id="nav">
 
-</div>
+                <a href="#inicio">
+                    Inicio
+                </a>
 
-</section>
+                <a href="#nosotros">
+                    Nosotros
+                </a>
 
-<section class="py-5">
+                <a href="#oportunidades">
+                    Actividades
+                </a>
 
-<div class="container">
+                <a href="#eventos">
+                    Eventos
+                </a>
 
-<h2 class="text-center mb-5">
-Experiencias disponibles
-</h2>
+                <a href="#contacto" class="nav-button">
+                    Contáctanos
+                </a>
 
-<div class="row g-4">
+            </nav>
 
-<div class="col-md-4">
+        </div>
 
-<div class="card">
+    </header>
 
-<img src="morsa.jpg" class="card-img-top">
 
-<div class="card-body">
 
-<h4>Parque Acuático</h4>
+    <!-- ==================================================
+         HERO
+         Imagen: estudiantes / universidad
+    ================================================== -->
 
-<p>
-Acceso general con compra inmediata.
-</p>
+    <section class="hero" id="inicio">
 
-<div class="mt-3">
-    <a href="calendario.html" class="btn btn-ticket w-100">
-        Comprar entradas
-    </a>
-</div>
+        <div class="container">
 
-</div>
+            <div class="hero-content">
 
-</div>
+                <div class="eyebrow">
+                    Vida universitaria
+                </div>
 
-</div>
 
-<div class="col-md-4">
+                <h1>
+                    Vive tu experiencia
+                    <span>al máximo.</span>
+                </h1>
 
-<div class="card">
 
-<img src="images.jpg" class="card-img-top">
+                <p>
+                    Un espacio para descubrir tus talentos,
+                    crear amistades, participar en nuevas
+                    experiencias y formar parte de una comunidad
+                    universitaria.
+                </p>
 
-<div class="card-body">
 
-<h4>Hotel</h4>
+                <div class="buttons">
 
-<p>
-Reserva hospedaje y agrega boletos al mismo tiempo.
-</p>
+                    <a
+                        href="#oportunidades"
+                        class="btn btn-primary">
 
-<button class="btn btn-ticket w-100">
-Reservar
-</button>
+                        Explorar actividades →
 
-</div>
+                    </a>
 
-</div>
 
-</div>
+                    <a
+                        href="#contacto"
+                        class="btn btn-outline">
 
-<div class="col-md-4">
+                        Conoce más
 
-<div class="card">
+                    </a>
 
-<img src="rest.jpg" class="card-img-top">
+                </div>
 
-<div class="card-body">
+            </div>
 
-<h4>Restaurantes</h4>
+        </div>
 
-<p>
-Conciertos y actividades especiales con cupo limitado.
-</p>
+    </section>
 
-<button class="btn btn-ticket w-100">
-Ver boletos
-</button>
 
-</div>
 
-</div>
+    <!-- ==================================================
+         SOBRE NOSOTROS
+         Imagen: estudiantes universitarios
+    ================================================== -->
 
-</div>
+    <section id="nosotros">
 
-</div>
+        <div class="container about-grid">
 
-</div>
 
-</section>
+            <div class="about-image">
 
-<section class="py-5 section-beneficios">
+                <img
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80"
+                    alt="Estudiantes universitarios">
 
-<div class="container">
 
-<div class="row">
+                <div class="about-badge">
 
-<div class="col-lg-6">
+                    <strong>
+                        Una experiencia que transforma
+                    </strong>
 
-<h2>
-¿Por qué usar nuestro sistema?
-</h2>
+                    Descubre espacios para crecer
+                    personalmente y profesionalmente.
 
-<ul class="list-group list-group-flush">
+                </div>
 
-<li class="list-group-item">
-✔ Venta de boletos en línea
-</li>
+            </div>
 
-<li class="list-group-item">
-✔ Códigos QR automáticos
-</li>
 
-<li class="list-group-item">
-✔ Control de accesos
-</li>
 
-<li class="list-group-item">
-✔ Promociones y cupones
-</li>
+            <div class="about-text">
 
-<li class="list-group-item">
-✔ Reportes en tiempo real
-</li>
+                <div class="eyebrow">
+                    Quiénes somos
+                </div>
 
-</ul>
 
-</div>
+                <h2>
+                    Un espacio para desarrollarte
+                    y conectar
+                </h2>
 
-<div class="col-lg-6">
 
-<img class="img-fluid rounded"
-src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80">
+                <p>
+                    La vida universitaria es mucho más que
+                    asistir a clases. Es una oportunidad para
+                    descubrir tus intereses, desarrollar nuevas
+                    habilidades y construir relaciones que pueden
+                    acompañarte durante toda tu vida.
+                </p>
 
-</div>
 
-</div>
+                <p>
+                    Participa en actividades de liderazgo,
+                    deporte, cultura, voluntariado, innovación
+                    y comunidad.
+                </p>
 
-</div>
 
-</section>
+                <div class="skills">
 
-<section class="py-5 text-center">
+                    <div class="skill">
+                        <span class="skill-icon">✦</span>
+                        Expresión y comunicación
+                    </div>
 
-<div class="container">
+                    <div class="skill">
+                        <span class="skill-icon">✦</span>
+                        Creatividad
+                    </div>
 
-<h2 class="mb-3">
-Comienza a vender hoy
-</h2>
+                    <div class="skill">
+                        <span class="skill-icon">✦</span>
+                        Confianza
+                    </div>
 
-<p>
-Implementa un sistema moderno de venta de boletos para parques, hoteles y eventos.
-</p>
+                    <div class="skill">
+                        <span class="skill-icon">✦</span>
+                        Trabajo en equipo
+                    </div>
 
-<a href="#" class="btn btn-ticket btn-lg">
-Solicitar demostración
-</a>
+                    <div class="skill">
+                        <span class="skill-icon">✦</span>
+                        Liderazgo
+                    </div>
 
-</div>
+                    <div class="skill">
+                        <span class="skill-icon">✦</span>
+                        Colaboración
+                    </div>
 
-</section>
+                </div>
 
-<footer class="py-4">
+            </div>
 
-<div class="container text-center">
+        </div>
 
-<p class="mb-0">
-Demo de plataforma de boletaje © 2026
-</p>
+    </section>
 
-</div>
 
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ==================================================
+         OPORTUNIDADES
+    ================================================== -->
+
+    <section
+        class="opportunities"
+        id="oportunidades">
+
+        <div class="container">
+
+
+            <div class="section-heading center">
+
+                <div class="eyebrow">
+                    Descubre
+                </div>
+
+
+                <h2>
+                    Encuentra tu lugar
+                </h2>
+
+
+                <p>
+                    Diferentes espacios para desarrollar
+                    tus intereses y vivir nuevas experiencias.
+                </p>
+
+            </div>
+
+
+
+            <div class="cards-grid">
+
+
+                <!-- ========================================
+                     DEPORTE
+                     Imagen relacionada con actividad física
+                ========================================= -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80"
+                            alt="Deporte universitario">
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span class="card-label">
+                            Actividad física
+                        </span>
+
+
+                        <h3>
+                            Deporte universitario
+                        </h3>
+
+
+                        <p>
+                            Entrena, compite y forma parte
+                            de una comunidad deportiva.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ========================================
+                     CULTURA
+                     Imagen relacionada con arte
+                ========================================= -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=80"
+                            alt="Arte y cultura">
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span class="card-label">
+                            Creatividad
+                        </span>
+
+
+                        <h3>
+                            Arte y cultura
+                        </h3>
+
+
+                        <p>
+                            Encuentra nuevas formas de
+                            expresar tus ideas y talentos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ========================================
+                     LIDERAZGO
+                     Imagen relacionada con trabajo en equipo
+                ========================================= -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80"
+                            alt="Liderazgo y trabajo en equipo">
+
+                    </div>
+
+
+                    <div class="card-content">
+
+                        <span class="card-label">
+                            Desarrollo
+                        </span>
+
+
+                        <h3>
+                            Liderazgo
+                        </h3>
+
+
+                        <p>
+                            Desarrolla habilidades para
+                            dirigir proyectos y equipos.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         EVENTOS
+         No necesita imagen
+    ================================================== -->
+
+    <section
+        class="events"
+        id="eventos">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    Agenda universitaria
+                </div>
+
+
+                <h2>
+                    Próximos eventos
+                </h2>
+
+
+                <p>
+                    Mantente al día con las actividades
+                    y experiencias disponibles en el campus.
+                </p>
+
+            </div>
+
+
+
+            <div class="events-list">
+
+
+                <article class="event">
+
+                    <div class="event-date">
+
+                        <strong>
+                            26
+                        </strong>
+
+                        <span>
+                            AGO
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <small>
+                            ARTE
+                        </small>
+
+
+                        <h3>
+                            Vaselina
+                        </h3>
+
+
+                        <p>
+                            07:00 PM · Campus universitario
+                        </p>
+
+                    </div>
+
+
+                    <a href="https://prueba.tuticket.com.mx/event/vaselina-2sx4tm?recurrenceSelection=true" class="btn btn-primary">
+
+                        Ver evento
+
+                    </a>
+
+                </article>
+
+
+
+                <article class="event">
+
+                    <div class="event-date">
+
+                        <strong>
+                            27
+                        </strong>
+
+                        <span>
+                            AGO
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <small>
+                            Arte
+                        </small>
+
+
+                        <h3>
+                            Vaselina
+                        </h3>
+
+
+                        <p>
+                            07:00 PM · Auditorio
+                        </p>
+
+                    </div>
+
+
+                    <a class="vivenu-btn yourStylingClass btn btn-primary" href="https://prueba.tuticket.com.mx/checkout/vaselina-9h0f7g?useEmbed=true"> Ver Entradas </a>
+
+                </article>
+
+
+
+                <article class="event">
+
+                    <div class="event-date">
+
+                        <strong>
+                            15
+                        </strong>
+
+                        <span>
+                            Dic
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <small>
+                            Deporte
+                        </small>
+
+
+                        <h3>
+                            Torneo universitario
+                        </h3>
+
+
+                        <p>
+                            04:00 PM · Canchas deportivas
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="#"
+                        class="btn btn-primary">
+
+                        Ver evento
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CONTACTO
+         Imagen: equipo / personas
+    ================================================== -->
+
+    <section
+        class="contact"
+        id="contacto">
+
+        <div class="container contact-grid">
+
+
+            <div>
+
+                <div class="eyebrow">
+                    Estamos aquí para ti
+                </div>
+
+
+                <h2>
+                    ¿Quieres formar parte
+                    de la experiencia?
+                </h2>
+
+
+                <p>
+                    Conoce las actividades disponibles,
+                    resuelve tus dudas y encuentra el programa
+                    que más se adapte a tus intereses.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-card">
+
+
+                <div class="contact-person">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80"
+                        alt="Equipo universitario">
+
+
+                    <div>
+
+                        <h3>
+                            Equipo de Vida Universitaria
+                        </h3>
+
+                        <p>
+                            Atención y orientación
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-data">
+
+                    <div>
+
+                        <strong>✉</strong>
+
+                        contacto@ejemplo.com
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>☎</strong>
+
+                        +52 222 000 0000
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>⌖</strong>
+
+                        Campus Universitario
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div>
+
+                    <div
+                        class="logo"
+                        style="color:white;">
+
+                        ANÁHUAC
+
+                        <span>
+                            PUEBLA
+                        </span>
+
+                    </div>
+
+
+                    <p style="margin-top:18px;">
+
+                        Una comunidad para aprender,
+                        crecer, conectar y transformar.
+
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>
+                        Explora
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#inicio">
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#nosotros">
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#oportunidades">
+                                Actividades
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#eventos">
+                                Comunidadtos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>
+                        Comunidad
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#">
+                                Estudiantes
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Actividades
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Servicios
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div>
+
+                    <h3>
+                        Contacto
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#contacto">
+                                Información
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#contacto">
+                                Ubicación
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#contacto">
+                                Atención
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 · Sitio de demostración
+                </span>
+
+
+                <span>
+                    Proyecto académico / demostrativo
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const nav = document.getElementById("nav");
+
+            nav.classList.toggle("open");
+
+        }
+
+
+        document
+            .querySelectorAll("nav a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    document
+                        .getElementById("nav")
+                        .classList
+                        .remove("open");
+
+                });
+
+            });
+
+    </script>
+
 
 </body>
+
 </html>
