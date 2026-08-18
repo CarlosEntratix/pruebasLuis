@@ -1,401 +1,2220 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
 
-<title>Calendario Agosto 2026</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mundo Granjero | Comprar entradas</title>
 
-<style>
 
-:root{
-    --naranja:#F58220;
-    --azul:#0089D0;
-    --turquesa:#00B8C8;
-    --gris:#f5f5f5;
-}
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
-body{
-    background:var(--gris);
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-.hero{
-    height:280px;
-    background:url("morsa.jpg") center/cover;
-    position:relative;
-}
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,137,208,.45);
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-.hero h1{
-    position:relative;
-    z-index:2;
-    color:white;
-}
 
-.day{
-    min-height: 170px;
-}
+    <!-- =====================================================
+         VIVENU
+    ====================================================== -->
 
-.calendar{
-    max-width:950px;
-    margin:auto;
-}
+    <script
+        type="text/javascript"
+        src="https://vivenu.dev/web/deliver/js/v1/embed.js"
+    ></script>
 
-.day{
-    background:white;
-    border-radius:15px;
-    padding:18px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
-}
 
-.day:hover{
-    transform:translateY(-5px);
-}
+    <style>
 
-.day-number{
-    font-size:28px;
-    font-weight:bold;
-    color:var(--azul);
-}
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
 
-.btn-ticket{
-    background:var(--naranja);
-    color:white;
-    border:none;
-}
+        :root {
 
-.btn-ticket:hover{
-    background:#dd6f15;
-    color:white;
-}
+            --green: #3f7f35;
+            --green-dark: #286127;
+            --green-light: #dcebc9;
 
-</style>
-<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+            --yellow: #f5c742;
+            --orange: #e8892e;
+            --brown: #74482e;
+
+            --cream: #fffaf0;
+            --white: #ffffff;
+
+            --text: #383838;
+            --gray: #777;
+
+            --shadow:
+                0 15px 40px rgba(0,0,0,.12);
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family: "Nunito", sans-serif;
+
+            color: var(--text);
+
+            background: #f8f7f2;
+
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+
+        button {
+
+            font-family: inherit;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,.97);
+
+            box-shadow:
+                0 2px 15px rgba(0,0,0,.08);
+
+        }
+
+
+        .nav {
+
+            max-width: 1250px;
+
+            height: 88px;
+
+            margin: auto;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .logo-icon {
+
+            width: 54px;
+
+            height: 54px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--green),
+                    var(--green-dark)
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 28px;
+
+        }
+
+
+        .logo-text {
+
+            font-family: "Montserrat";
+
+            font-weight: 800;
+
+            color: var(--green-dark);
+
+            font-size: 21px;
+
+            line-height: 1;
+
+        }
+
+
+        .logo-text span {
+
+            display: block;
+
+            color: var(--orange);
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        .menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 32px;
+
+            font-family: "Montserrat";
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+        .menu a {
+
+            position: relative;
+
+            color: #444;
+
+            transition: .25s;
+
+        }
+
+
+        .menu a:hover {
+
+            color: var(--green);
+
+        }
+
+
+        .menu a:not(.buy-button)::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -8px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--orange);
+
+            transition: .25s;
+
+        }
+
+
+        .menu a:not(.buy-button):hover::after {
+
+            width: 100%;
+
+        }
+
+
+        /* =====================================================
+           BOTÓN COMPRAR
+        ===================================================== */
+
+        .buy-button {
+
+            background: var(--orange);
+
+            color: white !important;
+
+            padding: 14px 23px;
+
+            border-radius: 30px;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 7px 18px
+                rgba(232,137,46,.28);
+
+            transition: .25s;
+
+        }
+
+
+        .buy-button:hover {
+
+            transform: translateY(-2px);
+
+            background: #d9761d;
+
+        }
+
+
+        /* =====================================================
+           HAMBURGER
+        ===================================================== */
+
+        .hamburger {
+
+            display: none;
+
+            border: 0;
+
+            background: transparent;
+
+            font-size: 30px;
+
+            color: var(--green);
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .calendar-hero {
+
+            margin-top: 88px;
+
+            min-height: 340px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 25px;
+
+            background:
+
+                linear-gradient(
+                    120deg,
+                    rgba(40,97,39,.96),
+                    rgba(63,127,53,.82)
+                );
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .calendar-hero::before {
+
+            content: "🐄";
+
+            position: absolute;
+
+            right: 5%;
+
+            bottom: -80px;
+
+            font-size: 260px;
+
+            opacity: .07;
+
+        }
+
+
+        .calendar-hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .eyebrow {
+
+            color: var(--yellow);
+
+            font-family: "Montserrat";
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .calendar-hero h1 {
+
+            color: white;
+
+            font-family: "Montserrat";
+
+            font-size:
+                clamp(38px, 6vw, 65px);
+
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .calendar-hero h1 span {
+
+            color: var(--yellow);
+
+        }
+
+
+        .calendar-hero p {
+
+            color:
+                rgba(255,255,255,.9);
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           CONTENEDOR
+        ===================================================== */
+
+        .booking-section {
+
+            max-width: 1200px;
+
+            margin: -45px auto 80px;
+
+            padding: 0 25px;
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        .booking-card {
+
+            background: white;
+
+            border-radius: 28px;
+
+            box-shadow: var(--shadow);
+
+            padding: 40px;
+
+        }
+
+
+        /* =====================================================
+           PASOS
+        ===================================================== */
+
+        .steps {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .step {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            color: #999;
+
+            font-family: "Montserrat";
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+        }
+
+
+        .step-number {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #eee;
+
+            color: #888;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .step.active {
+
+            color: var(--green-dark);
+
+        }
+
+
+        .step.active .step-number {
+
+            background: var(--green);
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           TITULO
+        ===================================================== */
+
+        .booking-title {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .booking-title h2 {
+
+            font-family: "Montserrat";
+
+            color: var(--green-dark);
+
+            font-size:
+                clamp(28px, 4vw, 42px);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .booking-title p {
+
+            color: var(--gray);
+
+            font-size: 16px;
+
+        }
+
+
+        /* =====================================================
+           CALENDARIO
+        ===================================================== */
+
+        .calendar-wrapper {
+
+            max-width: 720px;
+
+            margin: auto;
+
+        }
+
+
+        .calendar-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .calendar-header h3 {
+
+            font-family: "Montserrat";
+
+            color: var(--green-dark);
+
+            font-size: 22px;
+
+            text-transform: capitalize;
+
+        }
+
+
+        .calendar-nav {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: var(--green-light);
+
+            color: var(--green-dark);
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+        }
+
+
+        .calendar-nav:hover {
+
+            background: var(--green);
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           SEMANA
+        ===================================================== */
+
+        .weekdays {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 8px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .weekday {
+
+            text-align: center;
+
+            color: var(--gray);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            padding: 8px 0;
+
+        }
+
+
+        /* =====================================================
+           DIAS
+        ===================================================== */
+
+        .days {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 8px;
+
+        }
+
+
+        .day {
+
+            min-height: 68px;
+
+            border: 1px solid #eee;
+
+            background: white;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 5px;
+
+            font-weight: 800;
+
+            transition: .2s;
+
+            position: relative;
+
+        }
+
+
+        .day:hover:not(.disabled):not(.past) {
+
+            border-color: var(--green);
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px
+                rgba(63,127,53,.15);
+
+        }
+
+
+        .day-number {
+
+            font-size: 15px;
+
+        }
+
+
+        .day-price {
+
+            font-size: 10px;
+
+            color: var(--green);
+
+        }
+
+
+        .day.empty {
+
+            border: 0;
+
+            background: transparent;
+
+            cursor: default;
+
+        }
+
+
+        .day.past,
+        .day.disabled {
+
+            background: #f3f3f3;
+
+            color: #bbb;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .day.past .day-price,
+        .day.disabled .day-price {
+
+            color: #bbb;
+
+        }
+
+
+        .day.available {
+
+            border-color: #c8dfbc;
+
+        }
+
+
+        .day.selected {
+
+            background: var(--green);
+
+            border-color: var(--green);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 18px
+                rgba(63,127,53,.3);
+
+        }
+
+
+        .day.selected .day-price {
+
+            color: var(--yellow);
+
+        }
+
+
+        .day.today::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 6px;
+
+            right: 7px;
+
+            width: 6px;
+
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: var(--orange);
+
+        }
+
+
+        /* =====================================================
+           FECHA SELECCIONADA
+        ===================================================== */
+
+        .selected-date {
+
+            margin-top: 25px;
+
+            padding: 18px 20px;
+
+            border-radius: 15px;
+
+            background: var(--green-light);
+
+            text-align: center;
+
+            color: var(--green-dark);
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           BOTONES VIVENU
+        ===================================================== */
+
+        .vivenu-buttons {
+
+            margin-top: 25px;
+
+            text-align: center;
+
+        }
+
+
+        /*
+         * Los botones se mantienen como
+         * enlaces reales de Vivenu.
+         *
+         * Se ocultan visualmente porque
+         * el calendario abre el correspondiente.
+         */
+
+        .vivenu-date-button {
+
+            display: none;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background: #1e4b21;
+
+            color: white;
+
+            padding: 50px 25px 25px;
+
+            text-align: center;
+
+        }
+
+
+        footer h3 {
+
+            font-family: "Montserrat";
+
+            margin-bottom: 10px;
+
+        }
+
+
+        footer p {
+
+            color:
+                rgba(255,255,255,.65);
+
+            font-size: 13px;
+
+        }
+
+
+        .footer-bottom {
+
+            max-width: 1200px;
+
+            margin: 25px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.15);
+
+            color:
+                rgba(255,255,255,.45);
+
+            font-size: 12px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .menu {
+
+                display: none;
+
+                position: absolute;
+
+                top: 88px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                padding: 25px;
+
+                flex-direction: column;
+
+                box-shadow: var(--shadow);
+
+            }
+
+
+            .menu.active {
+
+                display: flex;
+
+            }
+
+
+            .hamburger {
+
+                display: block;
+
+            }
+
+
+            .booking-card {
+
+                padding: 30px 20px;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav {
+
+                height: 75px;
+
+            }
+
+
+            .calendar-hero {
+
+                margin-top: 75px;
+
+                padding: 55px 20px;
+
+            }
+
+
+            .steps {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .step {
+
+                justify-content: flex-start;
+
+            }
+
+
+            .weekdays,
+            .days {
+
+                gap: 4px;
+
+            }
+
+
+            .day {
+
+                min-height: 52px;
+
+                border-radius: 8px;
+
+            }
+
+
+            .day-price {
+
+                display: none;
+
+            }
+
+
+            .day-number {
+
+                font-size: 13px;
+
+            }
+
+
+            .logo-text {
+
+                font-size: 17px;
+
+            }
+
+
+            .logo-icon {
+
+                width: 45px;
+
+                height: 45px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<div class="hero d-flex align-items-center justify-content-center">
 
-<h1 class="display-4 fw-bold">
-Agosto 2026
-</h1>
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-</div>
+<header class="header">
 
-<div class="container py-5">
+    <div class="nav">
 
-    <div class="calendar">
 
-        <div class="row g-3">
+        <a
+            href="index.html"
+            class="logo"
+        >
 
-            <!-- 1 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">1</div>
-                    <small>Sábado</small>
-                    <a href="#"
-                        class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
+            <div class="logo-icon">
+                🐄
             </div>
 
-            <!-- 2 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">2</div>
-                    <small>Domingo</small>
-                    <a href="#"
-                        class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
+
+            <div class="logo-text">
+
+                MUNDO GRANJERO
+
+                <span>
+                    DIVERSIÓN Y APRENDIZAJE
+                </span>
+
             </div>
 
-            <!-- 3 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">3</div>
-                    <small>Lunes</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-3zt7z3?useEmbed=true"
-                        class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
+        </a>
+
+
+        <nav
+            class="menu"
+            id="menu"
+        >
+
+            <a href="index.html#que-hacer">
+                Qué hacer
+            </a>
+
+            <a href="index.html#especies">
+                Nuestras especies
+            </a>
+
+            <a href="index.html#aprende">
+                Calendario
+            </a>
+
+            <a href="index.html#interactua">
+                Interactúa
+            </a>
+
+            <a href="index.html#extrema">
+                Diversión extrema
+            </a>
+
+            <a
+                href="calendario.html"
+                class="buy-button"
+            >
+                Comprar entradas
+            </a>
+
+        </nav>
+
+
+        <button
+            class="hamburger"
+            onclick="toggleMenu()"
+            aria-label="Abrir menú"
+        >
+            ☰
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="calendar-hero">
+
+    <div class="calendar-hero-content">
+
+        <div class="eyebrow">
+            Reserva tu visita
+        </div>
+
+
+        <h1>
+
+            Elige tu
+            <span>
+                día perfecto
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Selecciona la fecha en la que quieres
+            visitar Mundo Granjero y compra tus
+            entradas de manera rápida y sencilla.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     RESERVACIÓN
+========================================================= -->
+
+<section class="booking-section">
+
+    <div class="booking-card">
+
+
+        <!-- =================================================
+             PASOS
+        ================================================== -->
+
+        <div class="steps">
+
+            <div class="step active">
+
+                <div class="step-number">
+                    1
                 </div>
+
+                <span>
+                    Selecciona tu fecha
+                </span>
+
             </div>
 
-            <!-- 4 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">4</div>
-                    <small>Martes</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-5yl1og?useEmbed=true"
-                        class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
                 </div>
+
+                <span>
+                    Elige tus boletos
+                </span>
+
             </div>
 
-            <!-- 5 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">5</div>
-                    <small>Miércoles</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-5l1h5f?useEmbed=true"
-                        class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
 
-            <!-- 6 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">6</div>
-                    <small>Jueves</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-uejp88?useEmbed=true"
-                    class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
+            <div class="step">
 
-            <!-- 7 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">7</div>
-                    <small>Viernes</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-pysl2e?useEmbed=true"
-                    class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
+                <div class="step-number">
+                    3
                 </div>
-            </div>
 
-            <!-- 8 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">8</div>
-                    <small>Sábado</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-4jtlsu?useEmbed=true" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
+                <span>
+                    Realiza tu compra
+                </span>
 
-            <!-- 9 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">9</div>
-                    <small>Domingo</small>
-                    <a href="https://prueba.tuticket.com.mx/checkout/la-calera-oc9x9c?useEmbed=true" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 10 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">10</div>
-                    <small>Lunes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 11 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">11</div>
-                    <small>Martes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 12 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">12</div>
-                    <small>Miércoles</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 13 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">13</div>
-                    <small>Jueves</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 14 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">14</div>
-                    <small>Viernes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 15 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">15</div>
-                    <small>Sábado</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 16 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">16</div>
-                    <small>Domingo</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 17 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">17</div>
-                    <small>Lunes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 18 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">18</div>
-                    <small>Martes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 19 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">19</div>
-                    <small>Miércoles</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 20 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">20</div>
-                    <small>Jueves</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 21 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">21</div>
-                    <small>Viernes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 22 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">22</div>
-                    <small>Sábado</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 23 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">23</div>
-                    <small>Domingo</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 24 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">24</div>
-                    <small>Lunes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 25 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">25</div>
-                    <small>Martes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 26 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">26</div>
-                    <small>Miércoles</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 27 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">27</div>
-                    <small>Jueves</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 28 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">28</div>
-                    <small>Viernes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 29 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">29</div>
-                    <small>Sábado</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 30 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">30</div>
-                    <small>Domingo</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
-            </div>
-
-            <!-- 31 -->
-            <div class="col">
-                <div class="day">
-                    <div class="day-number">31</div>
-                    <small>Lunes</small>
-                    <a href="#" class="btn btn-ticket btn-sm w-100 mt-3">Comprar</a>
-                </div>
             </div>
 
         </div>
 
+
+
+        <!-- =================================================
+             TITULO
+        ================================================== -->
+
+        <div class="booking-title">
+
+            <h2>
+                ¿Cuándo quieres visitarnos?
+            </h2>
+
+            <p>
+                Selecciona una fecha disponible
+                en el calendario.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CALENDARIO
+        ================================================== -->
+
+        <div class="calendar-wrapper">
+
+
+            <div class="calendar-header">
+
+                <button
+                    class="calendar-nav"
+                    id="previousMonth"
+                    type="button"
+                    aria-label="Mes anterior"
+                >
+                    ‹
+                </button>
+
+
+                <h3 id="monthTitle">
+                    Agosto 2026
+                </h3>
+
+
+                <button
+                    class="calendar-nav"
+                    id="nextMonth"
+                    type="button"
+                    aria-label="Mes siguiente"
+                >
+                    ›
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEMANA
+            ================================================== -->
+
+            <div class="weekdays">
+
+                <div class="weekday">
+                    Lun
+                </div>
+
+                <div class="weekday">
+                    Mar
+                </div>
+
+                <div class="weekday">
+                    Mié
+                </div>
+
+                <div class="weekday">
+                    Jue
+                </div>
+
+                <div class="weekday">
+                    Vie
+                </div>
+
+                <div class="weekday">
+                    Sáb
+                </div>
+
+                <div class="weekday">
+                    Dom
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DIAS
+            ================================================== -->
+
+            <div
+                class="days"
+                id="calendarDays"
+            ></div>
+
+
+
+            <!-- =================================================
+                 FECHA SELECCIONADA
+            ================================================== -->
+
+            <div
+                class="selected-date"
+                id="selectedDate"
+            >
+
+                Selecciona una fecha
+                para continuar
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BOTONES VIVENU
+
+                 MUY IMPORTANTE:
+                 Estos son enlaces reales con:
+
+                 class="vivenu-btn yourStylingClass"
+
+                 exactamente como los proporcionaste.
+            ================================================== -->
+
+            <div class="vivenu-buttons">
+
+
+                <!-- 25 AGOSTO -->
+
+                <a
+                    id="vivenu-2026-08-25"
+                    class="vivenu-btn yourStylingClass vivenu-date-button"
+                    href="https://prueba.tuticket.com.mx/event/mundo-granjero-copy-n5g86r?useEmbed=true"
+                >
+                    Buy Tickets
+                </a>
+
+
+
+                <!-- 26 AGOSTO -->
+
+                <a
+                    id="vivenu-2026-08-26"
+                    class="vivenu-btn yourStylingClass vivenu-date-button"
+                    href="https://prueba.tuticket.com.mx/event/mundo-granjero-copy-r5dz2s?useEmbed=true"
+                >
+                    Buy Tickets
+                </a>
+
+
+
+                <!-- 27 AGOSTO -->
+
+                <a
+                    id="vivenu-2026-08-27"
+                    class="vivenu-btn yourStylingClass vivenu-date-button"
+                    href="https://prueba.tuticket.com.mx/event/mundo-granjero-copy-iyys7x?useEmbed=true"
+                >
+                    Buy Tickets
+                </a>
+
+
+
+                <!-- 28 AGOSTO -->
+
+                <a
+                    id="vivenu-2026-08-28"
+                    class="vivenu-btn yourStylingClass vivenu-date-button"
+                    href="https://prueba.tuticket.com.mx/event/mundo-granjero-copy-rrjo3f?useEmbed=true"
+                >
+                    Buy Tickets
+                </a>
+
+            </div>
+
+
+        </div>
+
+
     </div>
 
-</div>
+</section>
 
-</div>
 
-</div>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <h3>
+        🐄 Mundo Granjero
+    </h3>
+
+    <p>
+        Diversión y aprendizaje
+        para disfrutar en familia.
+    </p>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Mundo Granjero
+        — Demo de front-end
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+    /* =====================================================
+       EVENTOS POR FECHA
+    ====================================================== */
+
+    const eventosPorFecha = {
+
+        "2026-08-25":
+            "vivenu-2026-08-25",
+
+        "2026-08-26":
+            "vivenu-2026-08-26",
+
+        "2026-08-27":
+            "vivenu-2026-08-27",
+
+        "2026-08-28":
+            "vivenu-2026-08-28"
+
+    };
+
+
+
+    /* =====================================================
+       FECHA DEL CALENDARIO
+    ====================================================== */
+
+    let currentDate = new Date();
+
+    let selectedDate = null;
+
+
+
+    /* =====================================================
+       NOMBRES DE LOS MESES
+    ====================================================== */
+
+    const monthNames = [
+
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+
+    ];
+
+
+
+    /* =====================================================
+       FORMATEAR FECHA
+       
+       Resultado:
+       2026-08-25
+    ====================================================== */
+
+    function formatDateKey(date) {
+
+        const year =
+            date.getFullYear();
+
+
+        const month =
+            String(
+                date.getMonth() + 1
+            ).padStart(2, "0");
+
+
+        const day =
+            String(
+                date.getDate()
+            ).padStart(2, "0");
+
+
+        return `${year}-${month}-${day}`;
+
+    }
+
+
+
+    /* =====================================================
+       GENERAR CALENDARIO
+    ====================================================== */
+
+    function generateCalendar() {
+
+
+        const year =
+            currentDate.getFullYear();
+
+
+        const month =
+            currentDate.getMonth();
+
+
+
+        const monthTitle =
+            document.getElementById(
+                "monthTitle"
+            );
+
+
+        monthTitle.textContent =
+            `${monthNames[month]} ${year}`;
+
+
+
+        const calendarDays =
+            document.getElementById(
+                "calendarDays"
+            );
+
+
+        calendarDays.innerHTML = "";
+
+
+
+        /* =================================================
+           PRIMER DÍA DEL MES
+        ================================================== */
+
+        let firstDay =
+            new Date(
+                year,
+                month,
+                1
+            ).getDay();
+
+
+        /*
+         * Domingo = 0
+         * Lunes = 1
+         *
+         * Convertimos para que
+         * lunes sea la primera columna.
+         */
+
+        firstDay =
+            firstDay === 0
+                ? 6
+                : firstDay - 1;
+
+
+
+        /* =================================================
+           DÍAS DEL MES
+        ================================================== */
+
+        const daysInMonth =
+            new Date(
+                year,
+                month + 1,
+                0
+            ).getDate();
+
+
+
+        /* =================================================
+           ESPACIOS VACÍOS
+        ================================================== */
+
+        for (
+            let i = 0;
+            i < firstDay;
+            i++
+        ) {
+
+            const emptyDay =
+                document.createElement(
+                    "div"
+                );
+
+
+            emptyDay.className =
+                "day empty";
+
+
+            calendarDays.appendChild(
+                emptyDay
+            );
+
+        }
+
+
+
+        /* =================================================
+           CREAR LOS DÍAS
+        ================================================== */
+
+        for (
+            let day = 1;
+            day <= daysInMonth;
+            day++
+        ) {
+
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.type = "button";
+
+
+            button.className =
+                "day";
+
+
+
+            /* =================================================
+               NÚMERO
+            ================================================== */
+
+            const dayNumber =
+                document.createElement(
+                    "span"
+                );
+
+
+            dayNumber.className =
+                "day-number";
+
+
+            dayNumber.textContent =
+                day;
+
+
+
+            /* =================================================
+               PRECIO / DISPONIBILIDAD
+            ================================================== */
+
+            const dayPrice =
+                document.createElement(
+                    "span"
+                );
+
+
+            dayPrice.className =
+                "day-price";
+
+
+
+            /* =================================================
+               FECHA
+            ================================================== */
+
+            const date =
+                new Date(
+                    year,
+                    month,
+                    day
+                );
+
+
+            const dateKey =
+                formatDateKey(date);
+
+
+
+            /* =================================================
+               ¿EXISTE EVENTO?
+            ================================================== */
+
+            const vivenuButtonId =
+                eventosPorFecha[
+                    dateKey
+                ];
+
+
+            const hasEvent =
+                Boolean(
+                    vivenuButtonId
+                );
+
+
+
+            if (hasEvent) {
+
+                dayPrice.textContent =
+                    "Disponible";
+
+                button.classList.add(
+                    "available"
+                );
+
+            } else {
+
+                dayPrice.textContent =
+                    "No disponible";
+
+            }
+
+
+
+            button.appendChild(
+                dayNumber
+            );
+
+
+            button.appendChild(
+                dayPrice
+            );
+
+
+
+            /* =================================================
+               HOY
+            ================================================== */
+
+            const today =
+                new Date();
+
+
+            today.setHours(
+                0,
+                0,
+                0,
+                0
+            );
+
+
+            if (
+                date.getTime() ===
+                today.getTime()
+            ) {
+
+                button.classList.add(
+                    "today"
+                );
+
+            }
+
+
+
+            /* =================================================
+               FECHAS PASADAS
+            ================================================== */
+
+            if (
+                date < today
+            ) {
+
+                button.classList.add(
+                    "past"
+                );
+
+                button.disabled = true;
+
+                dayPrice.textContent =
+                    "No disponible";
+
+            }
+
+
+
+            /* =================================================
+               LUNES CERRADO
+            ================================================== */
+
+            if (
+                date.getDay() === 1
+            ) {
+
+                button.classList.add(
+                    "disabled"
+                );
+
+                button.disabled = true;
+
+                dayPrice.textContent =
+                    "Cerrado";
+
+            }
+
+
+
+            /* =================================================
+               FECHAS FUTURAS SIN EVENTO
+            ================================================== */
+
+            if (
+                !hasEvent &&
+                date >= today &&
+                date.getDay() !== 1
+            ) {
+
+                button.classList.add(
+                    "disabled"
+                );
+
+                button.disabled = true;
+
+            }
+
+
+
+            /* =================================================
+               FECHA SELECCIONADA
+            ================================================== */
+
+            if (
+                selectedDate &&
+                date.toDateString() ===
+                selectedDate.toDateString()
+            ) {
+
+                button.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+
+            /* =================================================
+               CLICK
+            ================================================== */
+
+            if (
+                hasEvent &&
+                date >= today &&
+                date.getDay() !== 1
+            ) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        selectDate(
+                            date
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            calendarDays.appendChild(
+                button
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       SELECCIONAR FECHA
+    ====================================================== */
+
+    function selectDate(date) {
+
+
+        selectedDate =
+            date;
+
+
+
+        /* =================================================
+           TEXTO DE FECHA
+        ================================================== */
+
+        const formattedDate =
+            date.toLocaleDateString(
+                "es-MX",
+                {
+
+                    weekday: "long",
+
+                    day: "numeric",
+
+                    month: "long",
+
+                    year: "numeric"
+
+                }
+            );
+
+
+
+        document
+            .getElementById(
+                "selectedDate"
+            )
+            .innerHTML =
+
+            `📅 Fecha seleccionada:
+            <strong>
+                ${formattedDate}
+            </strong>`;
+
+
+
+        /* =================================================
+           REDIBUJAR CALENDARIO
+        ================================================== */
+
+        generateCalendar();
+
+
+
+        /* =================================================
+           OBTENER BOTÓN VIVENU
+        ================================================== */
+
+        const dateKey =
+            formatDateKey(date);
+
+
+        const vivenuButtonId =
+            eventosPorFecha[
+                dateKey
+            ];
+
+
+
+        if (!vivenuButtonId) {
+
+            return;
+
+        }
+
+
+
+        const vivenuButton =
+            document.getElementById(
+                vivenuButtonId
+            );
+
+
+
+        if (!vivenuButton) {
+
+            console.error(
+                "No se encontró el botón Vivenu:",
+                vivenuButtonId
+            );
+
+            return;
+
+        }
+
+
+
+        /* =================================================
+           ABRIR POPUP DE VIVENU
+           
+           Esperamos un momento para
+           asegurarnos de que Vivenu
+           haya inicializado sus botones.
+        ================================================== */
+
+        setTimeout(
+            function() {
+
+                vivenuButton.click();
+
+            },
+            100
+        );
+
+    }
+
+
+
+    /* =====================================================
+       MES ANTERIOR
+    ====================================================== */
+
+    document
+        .getElementById(
+            "previousMonth"
+        )
+        .addEventListener(
+            "click",
+            function() {
+
+
+                currentDate.setMonth(
+                    currentDate.getMonth() - 1
+                );
+
+
+                generateCalendar();
+
+            }
+        );
+
+
+
+    /* =====================================================
+       MES SIGUIENTE
+    ====================================================== */
+
+    document
+        .getElementById(
+            "nextMonth"
+        )
+        .addEventListener(
+            "click",
+            function() {
+
+
+                currentDate.setMonth(
+                    currentDate.getMonth() + 1
+                );
+
+
+                generateCalendar();
+
+            }
+        );
+
+
+
+    /* =====================================================
+       MENU MOBILE
+    ====================================================== */
+
+    function toggleMenu() {
+
+
+        document
+            .getElementById("menu")
+            .classList
+            .toggle("active");
+
+    }
+
+
+
+    /* =====================================================
+       CERRAR MENU
+    ====================================================== */
+
+    document
+        .querySelectorAll(".menu a")
+        .forEach(
+            function(link) {
+
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+
+                        document
+                            .getElementById(
+                                "menu"
+                            )
+                            .classList
+                            .remove(
+                                "active"
+                            );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+    /* =====================================================
+       INICIAR CALENDARIO
+    ====================================================== */
+
+    generateCalendar();
+
+
+</script>
+
 
 </body>
+
 </html>
