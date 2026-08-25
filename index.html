@@ -4,1284 +4,476 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mundo Granjero | Qué hacer</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+    <title>Convenciones y Parques Puebla</title>
 
     <style>
-
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
-
-        :root {
-            --green: #3f7f35;
-            --green-dark: #286127;
-            --green-light: #dcebc9;
-
-            --yellow: #f5c742;
-            --orange: #e8892e;
-            --brown: #74482e;
-
-            --cream: #fffaf0;
-            --white: #ffffff;
-            --text: #383838;
-            --gray: #777;
-
-            --shadow: 0 12px 35px rgba(0,0,0,.12);
-        }
-
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: "Nunito", sans-serif;
-            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
             background: #fff;
+            color: #444;
         }
 
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-
-        /* =====================================================
+        /* =========================
            HEADER
-        ===================================================== */
+        ========================= */
 
-        .header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-
-            background: rgba(255,255,255,.97);
-
-            box-shadow:
-                0 2px 15px rgba(0,0,0,.08);
-        }
-
-        .nav {
-            max-width: 1250px;
-            height: 88px;
-
-            margin: auto;
-            padding: 0 25px;
-
+        header {
+            height: 72px;
+            background: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 0 25px;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
-        /* LOGO */
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo-icon {
-            width: 54px;
-            height: 54px;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--green),
-                    var(--green-dark)
-                );
-
+            width: 55px;
+            height: 45px;
+            border: 2px solid #777;
+            border-radius: 8px;
             display: flex;
-            align-items: center;
             justify-content: center;
-
-            color: white;
-            font-size: 28px;
+            align-items: center;
+            font-size: 24px;
         }
 
         .logo-text {
-            font-family: "Montserrat";
-            font-weight: 800;
-            color: var(--green-dark);
-            font-size: 21px;
-            line-height: 1;
+            line-height: 1.05;
+        }
+
+        .logo-text strong {
+            color: #9c234b;
+            font-size: 17px;
+            display: block;
         }
 
         .logo-text span {
-            display: block;
-            color: var(--orange);
-            font-size: 11px;
-            letter-spacing: 2px;
-            margin-top: 5px;
+            color: #777;
+            font-size: 10px;
         }
 
-
-        /* MENU */
-
-        .menu {
+        nav {
             display: flex;
             align-items: center;
-            gap: 32px;
-
-            font-family: "Montserrat";
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .menu a {
-            position: relative;
-            color: #444;
-            transition: .25s;
-        }
-
-        .menu a:hover {
-            color: var(--green);
-        }
-
-        .menu a:not(.buy-button)::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: -8px;
-
-            width: 0;
-            height: 2px;
-
-            background: var(--orange);
-
-            transition: .25s;
-        }
-
-        .menu a:not(.buy-button):hover::after {
-            width: 100%;
-        }
-
-
-        /* BOTÓN ENTRADAS */
-
-        .buy-button {
-            background: var(--orange);
-            color: white !important;
-
-            padding: 14px 23px;
-
-            border-radius: 30px;
-
-            font-weight: 800;
-
-            box-shadow:
-                0 7px 18px rgba(232,137,46,.28);
-
-            transition: .25s;
-        }
-
-        .buy-button:hover {
-            transform: translateY(-2px);
-
-            background: #d9761d;
-
-            box-shadow:
-                0 10px 22px rgba(232,137,46,.35);
-        }
-
-
-        /* HAMBURGER */
-
-        .hamburger {
-            display: none;
-
-            border: 0;
-            background: transparent;
-
-            font-size: 30px;
-            color: var(--green);
-
-            cursor: pointer;
-        }
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            min-height: 720px;
-
-            position: relative;
-
-            display: flex;
-            align-items: center;
-
-            padding-top: 88px;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(25,75,30,.85),
-                    rgba(25,75,30,.45),
-                    rgba(25,75,30,.08)
-                ),
-                url("https://images.unsplash.com/photo-1566251037378-5e04e3bec343?auto=format&fit=crop&w=2000&q=85")
-                center/cover;
-        }
-
-        .hero::after {
-            content: "";
-
-            position: absolute;
-
-            bottom: -1px;
-            left: 0;
-
-            width: 100%;
-            height: 100px;
-
-            background: white;
-
-            clip-path:
-                polygon(
-                    0 70%,
-                    15% 82%,
-                    30% 70%,
-                    45% 84%,
-                    60% 70%,
-                    75% 83%,
-                    90% 70%,
-                    100% 80%,
-                    100% 100%,
-                    0 100%
-                );
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 1250px;
-            width: 100%;
-
-            margin: auto;
-            padding: 80px 25px;
-        }
-
-        .hero-tag {
-            display: inline-block;
-
-            color: var(--yellow);
-
-            font-family: "Montserrat";
-            font-weight: 800;
-
-            letter-spacing: 3px;
-            text-transform: uppercase;
-
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            color: white;
-
-            font-family: "Montserrat";
-
-            font-size:
-                clamp(45px, 7vw, 78px);
-
-            line-height: .98;
-
-            max-width: 750px;
-
-            margin-bottom: 28px;
-        }
-
-        .hero h1 span {
-            color: var(--yellow);
-        }
-
-        .hero p {
-            max-width: 650px;
-
-            color: rgba(255,255,255,.92);
-
-            font-size: 19px;
-
-            line-height: 1.7;
-
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .hero-primary {
-            background: var(--yellow);
-
-            color: #333;
-
-            padding: 16px 30px;
-
-            border-radius: 30px;
-
-            font-weight: 800;
-
-            transition: .25s;
-        }
-
-        .hero-primary:hover {
-            transform: translateY(-3px);
-            background: #ffd858;
-        }
-
-        .hero-secondary {
-            border: 2px solid white;
-
-            color: white;
-
-            padding: 14px 28px;
-
-            border-radius: 30px;
-
-            font-weight: 700;
-        }
-
-
-        /* =====================================================
-           INTRO
-        ===================================================== */
-
-        .intro {
-            max-width: 900px;
-
-            margin: 0 auto;
-
-            padding: 70px 25px 90px;
-
-            text-align: center;
-        }
-
-        .eyebrow {
-            color: var(--orange);
-
-            font-family: "Montserrat";
-
-            text-transform: uppercase;
-
-            letter-spacing: 3px;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            margin-bottom: 12px;
-        }
-
-        .intro h2,
-        .section-title {
-            color: var(--green-dark);
-
-            font-family: "Montserrat";
-
-            font-size:
-                clamp(32px, 4vw, 48px);
-
-            line-height: 1.15;
-
-            margin-bottom: 20px;
-        }
-
-        .intro p {
-            color: var(--gray);
-
-            font-size: 17px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =====================================================
-           SECCIONES DE ACTIVIDADES
-        ===================================================== */
-
-        .experience {
-            position: relative;
-
-            padding: 90px 0;
-
-            overflow: hidden;
-        }
-
-        .experience:nth-child(even) {
-            background: var(--cream);
-        }
-
-        .experience-inner {
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding: 0 25px;
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            align-items: center;
-
-            gap: 80px;
-        }
-
-        .experience.reverse .experience-inner {
-            direction: rtl;
-        }
-
-        .experience.reverse .experience-content {
-            direction: ltr;
-        }
-
-
-        /* IMAGEN */
-
-        .experience-image {
-            position: relative;
-
-            height: 470px;
-
-            overflow: hidden;
-
-            border-radius: 45px 10px 45px 10px;
-
-            box-shadow: var(--shadow);
-        }
-
-        .experience.reverse .experience-image {
-            border-radius: 10px 45px 10px 45px;
-        }
-
-        .experience-image::before {
-            content: "";
-
-            position: absolute;
-
-            width: 100%;
-            height: 100%;
-
-            border: 3px solid var(--yellow);
-
-            border-radius: inherit;
-
-            transform: translate(
-                15px,
-                15px
-            );
-
-            z-index: -1;
-        }
-
-        .experience-image img {
-            height: 100%;
-            object-fit: cover;
-
-            transition: transform .6s;
-        }
-
-        .experience-image:hover img {
-            transform: scale(1.06);
-        }
-
-
-        /* CONTENIDO */
-
-        .experience-number {
-            color: var(--yellow);
-
-            font-family: "Montserrat";
-
-            font-size: 65px;
-
-            line-height: 1;
-
-            font-weight: 800;
-
-            opacity: .8;
-
-            margin-bottom: -5px;
-        }
-
-        .experience-content h2 {
-            color: var(--green-dark);
-
-            font-family: "Montserrat";
-
-            font-size:
-                clamp(34px, 4vw, 52px);
-
-            margin-bottom: 20px;
-        }
-
-        .experience-content h2 span {
-            color: var(--orange);
-        }
-
-        .experience-content p {
-            color: #666;
-
-            font-size: 17px;
-
-            line-height: 1.8;
-
-            margin-bottom: 25px;
-        }
-
-        .more-button {
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 10px;
-
-            color: white;
-
-            background: var(--green);
-
-            padding: 14px 24px;
-
-            border-radius: 25px;
-
-            font-weight: 800;
-
-            transition: .25s;
-        }
-
-        .more-button:hover {
-            background: var(--green-dark);
-
-            transform: translateX(4px);
-        }
-
-
-        /* =====================================================
-           BANNER EXTREMO
-        ===================================================== */
-
-        .extreme {
-            min-height: 570px;
-
-            position: relative;
-
-            display: flex;
-
-            align-items: center;
-
-            background:
-                linear-gradient(
-                    rgba(48,30,18,.65),
-                    rgba(48,30,18,.65)
-                ),
-                url("https://images.unsplash.com/photo-1532339142463-fd0a8979791a?auto=format&fit=crop&w=1900&q=85")
-                center/cover;
-        }
-
-        .extreme-content {
-            max-width: 1200px;
-
-            width: 100%;
-
-            margin: auto;
-
-            padding: 80px 25px;
-
-            text-align: center;
-        }
-
-        .extreme-content .eyebrow {
-            color: var(--yellow);
-        }
-
-        .extreme h2 {
-            color: white;
-
-            font-family: "Montserrat";
-
-            font-size:
-                clamp(40px, 6vw, 68px);
-
-            margin-bottom: 20px;
-        }
-
-        .extreme h2 span {
-            color: var(--yellow);
-        }
-
-        .extreme p {
-            max-width: 750px;
-
-            margin: 0 auto 30px;
-
-            color: white;
-
-            font-size: 18px;
-
-            line-height: 1.7;
-        }
-
-        .activities-pills {
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-
-            margin-bottom: 35px;
-        }
-
-        .pill {
-            padding: 11px 18px;
-
-            border: 1px solid rgba(255,255,255,.45);
-
-            color: white;
-
-            border-radius: 30px;
-
-            background: rgba(255,255,255,.08);
-
-            backdrop-filter: blur(5px);
-        }
-
-
-        /* =====================================================
-           TESTIMONIOS
-        ===================================================== */
-
-        .reviews-section {
-            padding: 100px 25px;
-
-            background: #fff;
-        }
-
-        .reviews-header {
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-        .reviews {
-            max-width: 1150px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
             gap: 25px;
         }
 
-        .review {
-            background: var(--cream);
-
-            padding: 30px;
-
-            border-radius: 20px;
-
-            position: relative;
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 12px;
+            text-transform: uppercase;
+            transition: .2s;
         }
 
-        .quote {
-            position: absolute;
-
-            right: 25px;
-            top: 20px;
-
-            color: var(--yellow);
-
-            font-size: 45px;
-
-            font-family: serif;
+        nav a:hover {
+            color: #a02150;
         }
 
-        .stars {
-            color: #efaa20;
-
+        .puebla {
+            color: #a02150;
+            font-size: 20px;
+            font-weight: bold;
             letter-spacing: 3px;
-
-            margin-bottom: 18px;
         }
 
-        .review p {
-            color: #666;
+        /* =========================
+           HERO
+        ========================= */
 
-            line-height: 1.7;
-
-            margin-bottom: 22px;
-        }
-
-        .review-user {
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-        }
-
-        .avatar {
-            width: 45px;
-            height: 45px;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--green),
-                    var(--yellow)
-                );
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            font-size: 18px;
-        }
-
-        .review-user strong {
-            color: var(--green-dark);
-        }
-
-        .review-user small {
-            display: block;
-
-            color: #999;
-
-            margin-top: 3px;
-        }
-
-
-        /* =====================================================
-           CTA ENTRADAS
-        ===================================================== */
-
-        .tickets-cta {
-            background:
-                linear-gradient(
-                    120deg,
-                    var(--green-dark),
-                    var(--green)
-                );
-
-            padding: 80px 25px;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .tickets-cta::before {
-            content: "🐄";
-
-            position: absolute;
-
-            font-size: 250px;
-
-            opacity: .07;
-
-            right: 5%;
-            bottom: -60px;
-        }
-
-        .tickets-inner {
-            max-width: 1000px;
-
+        .hero {
+            width: 100%;
+            max-width: 1100px;
+            height: 430px;
             margin: auto;
-
-            text-align: center;
-
             position: relative;
-            z-index: 2;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.1),
+                    rgba(0,0,0,.15)
+                ),
+                url("c.jpg") center / cover;
         }
 
-        .tickets-inner h2 {
+        .hero-content {
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
             color: white;
+            max-width: 500px;
+        }
 
-            font-family: "Montserrat";
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px #000;
+        }
 
-            font-size:
-                clamp(32px, 5vw, 52px);
+        .hero-content p {
+            font-size: 18px;
+            text-shadow: 1px 1px 4px #000;
+        }
 
+        .hero-button {
+            margin-top: 20px;
+            background: #a02150;
+            color: white;
+            border: 0;
+            padding: 13px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* =========================
+           BUSCADOR
+        ========================= */
+
+        .search-section {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: #9c234b;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            height: 180px;
+            background: #eee;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .3s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            color: white;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,.85)
+            );
+            font-weight: bold;
+        }
+
+        /* =========================
+           BOTON POPUP
+        ========================= */
+
+        .popup-demo {
+            max-width: 1100px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 40px;
+            background: #f7f7f7;
+        }
+
+        .popup-demo h2 {
+            color: #9c234b;
             margin-bottom: 15px;
         }
 
-        .tickets-inner p {
-            color: rgba(255,255,255,.85);
+        .popup-button {
+              display: inline-block;
+              background: #9c234b;
+              border: none;
+              color: white;
+              padding: 15px 30px;
+              border-radius: 5px;
+              font-size: 16px;
+              cursor: pointer;
+              text-decoration: none;
+              font-weight: bold;
+          }
 
-            font-size: 17px;
+          .popup-button:hover {
+              background: #751837;
+              color: white;
+          }
 
-            margin-bottom: 30px;
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        .tickets-button {
-            display: inline-block;
-
-            background: var(--yellow);
-
-            color: #333;
-
-            padding: 17px 35px;
-
-            border-radius: 35px;
-
-            font-weight: 800;
-
-            font-size: 16px;
-
-            transition: .25s;
+        .modal.active {
+            display: flex;
         }
 
-        .tickets-button:hover {
-            transform: translateY(-3px);
-
-            background: #ffd858;
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 550px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            animation: aparecer .25s ease;
         }
 
+        @keyframes aparecer {
+            from {
+                transform: scale(.8);
+                opacity: 0;
+            }
 
-        /* =====================================================
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: #9c234b;
+            color: white;
+            padding: 20px;
+        }
+
+        .modal-header h2 {
+            font-size: 25px;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-body img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: white;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .modal-action {
+            margin-top: 20px;
+            background: #9c234b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           CHAT
+        ========================= */
+
+        .chat {
+            position: fixed;
+            left: 15px;
+            bottom: 15px;
+            background: #20c978;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.2);
+            z-index: 1500;
+        }
+
+        /* =========================
            FOOTER
-        ===================================================== */
+        ========================= */
 
         footer {
-            background: #1e4b21;
-
+            background: #333;
             color: white;
-
-            padding: 60px 25px 25px;
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                1.5fr 1fr 1fr 1fr;
-
-            gap: 40px;
-
-            padding-bottom: 45px;
-        }
-
-        footer h3 {
-            font-family: "Montserrat";
-
-            margin-bottom: 18px;
-        }
-
-        footer p,
-        footer li {
-            color: rgba(255,255,255,.7);
-
-            line-height: 1.8;
-
-            font-size: 14px;
-        }
-
-        footer ul {
-            list-style: none;
-        }
-
-        footer li {
-            margin-bottom: 7px;
-        }
-
-        footer a:hover {
-            color: var(--yellow);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding-top: 20px;
-
-            border-top:
-                1px solid rgba(255,255,255,.15);
-
+            padding: 35px;
             text-align: center;
-
-            color: rgba(255,255,255,.5);
-
-            font-size: 13px;
+            margin-top: 60px;
         }
 
-
-        /* =====================================================
-           SCROLL ANIMATION
-        ===================================================== */
-
-        .reveal {
-            opacity: 0;
-
-            transform: translateY(35px);
-
-            transition:
-                opacity .8s ease,
-                transform .8s ease;
-        }
-
-        .reveal.show {
-            opacity: 1;
-
-            transform: translateY(0);
-        }
-
-
-        /* =====================================================
+        /* =========================
            RESPONSIVE
-        ===================================================== */
+        ========================= */
 
-        @media (max-width: 950px) {
+        @media(max-width: 900px) {
 
-            .menu {
-                display: none;
-
-                position: absolute;
-
-                top: 88px;
-                left: 0;
-
-                width: 100%;
-
-                background: white;
-
-                padding: 25px;
-
+            header {
+                height: auto;
+                padding: 15px;
                 flex-direction: column;
-
-                box-shadow: var(--shadow);
+                gap: 15px;
             }
 
-            .menu.active {
-                display: flex;
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
             }
 
-            .hamburger {
-                display: block;
-            }
-
-            .experience-inner {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-            .experience.reverse .experience-inner {
-                direction: ltr;
-            }
-
-            .experience-image {
-                height: 380px;
-            }
-
-            .reviews {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-inner {
-                grid-template-columns:
-                    1fr 1fr;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .nav {
-                height: 75px;
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero {
-                min-height: 650px;
-
-                padding-top: 75px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-
-                align-items: flex-start;
-            }
-
-            .experience {
-                padding: 65px 0;
-            }
-
-            .experience-image {
-                height: 300px;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .logo-text {
-                font-size: 17px;
-            }
-
-            .logo-icon {
-                width: 45px;
-                height: 45px;
+                height: 350px;
             }
         }
 
+        @media(max-width: 600px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+        }
     </style>
 </head>
-
 <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+
 <body>
 
+<header>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+    <div class="logo">
+        <div class="logo-icon">🏛️</div>
 
-<header class="header">
+        <div class="logo-text">
+            <strong>CONVENCIONES<br>Y PARQUES</strong>
+            <span>Gobierno de Puebla</span>
+        </div>
+    </div>
 
-    <div class="nav">
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#">Nosotros</a>
 
-        <a href="#" class="logo">
+        <!-- NUEVAS SUBPÁGINAS -->
+        <a href="ex-hacienda.html">Ex Hacienda de Chautla</a>
+        <a href="catrineras.html">Catrineras</a>
 
-            <div class="logo-icon">
-                🐄
-            </div>
+        <a href="#">Experiencias</a>
+        <a href="#">Contacto</a>
+    </nav>
 
-            <div class="logo-text">
-
-                MUNDO GRANJERO
-
-                <span>
-                    DIVERSIÓN Y APRENDIZAJE
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <nav class="menu" id="menu">
-
-            <a href="#que-hacer">
-                Qué hacer
-            </a>
-
-            <a href="#especies">
-                Nuestras especies
-            </a>
-
-            <a href="calendario.html">
-                Calendario
-            </a>
-
-            <a href="#interactua">
-                Interactúa
-            </a>
-
-            <a href="#extrema">
-                Diversión extrema
-            </a>
-
-            <!--
-                AQUÍ PUEDES PONER LA URL
-                DE TU SISTEMA DE BOLETAJE
-            -->
-
-            <a class="vivenu-btn yourStylingClass buy-button" href="https://prueba.tuticket.com.mx/event/mundo-granjero-u62na0?useEmbed=true">
-            Comprar entradas</a>
-
-        </nav>
-
-
-        <button
-            class="hamburger"
-            onclick="toggleMenu()"
-            aria-label="Abrir menú"
-        >
-            ☰
-        </button>
-
+    <div class="puebla">
+        PUE<br>BLA
     </div>
 
 </header>
 
 
+<!-- HERO -->
 
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero" id="que-hacer">
+<section class="hero">
 
     <div class="hero-content">
 
-        <div class="hero-tag">
-            Vive la experiencia
-        </div>
-
-        <h1>
-            Diversión
-            <span>y aprendizaje</span>
-        </h1>
+        <h1>Experiencias en Puebla</h1>
 
         <p>
-            Descubre un mundo lleno de naturaleza,
-            animales, tradiciones y aventura.
-            En Mundo Granjero cada visita se convierte
-            en una experiencia para toda la familia.
+            Descubre nuestros recintos, parques
+            y experiencias culturales.
         </p>
-
-        <div class="hero-buttons">
-
-            <a
-                href="#especies"
-                class="hero-primary"
-            >
-                DESCUBRE QUÉ HACER
-            </a>
-
-            <a class="vivenu-btn yourStylingClass buy-button" href="https://prueba.tuticket.com.mx/event/mundo-granjero-u62na0?useEmbed=true">
-            Comprar entradas</a>
-
-        </div>
 
     </div>
 
 </section>
 
 
+<!-- EVENTOS -->
 
-<!-- =========================================================
-     INTRO
-========================================================= -->
+<section class="search-section">
 
-<section class="intro reveal">
-
-    <div class="eyebrow">
-        Una experiencia para todos
-    </div>
-
-    <h2>
-        Aprende, descubre y diviértete
+    <h2 class="section-title">
+        Lo más buscado
     </h2>
 
-    <p>
-        Todas nuestras actividades están diseñadas
-        para que el aprendizaje del mundo natural
-        y animal sea totalmente divertido.
-        Interactúa con nuestros animales, practica
-        tradiciones en nuestros talleres o disfruta
-        de nuestras actividades de aventura.
-    </p>
+    <div class="cards">
 
-</section>
-
-
-
-<!-- =========================================================
-     NUESTRAS ESPECIES
-========================================================= -->
-
-<section
-    class="experience reveal"
-    id="especies"
->
-
-    <div class="experience-inner">
-
-        <div class="experience-image">
-
-            <img
-                src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=1200&q=85"
-                alt="Animales"
-            >
-
+        <div class="card">
+            <img src="1.jpeg">
+            <div class="card-title">
+                Eventos en Puebla
+            </div>
         </div>
 
-
-        <div class="experience-content">
-
-            <div class="experience-number">
-                01
+        <div class="card">
+            <img src="2.jpeg">
+            <div class="card-title">
+                Catrineras
             </div>
+        </div>
 
-            <h2>
-                Nuestras
-                <span>especies</span>
-            </h2>
+        <div class="card">
+            <img src="3.png">
+            <div class="card-title">
+                Teatro Principal
+            </div>
+        </div>
 
-            <p>
-                Prepárate para conocer animales
-                increíbles y descubrir sus detalles
-                más sorprendentes.
-
-                Conoce felinos, aves, bovinos,
-                equinos, reptiles, mamíferos
-                y mucho más.
-            </p>
-
-            <p>
-                Aprende dónde viven, qué comen
-                y cómo podemos cuidar nuestro
-                mundo natural.
-            </p>
-
-            <a
-                href="#"
-                class="more-button"
-            >
-                VER MÁS
-                →
-            </a>
-
+        <div class="card">
+            <img src="4.jpeg">
+            <div class="card-title">
+                Ex Hacienda de Chautla
+            </div>
         </div>
 
     </div>
@@ -1289,595 +481,72 @@
 </section>
 
 
+<!-- DEMOSTRACION POPUP -->
 
-<!-- =========================================================
-     APRENDE / MANOS A LA OBRA
-========================================================= -->
+<section class="popup-demo">
 
-<section
-    class="experience reverse reveal"
-    id="aprende"
->
+    <h2>Compra tus entradas</h2>
 
-    <div class="experience-inner">
+  <a
+      href="https://prueba.tuticket.com.mx/event/evento-1-5scb36?useEmbed=true"
+      class="popup-button vivenu-btn yourStylingClass">
+      Comprar entradas
+  </a>
 
-        <div class="experience-image">
-
-            <img
-                src="boleto.jpg"
-                alt="Taller familiar"
-            >
-
-        </div>
-
-
-        <div class="experience-content">
-
-            <div class="experience-number">
-                02
-            </div>
-
-            <h2>
-                ¡Manos
-                <span>a la obra!</span>
-            </h2>
-
-            <p>
-                Pon las manos a trabajar y descubre
-                nuestras tradiciones gastronómicas.
-            </p>
-
-            <p>
-                Aprende cómo realizar pan tradicional,
-                dulces típicos, tortillas y quesos
-                de manera artesanal.
-            </p>
-
-            <p>
-                También podrás descubrir el maravilloso
-                mundo de las plantas cultivando
-                hortalizas y flores.
-            </p>
-
-            <a
-                href="#"
-                class="more-button"
-            >
-                VER MÁS
-                →
-            </a>
-
-        </div>
-
-    </div>
 
 </section>
 
 
+<div class="chat">
+    💬 ¡Hola, ¿cómo te podemos ayudar?
+</div>
 
-<!-- =========================================================
-     INTERACTÚA
-========================================================= -->
-
-<section
-    class="experience reveal"
-    id="interactua"
->
-
-    <div class="experience-inner">
-
-        <div class="experience-image">
-
-            <img
-                src="gran.jpg"
-                alt="Interacción con animales"
-            >
-
-        </div>
-
-
-        <div class="experience-content">
-
-            <div class="experience-number">
-                03
-            </div>
-
-            <h2>
-                <span>Interactúa</span>
-            </h2>
-
-            <p>
-                Estamos convencidos de que el mejor
-                aprendizaje se obtiene a través
-                de los cinco sentidos.
-            </p>
-
-            <p>
-                Convive con nuestros animales,
-                aliméntalos y descubre datos
-                sorprendentes que te harán amar
-                todavía más el mundo natural.
-            </p>
-
-            <a
-                href="#"
-                class="more-button"
-            >
-                VER MÁS
-                →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     DIVERSIÓN EXTREMA
-========================================================= -->
-
-<section
-    class="extreme reveal"
-    id="extrema"
->
-
-    <div class="extreme-content">
-
-        <div class="eyebrow">
-            Para los amantes de la adrenalina
-        </div>
-
-        <h2>
-            Diversión
-            <span>extrema</span>
-        </h2>
-
-        <p>
-            Si buscas aventura también tenemos
-            actividades para ti. Vive la adrenalina
-            y disfruta de una experiencia diferente
-            durante tu visita.
-        </p>
-
-
-        <div class="activities-pills">
-
-            <span class="pill">
-                Go Karts
-            </span>
-
-            <span class="pill">
-                Tirolesa
-            </span>
-
-            <span class="pill">
-                Bungee
-            </span>
-
-            <span class="pill">
-                Muro de escalar
-            </span>
-
-            <span class="pill">
-                Safari
-            </span>
-
-            <span class="pill">
-                Lago Lémur
-            </span>
-
-        </div>
-
-
-        <a
-            href="#"
-            class="hero-primary"
-        >
-            CONOCE LAS ACTIVIDADES
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     TESTIMONIOS
-========================================================= -->
-
-<section class="reviews-section">
-
-    <div class="reviews-header reveal">
-
-        <div class="eyebrow">
-            Nuestros visitantes
-        </div>
-
-        <h2 class="section-title">
-            Lo que opinan de nosotros
-        </h2>
-
-    </div>
-
-
-    <div class="reviews">
-
-
-        <article class="review reveal">
-
-            <div class="quote">
-                “
-            </div>
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Excelente lugar para pasar el rato
-                en familia. Las personas que trabajan
-                en el establecimiento son muy lindas
-                y la atención es excelente.
-            </p>
-
-            <div class="review-user">
-
-                <div class="avatar">
-                    L
-                </div>
-
-                <div>
-
-                    <strong>
-                        Liz Enríquez
-                    </strong>
-
-                    <small>
-                        Visitante
-                    </small>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="review reveal">
-
-            <div class="quote">
-                “
-            </div>
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Súper padrísimo, muy limpio y cuidado.
-                La atención del personal es excelente
-                y puedes convivir con los animales.
-            </p>
-
-            <div class="review-user">
-
-                <div class="avatar">
-                    C
-                </div>
-
-                <div>
-
-                    <strong>
-                        Cristal Hernandez
-                    </strong>
-
-                    <small>
-                        Visitante
-                    </small>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="review reveal">
-
-            <div class="quote">
-                “
-            </div>
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Muy bonito lugar. Hay mucho que ver
-                y disfrutar en compañía de tu familia.
-                A los niños les encanta.
-            </p>
-
-            <div class="review-user">
-
-                <div class="avatar">
-                    O
-                </div>
-
-                <div>
-
-                    <strong>
-                        Oscar Herrera
-                    </strong>
-
-                    <small>
-                        Visitante
-                    </small>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CTA
-========================================================= -->
-
-<section
-    class="tickets-cta"
-    id="comprar"
->
-
-    <div class="tickets-inner">
-
-        <h2>
-            ¿Listo para vivir la experiencia?
-        </h2>
-
-        <p>
-            Planea tu visita y disfruta de un día
-            lleno de diversión y aprendizaje.
-        </p>
-
-
-        <!-- =================================================
-             IMPORTANTE:
-             CAMBIA # POR LA URL DE TU SISTEMA
-             DE BOLETAJE.
-        ================================================== -->
-
-<a class="vivenu-btn yourStylingClass buy-button" href="https://prueba.tuticket.com.mx/event/mundo-granjero-copy-fdmr0w?recurrenceSelection=true">
-            Comprar entradas</a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 
 <footer>
 
-    <div class="footer-inner">
-
-
-        <div>
-
-            <h3>
-                🐄 Mundo Granjero
-            </h3>
-
-            <p>
-                Diversión y aprendizaje para
-                disfrutar en familia.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Explora
-            </h3>
-
-            <ul>
-
-                <li>
-                    <a href="#que-hacer">
-                        Qué hacer
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#especies">
-                        Nuestras especies
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#aprende">
-                        Aprende
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#interactua">
-                        Interactúa
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Visita
-            </h3>
-
-            <ul>
-
-                <li>
-                    Planea tu visita
-                </li>
-
-                <li>
-                    Preguntas frecuentes
-                </li>
-
-                <li>
-                    Promociones
-                </li>
-
-                <li>
-                    Compra tus entradas
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Síguenos
-            </h3>
-
-            <ul>
-
-                <li>
-                    Facebook
-                </li>
-
-                <li>
-                    Instagram
-                </li>
-
-                <li>
-                    TikTok
-                </li>
-
-            </ul>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        © 2026 Mundo Granjero — Demo de front-end
-
-    </div>
+    Gobierno del Estado de Puebla ·
+    Convenciones y Parques
 
 </footer>
 
 
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
 
-    /* ================================================
-       MENÚ MOBILE
-    ================================================= */
+    function abrirPopup() {
 
-    function toggleMenu() {
-
-        const menu =
-            document.getElementById("menu");
-
-        menu.classList.toggle("active");
+        document
+            .getElementById("popup")
+            .classList.add("active");
 
     }
 
+    function cerrarPopup(event) {
 
-    /* ================================================
-       ANIMACIONES AL HACER SCROLL
-    ================================================= */
+        if (
+            !event ||
+            event.target.id === "popup"
+        ) {
 
-    const observer =
-        new IntersectionObserver(
-            (entries) => {
+            document
+                .getElementById("popup")
+                .classList.remove("active");
 
-                entries.forEach(
-                    entry => {
+        }
 
-                        if (entry.isIntersecting) {
+    }
 
-                            entry.target
-                                .classList
-                                .add("show");
+    document.addEventListener(
+        "keydown",
+        function(event) {
 
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold: .15
+            if (event.key === "Escape") {
+                cerrarPopup();
             }
-        );
 
-
-    document
-        .querySelectorAll(".reveal")
-        .forEach(
-            element => observer.observe(element)
-        );
-
-
-    /* ================================================
-       CERRAR MENÚ MOBILE AL SELECCIONAR
-    ================================================= */
-
-    document
-        .querySelectorAll(".menu a")
-        .forEach(
-            link => {
-
-                link.addEventListener(
-                    "click",
-                    () => {
-
-                        document
-                            .getElementById("menu")
-                            .classList
-                            .remove("active");
-
-                    }
-                );
-
-            }
-        );
+        }
+    );
 
 </script>
-
 
 </body>
 </html>
