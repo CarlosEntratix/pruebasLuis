@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Ex Hacienda de Chautla
+    </title>
+
+
+    <!-- =========================
+         VIVENU
+    ========================= -->
+
+    <script
+        type="text/javascript"
+        src="https://vivenu.dev/web/deliver/js/v1/embed.js">
+    </script>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #f5f3ef;
+
+            color:
+                #333;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            background:
+                white;
+
+            min-height:
+                75px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            padding:
+                15px 35px;
+
+            border-bottom:
+                1px solid #ddd;
+
+        }
+
+
+        .logo {
+
+            color:
+                #98234c;
+
+            font-weight:
+                bold;
+
+            font-size:
+                18px;
+
+        }
+
+
+        nav {
+
+            display:
+                flex;
+
+            gap:
+                25px;
+
+        }
+
+
+        nav a {
+
+            text-decoration:
+                none;
+
+            color:
+                #555;
+
+            font-size:
+                12px;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                .2s;
+
+        }
+
+
+        nav a:hover {
+
+            color:
+                #98234c;
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            height:
+                320px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0,0,0,.35),
+                    rgba(0,0,0,.35)
+                ),
+
+                url("image-1024.jpg")
+                center / cover;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            text-align:
+                center;
+
+            color:
+                white;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                45px;
+
+            text-shadow:
+                2px 2px 5px black;
+
+        }
+
+
+        .hero p {
+
+            margin-top:
+                10px;
+
+            font-size:
+                18px;
+
+        }
+
+
+        /* =========================
+           CONTENEDOR
+        ========================= */
+
+        .container {
+
+            max-width:
+                1000px;
+
+            margin:
+                50px auto;
+
+            padding:
+                20px;
+
+        }
+
+
+        .title {
+
+            text-align:
+                center;
+
+            color:
+                #98234c;
+
+            margin-bottom:
+                10px;
+
+            font-size:
+                32px;
+
+        }
+
+
+        .subtitle {
+
+            text-align:
+                center;
+
+            color:
+                #666;
+
+            margin-bottom:
+                35px;
+
+        }
+
+
+        /* =========================
+           CALENDARIO
+        ========================= */
+
+        .calendar-box {
+
+            background:
+                white;
+
+            padding:
+                30px;
+
+            border-radius:
+                10px;
+
+            box-shadow:
+                0 4px 20px
+                rgba(0,0,0,.1);
+
+        }
+
+
+        /* =========================
+           HEADER DEL CALENDARIO
+        ========================= */
+
+        .calendar-header {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .calendar-header h2 {
+
+            color:
+                #98234c;
+
+            font-size:
+                25px;
+
+        }
+
+
+        .calendar-header button {
+
+            border:
+                none;
+
+            background:
+                #98234c;
+
+            color:
+                white;
+
+            width:
+                40px;
+
+            height:
+                40px;
+
+            border-radius:
+                50%;
+
+            cursor:
+                pointer;
+
+            font-size:
+                18px;
+
+            transition:
+                .2s;
+
+        }
+
+
+        .calendar-header button:hover {
+
+            background:
+                #751837;
+
+            transform:
+                scale(1.05);
+
+        }
+
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .weekdays,
+        .days {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap:
+                8px;
+
+        }
+
+
+        /* =========================
+           DÍAS DE LA SEMANA
+        ========================= */
+
+        .weekday {
+
+            text-align:
+                center;
+
+            font-weight:
+                bold;
+
+            color:
+                #98234c;
+
+            padding:
+                10px;
+
+        }
+
+
+        /* =========================
+           DÍAS DEL CALENDARIO
+           
+           IMPORTANTE:
+           SON ELEMENTOS <a>
+        ========================= */
+
+        .day {
+
+            border:
+                1px solid #ddd;
+
+            background:
+                #fafafa;
+
+            min-height:
+                70px;
+
+            border-radius:
+                6px;
+
+            cursor:
+                pointer;
+
+            font-size:
+                16px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            text-decoration:
+                none;
+
+            color:
+                #333;
+
+            transition:
+                .2s;
+
+        }
+
+
+        /* =========================
+           HOVER DÍA DISPONIBLE
+        ========================= */
+
+        .day:not(.no-evento):hover {
+
+            background:
+                #98234c;
+
+            color:
+                white;
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                #98234c;
+
+        }
+
+
+        /* =========================
+           DÍAS SIN EVENTO
+        ========================= */
+
+        .day.no-evento {
+
+            opacity:
+                .4;
+
+            cursor:
+                not-allowed;
+
+            background:
+                #f2f2f2;
+
+            color:
+                #888;
+
+        }
+
+
+        .day.no-evento:hover {
+
+            background:
+                #f2f2f2;
+
+            color:
+                #888;
+
+            transform:
+                none;
+
+            border-color:
+                #ddd;
+
+        }
+
+
+        /* =========================
+           ESPACIOS VACÍOS
+        ========================= */
+
+        .empty {
+
+            border:
+                none;
+
+            background:
+                transparent;
+
+            cursor:
+                default;
+
+        }
+
+
+        .empty:hover {
+
+            background:
+                transparent;
+
+            transform:
+                none;
+
+        }
+
+
+        /* =========================
+           LEYENDA
+        ========================= */
+
+        .calendar-info {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            gap:
+                25px;
+
+            margin-top:
+                30px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .legend {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+            color:
+                #666;
+
+            font-size:
+                14px;
+
+        }
+
+
+        .legend-box {
+
+            width:
+                18px;
+
+            height:
+                18px;
+
+            border-radius:
+                4px;
+
+        }
+
+
+        .legend-available {
+
+            background:
+                #98234c;
+
+        }
+
+
+        .legend-unavailable {
+
+            background:
+                #f2f2f2;
+
+            border:
+                1px solid #ddd;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background:
+                #333;
+
+            color:
+                white;
+
+            text-align:
+                center;
+
+            padding:
+                35px;
+
+            margin-top:
+                60px;
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:600px) {
+
+
+            header {
+
+                flex-direction:
+                    column;
+
+                gap:
+                    15px;
+
+                padding:
+                    20px;
+
+            }
+
+
+            nav {
+
+                flex-wrap:
+                    wrap;
+
+                justify-content:
+                    center;
+
+                gap:
+                    12px;
+
+            }
+
+
+            .hero {
+
+                height:
+                    280px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    30px;
+
+            }
+
+
+            .calendar-box {
+
+                padding:
+                    15px;
+
+            }
+
+
+            .calendar-header h2 {
+
+                font-size:
+                    20px;
+
+            }
+
+
+            .day {
+
+                min-height:
+                    50px;
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .weekday {
+
+                font-size:
+                    12px;
+
+                padding:
+                    7px 2px;
+
+            }
+
+
+            .calendar-info {
+
+                gap:
+                    15px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        CONVENCIONES Y PARQUES
+
+    </div>
+
+
+    <nav>
+
+
+        <a href="index.html">
+
+            Inicio
+
+        </a>
+
+
+        <a href="ex-hacienda.html">
+
+            Ex Hacienda de Chautla
+
+        </a>
+
+
+        <a href="catrineras.html">
+
+            Catrineras
+
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+    <div>
+
+
+        <h1>
+
+            Ex Hacienda de Chautla
+
+        </h1>
+
+
+        <p>
+
+            Consulta nuestras fechas
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     CALENDARIO
+========================= -->
+
+<main class="container">
+
+
+    <h2 class="title">
+
+        Calendario
+
+    </h2>
+
+
+    <p class="subtitle">
+
+        Selecciona cualquier día disponible
+        para comprar tus entradas.
+
+    </p>
+
+
+    <div class="calendar-box">
+
+
+        <!-- =========================
+             CABECERA CALENDARIO
+        ========================= -->
+
+        <div class="calendar-header">
+
+
+            <button
+                type="button"
+                onclick="cambiarMes(-1)"
+                aria-label="Mes anterior">
+
+                ‹
+
+            </button>
+
+
+            <h2 id="monthYear">
+
+            </h2>
+
+
+            <button
+                type="button"
+                onclick="cambiarMes(1)"
+                aria-label="Mes siguiente">
+
+                ›
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             DÍAS DE LA SEMANA
+        ========================= -->
+
+        <div class="weekdays">
+
+
+            <div class="weekday">
+
+                Dom
+
+            </div>
+
+
+            <div class="weekday">
+
+                Lun
+
+            </div>
+
+
+            <div class="weekday">
+
+                Mar
+
+            </div>
+
+
+            <div class="weekday">
+
+                Mié
+
+            </div>
+
+
+            <div class="weekday">
+
+                Jue
+
+            </div>
+
+
+            <div class="weekday">
+
+                Vie
+
+            </div>
+
+
+            <div class="weekday">
+
+                Sáb
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             DÍAS
+        ========================= -->
+
+        <div
+            id="calendarDays"
+            class="days">
+
+        </div>
+
+
+
+        <!-- =========================
+             LEYENDA
+        ========================= -->
+
+        <div class="calendar-info">
+
+
+            <div class="legend">
+
+
+                <span
+                    class="legend-box
+                           legend-available">
+                </span>
+
+
+                <span>
+
+                    Disponible
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="legend">
+
+
+                <span
+                    class="legend-box
+                           legend-unavailable">
+                </span>
+
+
+                <span>
+
+                    No disponible
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Gobierno del Estado de Puebla ·
+    Ex Hacienda de Chautla
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+    /* =====================================================
+       LINKS POR FECHA
+       
+       Aquí es donde vas agregando las fechas y sus links.
+       
+       Formato:
+       
+       "AÑO-MES-DÍA": "LINK"
+    ===================================================== */
+
+
+    const linksPorFecha = {
+
+
+        "2026-08-27":
+            "https://prueba.tuticket.com.mx/checkout/ex-hacienda-de-chautla-2cve5p?useEmbed=true",
+
+
+        "2026-08-28":
+            "https://prueba.tuticket.com.mx/checkout/ex-hacienda-de-chautla-lfsyoq?useEmbed=true",
+
+
+        "2026-08-29":
+            "https://prueba.tuticket.com.mx/checkout/ex-hacienda-de-chautla-zhb318?useEmbed=true",
+
+
+        "2026-08-30":
+            "https://prueba.tuticket.com.mx/checkout/ex-hacienda-de-chautla-vm3kjm?useEmbed=true"
+
+
+    };
+
+
+
+    /* =====================================================
+       FECHA QUE ESTAMOS VISUALIZANDO
+    ===================================================== */
+
+
+    let fecha = new Date();
+
+
+
+    /* =====================================================
+       NOMBRES DE LOS MESES
+    ===================================================== */
+
+
+    const nombresMeses = [
+
+        "Enero",
+
+        "Febrero",
+
+        "Marzo",
+
+        "Abril",
+
+        "Mayo",
+
+        "Junio",
+
+        "Julio",
+
+        "Agosto",
+
+        "Septiembre",
+
+        "Octubre",
+
+        "Noviembre",
+
+        "Diciembre"
+
+    ];
+
+
+
+    /* =====================================================
+       GENERAR CALENDARIO
+    ===================================================== */
+
+
+    function generarCalendario() {
+
+
+        /* Año actual del calendario */
+
+        const year =
+            fecha.getFullYear();
+
+
+
+        /* Mes actual del calendario */
+
+        const month =
+            fecha.getMonth();
+
+
+
+        /* =================================================
+           PRIMER DÍA DEL MES
+        ================================================= */
+
+
+        const firstDay =
+            new Date(
+                year,
+                month,
+                1
+            ).getDay();
+
+
+
+        /* =================================================
+           CANTIDAD DE DÍAS DEL MES
+        ================================================= */
+
+
+        const daysInMonth =
+            new Date(
+                year,
+                month + 1,
+                0
+            ).getDate();
+
+
+
+        /* =================================================
+           MOSTRAR MES Y AÑO
+        ================================================= */
+
+
+        document
+            .getElementById("monthYear")
+            .textContent =
+
+                nombresMeses[month]
+                + " "
+                + year;
+
+
+
+        /* =================================================
+           CONTENEDOR DE LOS DÍAS
+        ================================================= */
+
+
+        const container =
+            document.getElementById(
+                "calendarDays"
+            );
+
+
+
+        /* Limpiar calendario */
+
+        container.innerHTML = "";
+
+
+
+        /* =================================================
+           ESPACIOS ANTES DEL DÍA 1
+        ================================================= */
+
+
+        for (
+            let i = 0;
+            i < firstDay;
+            i++
+        ) {
+
+
+            const empty =
+                document.createElement(
+                    "div"
+                );
+
+
+            empty.className =
+                "day empty";
+
+
+            container.appendChild(
+                empty
+            );
+
+        }
+
+
+
+        /* =================================================
+           CREAR CADA DÍA
+        ================================================= */
+
+
+        for (
+            let day = 1;
+            day <= daysInMonth;
+            day++
+        ) {
+
+
+            /* =============================================
+               CREAR FECHA YYYY-MM-DD
+            ============================================= */
+
+
+            const mes =
+                String(month + 1)
+                    .padStart(2, "0");
+
+
+            const dia =
+                String(day)
+                    .padStart(2, "0");
+
+
+            const fechaCompleta =
+
+                `${year}-${mes}-${dia}`;
+
+
+
+            /* =============================================
+               CREAR EL <a>
+            ============================================= */
+
+
+            const link =
+                document.createElement(
+                    "a"
+                );
+
+
+            link.className =
+                "day";
+
+
+            link.textContent =
+                day;
+
+
+
+            /* =============================================
+               BUSCAR EL LINK DE ESA FECHA
+            ============================================= */
+
+
+            const url =
+                linksPorFecha[
+                    fechaCompleta
+                ];
+
+
+
+            /* =============================================
+               SI LA FECHA TIENE LINK
+            ============================================= */
+
+
+            if (url) {
+
+
+                link.href =
+                    url;
+
+
+                link.target =
+                    "_blank";
+
+
+                link.rel =
+                    "noopener noreferrer";
+
+
+            }
+
+
+            /* =============================================
+               SI LA FECHA NO TIENE LINK
+            ============================================= */
+
+
+            else {
+
+
+                link.href =
+                    "#";
+
+
+                link.classList.add(
+                    "no-evento"
+                );
+
+
+                link.setAttribute(
+                    "aria-disabled",
+                    "true"
+                );
+
+
+                link.addEventListener(
+                    "click",
+                    function(event) {
+
+
+                        event.preventDefault();
+
+
+                        alert(
+
+                            "No hay entradas disponibles para el "
+                            + day
+                            + " de "
+                            + nombresMeses[month]
+                            + " de "
+                            + year
+
+                        );
+
+
+                    }
+                );
+
+
+            }
+
+
+
+            /* =============================================
+               AGREGAR DÍA AL CALENDARIO
+            ============================================= */
+
+
+            container.appendChild(
+                link
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       CAMBIAR DE MES
+    ===================================================== */
+
+
+    function cambiarMes(
+        valor
+    ) {
+
+
+        fecha.setMonth(
+
+            fecha.getMonth()
+            + valor
+
+        );
+
+
+        generarCalendario();
+
+    }
+
+
+
+    /* =====================================================
+       INICIAR CALENDARIO
+    ===================================================== */
+
+
+    generarCalendario();
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Catrineras Chautla
+    </title>
+
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        body {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                #170c0a;
+
+            color: white;
+
+        }
+
+
+        /* =========================
+           DECORACIÓN SUPERIOR
+        ========================= */
+
+        .marigold {
+
+            height: 25px;
+
+            background:
+
+                repeating-linear-gradient(
+                    90deg,
+                    #e67616 0,
+                    #e67616 25px,
+                    #f6a51a 25px,
+                    #f6a51a 50px
+                );
+
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 620px;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                60px 20px;
+
+
+            background:
+
+                linear-gradient(
+                    rgba(20,8,5,.05),
+                    rgba(20,8,5,.75)
+                ),
+
+                url("image.png")
+                center top / cover
+                no-repeat;
+
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+
+        }
+
+
+        .hero-content h1 {
+
+            font-size:
+                clamp(
+                    45px,
+                    8vw,
+                    90px
+                );
+
+            color: #fff;
+
+            text-shadow:
+
+                4px 4px 0 #26100c,
+
+                0 5px 20px black;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .hero-content p {
+
+            color:
+                #f0b53d;
+
+            font-size: 26px;
+
+            margin-top: 5px;
+
+            font-weight: bold;
+
+        }
+
+
+        .description {
+
+            color: white;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 17px;
+
+            max-width: 650px;
+
+            margin: 20px auto;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================
+           CALENDARIO
+        ========================= */
+
+        .calendar-section {
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    #3b1c13,
+                    #120706
+                );
+
+            padding:
+                70px 20px;
+
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            color:
+                #f2a51a;
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .section-subtitle {
+
+            text-align: center;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            color: #ddd;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .calendar {
+
+            max-width: 950px;
+
+            margin: auto;
+
+            background:
+                rgba(20,8,6,.95);
+
+            border:
+                2px solid #b66b19;
+
+            padding: 30px;
+
+            box-shadow:
+
+                0 0 30px
+                rgba(
+                    236,
+                    130,
+                    22,
+                    .25
+                );
+
+        }
+
+
+        .calendar-header {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .calendar-header h2 {
+
+            color:
+                #f6a623;
+
+            font-size: 30px;
+
+        }
+
+
+        .month-button {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid #d4871e;
+
+            background:
+                transparent;
+
+            color:
+                #f6a623;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+        }
+
+
+        .month-button:hover {
+
+            background:
+                #d47715;
+
+            color: white;
+
+        }
+
+
+        .weekdays,
+        .days {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, 1fr);
+
+            gap: 8px;
+
+        }
+
+
+        .weekday {
+
+            text-align: center;
+
+            padding: 12px;
+
+            color:
+                #f3a21d;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           DÍAS - <a>
+        ========================= */
+
+        .day {
+
+            min-height: 70px;
+
+            border:
+                1px solid #633319;
+
+            background:
+                #21100d;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            transition: .2s;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+        }
+
+
+        .day:hover {
+
+            background:
+                #9c4316;
+
+            border-color:
+                #f2a21c;
+
+            transform:
+                scale(1.03);
+
+            color: white;
+
+        }
+
+
+        /* =========================
+           DÍAS SIN LINK
+        ========================= */
+
+        .day.no-evento {
+
+            opacity: .45;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .day.no-evento:hover {
+
+            background:
+                #21100d;
+
+            border-color:
+                #633319;
+
+            transform: none;
+
+            color: white;
+
+        }
+
+
+        .empty {
+
+            border: none;
+
+            background:
+                transparent;
+
+            cursor: default;
+
+        }
+
+
+        .empty:hover {
+
+            background:
+                transparent;
+
+            border: none;
+
+            transform: none;
+
+        }
+
+
+        /* =========================
+           BOTÓN COMPRA
+        ========================= */
+
+        .buy-container {
+
+            text-align: center;
+
+            margin-top: 35px;
+
+        }
+
+
+        .buy-button {
+
+            display: inline-block;
+
+            background:
+                #a94315;
+
+            color: white;
+
+            border:
+                1px solid #f3a12c;
+
+            padding:
+                14px 35px;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            transition: .2s;
+
+        }
+
+
+        .buy-button:hover {
+
+            background:
+                #d96519;
+
+            color: white;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 40px;
+
+            text-align: center;
+
+            background:
+                #090504;
+
+            color: #aaa;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width:650px) {
+
+
+            .hero {
+
+                min-height:
+                    500px;
+
+            }
+
+
+            .hero-content h1 {
+
+                font-size:
+                    48px;
+
+            }
+
+
+            .calendar {
+
+                padding:
+                    12px;
+
+            }
+
+
+            .day {
+
+                min-height:
+                    50px;
+
+                font-size:
+                    13px;
+
+            }
+
+
+            .weekday {
+
+                font-size:
+                    11px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<script
+    type="text/javascript"
+    src="https://vivenu.dev/web/deliver/js/v1/embed.js">
+</script>
+
+
+<body>
+
+
+<!-- =========================
+     DECORACIÓN
+========================= -->
+
+<div class="marigold"></div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+
+        <h1>
+            CATRINERAS
+        </h1>
+
+
+        <p>
+            CHAUTLA
+        </p>
+
+
+        <div class="description">
+
+            Vive una experiencia llena de
+            tradición, color y cultura en la
+            Ex Hacienda de Chautla.
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<div class="marigold"></div>
+
+
+
+<!-- =========================
+     CALENDARIO
+========================= -->
+
+<section class="calendar-section">
+
+
+    <h2 class="section-title">
+
+        Próximamente
+
+    </h2>
+
+
+    <p class="section-subtitle">
+
+        Selecciona una fecha para
+        comprar tus entradas.
+
+    </p>
+
+
+    <div class="calendar">
+
+
+        <!-- =========================
+             CABECERA
+        ========================= -->
+
+        <div class="calendar-header">
+
+
+            <button
+                type="button"
+                class="month-button"
+                onclick="cambiarMes(-1)">
+
+                ‹
+
+            </button>
+
+
+            <h2 id="monthYear"></h2>
+
+
+            <button
+                type="button"
+                class="month-button"
+                onclick="cambiarMes(1)">
+
+                ›
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             DÍAS DE LA SEMANA
+        ========================= -->
+
+        <div class="weekdays">
+
+
+            <div class="weekday">
+                DOM
+            </div>
+
+
+            <div class="weekday">
+                LUN
+            </div>
+
+
+            <div class="weekday">
+                MAR
+            </div>
+
+
+            <div class="weekday">
+                MIÉ
+            </div>
+
+
+            <div class="weekday">
+                JUE
+            </div>
+
+
+            <div class="weekday">
+                VIE
+            </div>
+
+
+            <div class="weekday">
+                SÁB
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             DÍAS
+        ========================= -->
+
+        <div
+            id="calendarDays"
+            class="days">
+
+        </div>
+
+
+
+        <!-- =========================
+             BOTÓN GENERAL
+        ========================= -->
+
+        <div class="buy-container">
+
+
+            <a
+                href="https://prueba.tuticket.com.mx/event/evento-1-5scb36?useEmbed=true"
+                class="buy-button"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                COMPRAR ENTRADAS
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Catrineras Chautla ·
+    Gobierno del Estado de Puebla
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+    /* =====================================================
+       LINKS POR FECHA
+
+       IMPORTANTE:
+
+       Aquí posteriormente pondremos los links de cada día.
+
+       El formato es:
+
+       "AÑO-MES-DÍA":
+           "LINK",
+
+       Ejemplo:
+
+       "2026-10-01":
+           "https://prueba.tuticket.com.mx/checkout/xxxxx"
+
+       Por ahora está VACÍO.
+       El calendario funcionará de todas formas.
+    ===================================================== */
+
+
+    const linksPorFecha = {
+
+
+        "2026-08-27":
+            "https://prueba.tuticket.com.mx/checkout/catrinas-ex-hacienda-de-chautla-lka4o1?useEmbed=true",
+
+
+        "2026-08-28":
+            "https://prueba.tuticket.com.mx/checkout/catrinas-ex-hacienda-de-chautla-mmr5y4?useEmbed=true",
+
+
+        "2026-08-29":
+            "https://prueba.tuticket.com.mx/checkout/catrinas-ex-hacienda-de-chautla-cjbuzo?useEmbed=true",
+
+
+        "2026-08-30":
+            "https://prueba.tuticket.com.mx/checkout/catrinas-ex-hacienda-de-chautla-ahlqlq?useEmbed=true",
+
+        "2026-08-30":
+            "https://prueba.tuticket.com.mx/checkout/catrinas-ex-hacienda-de-chautla-w3enu0?useEmbed=true",
+
+    };
+
+
+
+    /* =====================================================
+       FECHA DEL CALENDARIO
+    ===================================================== */
+
+    let fecha = new Date();
+
+
+
+    /* =====================================================
+       NOMBRES DE LOS MESES
+    ===================================================== */
+
+    const meses = [
+
+        "ENERO",
+
+        "FEBRERO",
+
+        "MARZO",
+
+        "ABRIL",
+
+        "MAYO",
+
+        "JUNIO",
+
+        "JULIO",
+
+        "AGOSTO",
+
+        "SEPTIEMBRE",
+
+        "OCTUBRE",
+
+        "NOVIEMBRE",
+
+        "DICIEMBRE"
+
+    ];
+
+
+
+    /* =====================================================
+       GENERAR CALENDARIO
+    ===================================================== */
+
+    function generarCalendario() {
+
+
+        /* Año */
+
+        const year =
+            fecha.getFullYear();
+
+
+        /* Mes */
+
+        const month =
+            fecha.getMonth();
+
+
+
+        /* =================================================
+           PRIMER DÍA DEL MES
+        ================================================= */
+
+        const primerDia =
+            new Date(
+                year,
+                month,
+                1
+            ).getDay();
+
+
+
+        /* =================================================
+           CANTIDAD DE DÍAS
+        ================================================= */
+
+        const diasMes =
+            new Date(
+                year,
+                month + 1,
+                0
+            ).getDate();
+
+
+
+        /* =================================================
+           MOSTRAR MES Y AÑO
+        ================================================= */
+
+        document
+            .getElementById(
+                "monthYear"
+            )
+            .textContent =
+
+                meses[month]
+                + " "
+                + year;
+
+
+
+        /* =================================================
+           CONTENEDOR DEL CALENDARIO
+        ================================================= */
+
+        const calendario =
+            document.getElementById(
+                "calendarDays"
+            );
+
+
+
+        /* Limpiar */
+
+        calendario.innerHTML = "";
+
+
+
+        /* =================================================
+           ESPACIOS ANTES DEL DÍA 1
+        ================================================= */
+
+        for (
+            let i = 0;
+            i < primerDia;
+            i++
+        ) {
+
+
+            const empty =
+                document.createElement(
+                    "div"
+                );
+
+
+            empty.className =
+                "day empty";
+
+
+            calendario.appendChild(
+                empty
+            );
+
+        }
+
+
+
+        /* =================================================
+           CREAR CADA DÍA
+        ================================================= */
+
+        for (
+            let dia = 1;
+            dia <= diasMes;
+            dia++
+        ) {
+
+
+            /* =============================================
+               FORMATO DEL MES
+
+               1 → 01
+               2 → 02
+               etc.
+            ============================================= */
+
+            const mesFormateado =
+                String(
+                    month + 1
+                ).padStart(
+                    2,
+                    "0"
+                );
+
+
+
+            /* =============================================
+               FORMATO DEL DÍA
+
+               1 → 01
+               2 → 02
+               etc.
+            ============================================= */
+
+            const diaFormateado =
+                String(
+                    dia
+                ).padStart(
+                    2,
+                    "0"
+                );
+
+
+
+            /* =============================================
+               FECHA COMPLETA
+
+               Ejemplo:
+
+               2026-10-01
+            ============================================= */
+
+            const fechaCompleta =
+
+                `${year}-${mesFormateado}-${diaFormateado}`;
+
+
+
+            /* =============================================
+               CREAR <a>
+            ============================================= */
+
+            const link =
+                document.createElement(
+                    "a"
+                );
+
+
+            link.className =
+                "day";
+
+
+            link.textContent =
+                dia;
+
+
+
+            /* =============================================
+               BUSCAR LINK DE ESA FECHA
+            ============================================= */
+
+            const url =
+                linksPorFecha[
+                    fechaCompleta
+                ];
+
+
+
+            /* =============================================
+               SI EXISTE LINK
+            ============================================= */
+
+            if (url) {
+
+
+                link.href =
+                    url;
+
+
+                link.target =
+                    "_blank";
+
+
+                link.rel =
+                    "noopener noreferrer";
+
+
+            }
+
+
+            /* =============================================
+               SI NO EXISTE LINK
+            ============================================= */
+
+            else {
+
+
+                /*
+                 * No ponemos un href real
+                 */
+
+                link.href =
+                    "#";
+
+
+                link.classList.add(
+                    "no-evento"
+                );
+
+
+                link.setAttribute(
+                    "aria-disabled",
+                    "true"
+                );
+
+
+                /*
+                 * Evitar navegación
+                 */
+
+                link.addEventListener(
+                    "click",
+                    function(event) {
+
+                        event.preventDefault();
+
+                    }
+                );
+
+            }
+
+
+
+            /* =============================================
+               AGREGAR AL CALENDARIO
+            ============================================= */
+
+            calendario.appendChild(
+                link
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       CAMBIAR MES
+    ===================================================== */
+
+    function cambiarMes(
+        cantidad
+    ) {
+
+
+        fecha.setMonth(
+
+            fecha.getMonth()
+            + cantidad
+
+        );
+
+
+        generarCalendario();
+
+    }
+
+
+
+    /* =====================================================
+       INICIAR
+    ===================================================== */
+
+    generarCalendario();
+
+
+</script>
+
+
+</body>
+
+</html>
