@@ -1,411 +1,1411 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Run Events | Venta de Boletos</title>
+ <!DOCTYPE html>
+<html lang="es">
 
-    <style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, Helvetica, sans-serif;
-    }
+<title>Medical Expo | Registro de Asistentes</title>
 
-    body{
-        background:#f4f4f4;
-    }
+<style>
 
-    /* NAVBAR */
+/* =========================
+   RESET
+========================= */
 
-    header{
-        background:#111;
-        color:white;
-        padding:18px 60px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    .logo{
-        font-size:28px;
-        font-weight:bold;
-        color:#fff;
-    }
+body{
+    background:#f4f9fc;
+    color:#183b56;
+}
 
-    nav a{
-        color:white;
-        text-decoration:none;
-        margin-left:30px;
-        transition:.3s;
-    }
+/* =========================
+   NAVBAR
+========================= */
 
-    nav a:hover{
-        color:#00A8FF;
-    }
+header{
+    background:#ffffff;
+    padding:18px 60px;
 
-    /* HERO */
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    .hero{
+    border-bottom:1px solid #dceaf2;
 
-        height:420px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-        background:
-        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1600&q=80");
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-        background-size:cover;
-        background-position:center;
+    font-size:26px;
+    font-weight:bold;
+    color:#087ea4;
+}
 
-        display:flex;
-        justify-content:center;
-        align-items:center;
+.logo-icon{
+    width:42px;
+    height:42px;
 
-        text-align:center;
-        color:white;
-    }
+    background:#087ea4;
+    color:white;
 
-    .hero h1{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-        font-size:55px;
-        margin-bottom:20px;
-    }
+    border-radius:10px;
 
-    .hero p{
+    font-size:24px;
+}
 
-        font-size:20px;
-        margin-bottom:30px;
-    }
-
-    .hero button{
-
-        background:#0066ff;
-        color:white;
-        border:none;
-        padding:16px 40px;
-        font-size:18px;
-        border-radius:40px;
-        cursor:pointer;
-        transition:.3s;
-    }
-
-    .hero button:hover{
-
-        background:#0049c6;
-    }
-
-    /* EVENTOS */
-
-    .section{
-
-        width:90%;
-        max-width:1300px;
-        margin:auto;
-        padding:60px 0;
-    }
-
-    .section h2{
-
-        text-align:center;
-        margin-bottom:45px;
-        font-size:36px;
-        color:#222;
-    }
-
-    .cards{
-
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-        gap:25px;
-    }
-
-    .card{
-
-        background:white;
-        border-radius:14px;
-        overflow:hidden;
-        box-shadow:0 10px 30px rgba(0,0,0,.1);
-        transition:.3s;
-    }
-
-    .card:hover{
-
-        transform:translateY(-8px);
-    }
-
-    .card img{
-
-        width:100%;
-        height:220px;
-        object-fit:cover;
-    }
-
-    .info{
-
-        padding:25px;
-    }
-
-    .info h3{
-
-        margin-bottom:15px;
-        color:#111;
-    }
-
-    .fecha{
-
-        color:#0066ff;
-        font-weight:bold;
-        margin-bottom:10px;
-    }
-
-    .lugar{
-
-        color:#666;
-        margin-bottom:20px;
-    }
-
-    .precio{
-
-        font-size:28px;
-        color:#111;
-        margin-bottom:25px;
-    }
-
-    button.compra{
-
-        width:100%;
-        padding:14px;
-        border:none;
-        background:#0066ff;
-        color:white;
-        border-radius:8px;
-        cursor:pointer;
-        font-size:16px;
-    }
-
-    button.compra:hover{
-
-        background:#0049c6;
-    }
-
-    /* Botones Vivenu */
-
-.vivenu-btn{
-    display:block;
-    width:100%;
-    padding:14px;
-    background:#0066ff;
-    color:#fff !important;
+nav a{
+    color:#183b56;
     text-decoration:none;
-    text-align:center;
+
+    margin-left:30px;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00a6a6;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:500px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(4,54,78,.92),
+        rgba(8,126,164,.78),
+        rgba(0,166,166,.55)
+    ),
+    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    color:white;
+
+    padding:80px 8%;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.tag{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    padding:9px 18px;
+
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    backdrop-filter:blur(5px);
+}
+
+.hero h1{
+
+    font-size:58px;
+    line-height:1.05;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#63e6e2;
+}
+
+.hero p{
+
+    font-size:20px;
+    line-height:1.6;
+
+    max-width:700px;
+
+    margin-bottom:30px;
+
+    color:#e8f8fb;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.hero button{
+
+    padding:15px 30px;
+
     border:none;
-    border-radius:8px;
+    border-radius:7px;
+
     font-size:16px;
     font-weight:bold;
+
     cursor:pointer;
-    transition:all .3s ease;
-    box-shadow:0 4px 12px rgba(0,102,255,.25);
+
+    transition:.3s;
+}
+
+.primary-btn{
+    background:#00a6a6;
+    color:white;
+}
+
+.primary-btn:hover{
+    background:#008b8b;
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    background:white;
+    color:#087ea4;
+}
+
+.secondary-btn:hover{
+    background:#edfafa;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   INFO BAR
+========================= */
+
+.info-bar{
+
+    background:white;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    max-width:1200px;
+
+    margin:-45px auto 0;
+
+    position:relative;
+    z-index:10;
+
+    border-radius:12px;
+
+    box-shadow:0 15px 40px rgba(15,67,91,.12);
+
+    overflow:hidden;
+}
+
+.info-item{
+
+    padding:28px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    border-right:1px solid #e4eef3;
+}
+
+.info-item:last-child{
+    border-right:none;
+}
+
+.info-icon{
+
+    width:48px;
+    height:48px;
+
+    border-radius:10px;
+
+    background:#e8f7f8;
+
+    color:#087ea4;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+}
+
+.info-item strong{
+    display:block;
+    margin-bottom:5px;
+    color:#183b56;
+}
+
+.info-item span{
+    color:#718797;
+    font-size:14px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:80px 0;
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-header .eyebrow{
+
+    color:#00a6a6;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.section h2{
+
+    font-size:38px;
+
+    color:#183b56;
+
+    margin-bottom:15px;
+}
+
+.section-description{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#718797;
+
+    line-height:1.6;
+}
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+}
+
+.card{
+
+    background:white;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    border:1px solid #e1edf3;
+
+    box-shadow:
+    0 10px 35px rgba(17,67,89,.08);
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 20px 45px rgba(17,67,89,.14);
+}
+
+.card-image{
+    position:relative;
+}
+
+.card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+}
+
+.card-label{
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    background:#00a6a6;
+
+    color:white;
+
+    padding:7px 13px;
+
+    border-radius:5px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.info{
+    padding:27px;
+}
+
+.event-type{
+
+    color:#00a6a6;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:9px;
+}
+
+.info h3{
+
+    color:#183b56;
+
+    font-size:21px;
+
+    line-height:1.3;
+
+    margin-bottom:18px;
+}
+
+.event-detail{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#718797;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+}
+
+.event-detail strong{
+    color:#087ea4;
+}
+
+.price{
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid #e5eef2;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.price span{
+
+    font-size:13px;
+
+    color:#718797;
+}
+
+.price strong{
+
+    font-size:24px;
+
+    color:#183b56;
+}
+
+/* =========================
+   VIVENU BUTTON
+========================= */
+
+.vivenu-btn{
+
+    display:block;
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:20px;
+
+    background:#087ea4;
+
+    color:#fff !important;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    border:none;
+
+    border-radius:7px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 5px 15px rgba(8,126,164,.2);
 }
 
 .vivenu-btn:hover{
-    background:#0049c6;
+
+    background:#065f7c;
+
     transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(0,102,255,.35);
+
+    box-shadow:
+    0 8px 20px rgba(8,126,164,.3);
 }
 
-.vivenu-btn:active{
-    transform:translateY(0);
-    box-shadow:0 3px 8px rgba(0,102,255,.25);
+/* =========================
+   ABOUT / MEDICAL EXPO
+========================= */
+
+.about{
+
+    background:#eaf6f8;
+
+    padding:80px 8%;
 }
 
-    /* PATROCINADORES */
+.about-container{
 
-    .sponsors{
+    max-width:1200px;
 
-        background:#111;
-        color:white;
-        padding:50px;
-        text-align:center;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-image img{
+
+    width:100%;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 20px 45px rgba(13,74,94,.15);
+}
+
+.about-content .eyebrow{
+
+    color:#00a6a6;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.about-content h2{
+
+    color:#183b56;
+
+    font-size:38px;
+
+    margin-bottom:20px;
+}
+
+.about-content p{
+
+    color:#617b8b;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+}
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+}
+
+.feature{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    color:#183b56;
+
+    font-weight:bold;
+
+    border-left:4px solid #00a6a6;
+}
+
+/* =========================
+   SPONSORS
+========================= */
+
+.sponsors{
+
+    background:#ffffff;
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    border-top:1px solid #e1edf3;
+}
+
+.sponsors h2{
+
+    color:#183b56;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.sponsors p{
+
+    color:#718797;
+
+    margin-bottom:30px;
+}
+
+.logos{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.logo-box{
+
+    min-width:160px;
+
+    border:1px solid #dceaf2;
+
+    background:#f8fcfd;
+
+    padding:22px 35px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#547181;
+
+    transition:.3s;
+}
+
+.logo-box:hover{
+
+    border-color:#00a6a6;
+
+    color:#087ea4;
+
+    background:#effafa;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+
+    background:
+    linear-gradient(
+        135deg,
+        #04364e,
+        #087ea4
+    );
+
+    color:white;
+
+    padding:70px 20px;
+
+    text-align:center;
+}
+
+.cta h2{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.cta p{
+
+    color:#d7eef3;
+
+    margin-bottom:25px;
+}
+
+.cta button{
+
+    background:#00a6a6;
+
+    border:none;
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:7px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.cta button:hover{
+    background:#008b8b;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#062b3c;
+
+    color:#9bb5c1;
+
+    text-align:center;
+
+    padding:30px;
+
+    font-size:14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:15px 25px;
+        flex-direction:column;
+        gap:15px;
     }
 
-    .logos{
-
-        display:flex;
-        justify-content:center;
-        gap:50px;
-        margin-top:25px;
-        flex-wrap:wrap;
+    nav a{
+        margin:0 8px;
+        font-size:13px;
     }
 
-    .logo-box{
-
-        border:1px solid #444;
-        padding:20px 35px;
-        border-radius:10px;
-        font-size:22px;
-        color:#ddd;
+    .hero{
+        min-height:550px;
+        padding:60px 25px;
     }
 
-    /* FOOTER */
-
-    footer{
-
-        background:#000;
-        color:#aaa;
-        text-align:center;
-        padding:25px;
+    .hero h1{
+        font-size:40px;
     }
 
-    </style>
-    <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
-    </head>
-    <body>
+    .hero p{
+        font-size:17px;
+    }
 
-    <header>
+    .info-bar{
+        width:90%;
+        grid-template-columns:1fr;
+        margin:-30px auto 0;
+    }
+
+    .info-item{
+        border-right:none;
+        border-bottom:1px solid #e4eef3;
+    }
+
+    .info-item:last-child{
+        border-bottom:none;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .about-content h2{
+        font-size:30px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<script
+type="text/javascript"
+src="https://vivenu.dev/web/deliver/js/v1/embed.js">
+</script>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
 
     <div class="logo">
-    HUB SPORTS
+
+        <div class="logo-icon">
+            +
+        </div>
+
+        MEDICAL EXPO
+
     </div>
 
     <nav>
 
-    <a href="#">Inicio</a>
-    <a href="#">Eventos</a>
-    <a href="#">Boletos</a>
-    <a href="#">Contacto</a>
+        <a href="#">Inicio</a>
+
+        <a href="#eventos">
+            Eventos
+        </a>
+
+        <a href="#expo">
+            Expo
+        </a>
+
+        <a href="#patrocinadores">
+            Patrocinadores
+        </a>
+
+        <a href="#contacto">
+            Contacto
+        </a>
 
     </nav>
 
-    </header>
+</header>
 
-    <section class="hero">
 
-    <div>
+<!-- =========================
+     HERO
+========================= -->
 
-    <h1>Corre tu próxima meta</h1>
+<section class="hero">
 
-    <p>Compra tus boletos para las mejores carreras del año.</p>
+    <div class="hero-content">
+
+        <div class="tag">
+            CONGRESO & EXPO MÉDICA 2026
+        </div>
+
+        <h1>
+            Innovación que
+            <span>
+                transforma la medicina
+            </span>
+        </h1>
+
+        <p>
+            Descubre las últimas tendencias, tecnologías,
+            soluciones médicas y oportunidades de networking
+            en el encuentro profesional de salud más importante
+            del año.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+            class="primary-btn"
+            onclick="document.getElementById('eventos').scrollIntoView()">
+
+                REGISTRARME
+
+            </button>
+
+            <button
+            class="secondary-btn"
+            onclick="document.getElementById('expo').scrollIntoView()">
+
+                CONOCER LA EXPO
+
+            </button>
+
+        </div>
 
     </div>
 
-    </section>
+</section>
 
-    <section class="section">
 
-    <h2>Próximos Eventos</h2>
+<!-- =========================
+     INFO BAR
+========================= -->
+
+<div class="info-bar">
+
+    <div class="info-item">
+
+        <div class="info-icon">
+            📅
+        </div>
+
+        <div>
+
+            <strong>
+                15 — 17 Octubre 2026
+            </strong>
+
+            <span>
+                Tres días de innovación médica
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <div class="info-icon">
+            📍
+        </div>
+
+        <div>
+
+            <strong>
+                Centro de Convenciones
+            </strong>
+
+            <span>
+                Ciudad de México, México
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <div class="info-icon">
+            👨‍⚕️
+        </div>
+
+        <div>
+
+            <strong>
+                Profesionales de salud
+            </strong>
+
+            <span>
+                Médicos, especialistas y empresas
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     EVENTOS
+========================= -->
+
+<section
+class="section"
+id="eventos">
+
+    <div class="section-header">
+
+        <div class="eyebrow">
+            Programa 2026
+        </div>
+
+        <h2>
+            Próximos eventos
+        </h2>
+
+        <p class="section-description">
+
+            Elige tu experiencia y forma parte de
+            una comunidad que impulsa el futuro de
+            la medicina y la tecnología en salud.
+
+        </p>
+
+    </div>
+
 
     <div class="cards">
 
-    <div class="card">
 
-    <img src="11.jpg">
+        <!-- EVENTO 1 -->
 
-    <div class="info">
+        <div class="card">
 
-    <h3>Adidas HUB TRAIL 12K/22K, La primavera, GDL</h3>
+            <div class="card-image">
 
-    <div class="fecha">
-    09/08/2026
+                <img
+                src="11.jpg"
+                alt="Congreso médico">
+
+                <div class="card-label">
+                    CONGRESO
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <div class="event-type">
+                    Congreso Internacional
+                </div>
+
+                <h3>
+                    Medical Innovation Summit 2026
+                </h3>
+
+                <div class="event-detail">
+                    📅
+                    <span>
+                        15 Octubre 2026
+                    </span>
+                </div>
+
+                <div class="event-detail">
+                    📍
+                    <span>
+                        Ciudad de México
+                    </span>
+                </div>
+
+                <div class="event-detail">
+                    👨‍⚕️
+                    <span>
+                        +1,500 profesionales
+                    </span>
+                </div>
+
+                <div class="price">
+
+                    <span>
+                        Acceso profesional
+                    </span>
+
+                    <strong>
+                        $1,250 MXN
+                    </strong>
+
+                </div>
+
+
+                <a
+                class="vivenu-btn"
+                href="https://tickets.payuticket.com/event/run-the-circuit-m7ybro?useEmbed=true">
+
+                    REGISTRARME
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENTO 2 -->
+
+        <div class="card">
+
+            <div class="card-image">
+
+                <img
+                src="21.jpg"
+                alt="Expo médica">
+
+                <div class="card-label">
+                    EXPO
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <div class="event-type">
+                    Medical Technology
+                </div>
+
+                <h3>
+                    Expo Tecnología y Equipamiento Médico
+                </h3>
+
+                <div class="event-detail">
+                    📅
+                    <span>
+                        16 Octubre 2026
+                    </span>
+                </div>
+
+                <div class="event-detail">
+                    📍
+                    <span>
+                        Centro de Convenciones
+                    </span>
+                </div>
+
+                <div class="event-detail">
+                    🏢
+                    <span>
+                        +120 empresas expositoras
+                    </span>
+                </div>
+
+                <div class="price">
+
+                    <span>
+                        Acceso Expo
+                    </span>
+
+                    <strong>
+                        $750 MXN
+                    </strong>
+
+                </div>
+
+
+                <a
+                class="vivenu-btn"
+                href="https://tickets.payuticket.com/event/adidas-hub-trail-12k-22k-la-primavera-gdl-y4ng13?useEmbed=true">
+
+                    OBTENER ACCESO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENTO 3 -->
+
+        <div class="card">
+
+            <div class="card-image">
+
+                <img
+                src="31.jpg"
+                alt="Innovación médica">
+
+                <div class="card-label">
+                    WORKSHOP
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <div class="event-type">
+                    Taller especializado
+                </div>
+
+                <h3>
+                    Inteligencia Artificial aplicada a la Salud
+                </h3>
+
+                <div class="event-detail">
+                    📅
+                    <span>
+                        17 Octubre 2026
+                    </span>
+                </div>
+
+                <div class="event-detail">
+                    📍
+                    <span>
+                        Sala de Innovación
+                    </span>
+                </div>
+
+                <div class="event-detail">
+                    💻
+                    <span>
+                        Cupo limitado
+                    </span>
+                </div>
+
+                <div class="price">
+
+                    <span>
+                        Workshop
+                    </span>
+
+                    <strong>
+                        $350 MXN
+                    </strong>
+
+                </div>
+
+
+                <button
+                class="vivenu-btn">
+
+                    RESERVAR LUGAR
+
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="lugar">
-    Guadalajara, Jalisco
+</section>
+
+
+<!-- =========================
+     SOBRE LA EXPO
+========================= -->
+
+<section
+class="about"
+id="expo">
+
+    <div class="about-container">
+
+
+        <div class="about-image">
+
+            <img
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=85"
+            alt="Profesionales de la salud">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div class="eyebrow">
+                Una nueva era para la salud
+            </div>
+
+            <h2>
+                Donde la ciencia se encuentra con la innovación
+            </h2>
+
+            <p>
+
+                Medical Expo reúne a líderes de la industria,
+                profesionales de la salud, investigadores,
+                instituciones y empresas tecnológicas para
+                compartir conocimiento y descubrir las
+                soluciones que están transformando la
+                atención médica.
+
+            </p>
+
+
+            <div class="features">
+
+                <div class="feature">
+                    ✓ Conferencias magistrales
+                </div>
+
+                <div class="feature">
+                    ✓ Tecnología médica
+                </div>
+
+                <div class="feature">
+                    ✓ Networking profesional
+                </div>
+
+                <div class="feature">
+                    ✓ Workshops especializados
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="precio">
-    $550 MXN
-    </div>
+</section>
 
-    <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/run-the-circuit-m7ybro?useEmbed=true">COMPRAR BOLETOS</a>
 
-    </div>
+<!-- =========================
+     PATROCINADORES
+========================= -->
 
-    </div>
+<section
+class="sponsors"
+id="patrocinadores">
 
-    <div class="card">
+    <h2>
+        Partners & Sponsors
+    </h2>
 
-    <img src="21.jpg">
+    <p>
+        Empresas líderes impulsando la innovación en salud.
+    </p>
 
-    <div class="info">
-
-    <h3>RUN THE CIRCUIT</h3>
-
-    <div class="fecha">
-    17/10/2026
-    </div>
-
-    <div class="lugar">
-    Bosque La Primavera
-    </div>
-
-    <div class="precio">
-    $750 MXN
-    </div>
-
-    <a class="vivenu-btn yourStylingClass" href="https://tickets.payuticket.com/event/adidas-hub-trail-12k-22k-la-primavera-gdl-y4ng13?useEmbed=true">COMPRAR BOLETOS</a>
-
-    </div>
-
-    </div>
-
-    <div class="card">
-
-    <img src="31.jpg">
-
-    <div class="info">
-
-    <h3>Night Run 5K</h3>
-
-    <div class="fecha">
-    8 Octubre 2026
-    </div>
-
-    <div class="lugar">
-    Monterrey, Nuevo León
-    </div>
-
-    <div class="precio">
-    $350 MXN
-    </div>
-
-    <button class="compra">
-    Comprar boleto
-    </button>
-
-    </div>
-
-    </div>
-
-    </div>
-
-    </section>
-
-    <section class="sponsors">
-
-    <h2>Patrocinadores</h2>
 
     <div class="logos">
 
-    <div class="logo-box">ADIDAS</div>
+        <div class="logo-box">
+            MEDTRONIC
+        </div>
 
-    <div class="logo-box">NIKE</div>
+        <div class="logo-box">
+            ROCHE
+        </div>
 
-    <div class="logo-box">PUMA</div>
+        <div class="logo-box">
+            SIEMENS HEALTHINEERS
+        </div>
 
-    <div class="logo-box">ASICS</div>
+        <div class="logo-box">
+            PHILIPS
+        </div>
+
+        <div class="logo-box">
+            GE HEALTHCARE
+        </div>
 
     </div>
 
-    </section>
+</section>
 
-    <footer>
 
-    © 2026 Run Events - Demo de Venta de Boletos
+<!-- =========================
+     CTA
+========================= -->
 
-    </footer>
+<section class="cta">
 
-    </body>
-    </html>
+    <h2>
+        Sé parte del futuro de la medicina
+    </h2>
+
+    <p>
+        Reserva tu lugar y conecta con los líderes
+        que están transformando la industria.
+    </p>
+
+    <button
+    onclick="document.getElementById('eventos').scrollIntoView()">
+
+        REGISTRARME AHORA
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="contacto">
+
+    © 2026 Medical Expo —
+    Congreso y Expo Internacional de Medicina
+
+</footer>
+
+</body>
+</html>
