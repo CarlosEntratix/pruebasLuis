@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Convenciones y Parques Puebla</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #444;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 72px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 45px;
+            border: 2px solid #777;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            line-height: 1.05;
+        }
+
+        .logo-text strong {
+            color: #9c234b;
+            font-size: 17px;
+            display: block;
+        }
+
+        .logo-text span {
+            color: #777;
+            font-size: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 12px;
+            text-transform: uppercase;
+            transition: .2s;
+        }
+
+        nav a:hover {
+            color: #a02150;
+        }
+
+        .puebla {
+            color: #a02150;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            width: 100%;
+            max-width: 1100px;
+            height: 430px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.1),
+                    rgba(0,0,0,.15)
+                ),
+                url("c.jpg") center / cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
+            color: white;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            text-shadow: 1px 1px 4px #000;
+        }
+
+        .hero-button {
+            margin-top: 20px;
+            background: #a02150;
+            color: white;
+            border: 0;
+            padding: 13px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* =========================
+           BUSCADOR
+        ========================= */
+
+        .search-section {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: #9c234b;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            height: 180px;
+            background: #eee;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .3s;
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            color: white;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,.85)
+            );
+            font-weight: bold;
+        }
+
+        /* =========================
+           BOTON POPUP
+        ========================= */
+
+        .popup-demo {
+            max-width: 1100px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 40px;
+            background: #f7f7f7;
+        }
+
+        .popup-demo h2 {
+            color: #9c234b;
+            margin-bottom: 15px;
+        }
+
+        .popup-button {
+              display: inline-block;
+              background: #9c234b;
+              border: none;
+              color: white;
+              padding: 15px 30px;
+              border-radius: 5px;
+              font-size: 16px;
+              cursor: pointer;
+              text-decoration: none;
+              font-weight: bold;
+          }
+
+          .popup-button:hover {
+              background: #751837;
+              color: white;
+          }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 550px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            animation: aparecer .25s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                transform: scale(.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: #9c234b;
+            color: white;
+            padding: 20px;
+        }
+
+        .modal-header h2 {
+            font-size: 25px;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-body img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: white;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .modal-action {
+            margin-top: 20px;
+            background: #9c234b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           CHAT
+        ========================= */
+
+        .chat {
+            position: fixed;
+            left: 15px;
+            bottom: 15px;
+            background: #20c978;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            box-shadow: 0 3px 10px rgba(0,0,0,.2);
+            z-index: 1500;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 35px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            header {
+                height: auto;
+                padding: 15px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                height: 350px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <div class="logo-icon">🏛️</div>
+
+        <div class="logo-text">
+            <strong>CONVENCIONES<br>Y PARQUES</strong>
+            <span>Gobierno de Puebla</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#">Nosotros</a>
+
+        <!-- NUEVAS SUBPÁGINAS -->
+        <a href="ex-hacienda.html">Ex Hacienda de Chautla</a>
+        <a href="catrineras.html">Catrineras</a>
+
+        <a href="#">Experiencias</a>
+        <a href="carrera.html">Expo Medicina</a>
+    </nav>
+
+    <div class="puebla">
+        PUE<br>BLA
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Experiencias en Puebla</h1>
+
+        <p>
+            Descubre nuestros recintos, parques
+            y experiencias culturales.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EVENTOS -->
+
+<section class="search-section">
+
+    <h2 class="section-title">
+        Lo más buscado
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <a
+              href="https://prueba.tuticket.com.mx/event/evento-1-5scb36?useEmbed=true"
+              class="vivenu-btn yourStylingClass">
+            <img src="1.jpeg">
+            <div class="card-title">
+                Eventos en Puebla
+            </div>
+              </a>
+        </div>
+
+        <div class="card">
+            <img src="2.jpeg">
+            <div class="card-title">
+                Catrineras
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="3.png">
+            <div class="card-title">
+                Teatro Principal
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="4.jpeg">
+            <div class="card-title">
+                Ex Hacienda de Chautla
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DEMOSTRACION POPUP -->
+
+</section>
+
+
+<div class="chat">
+    💬 ¡Hola, ¿cómo te podemos ayudar?
+</div>
+
+
+<footer>
+
+    Gobierno del Estado de Puebla ·
+    Convenciones y Parques
+
+</footer>
+
+
+<script>
+
+    function abrirPopup() {
+
+        document
+            .getElementById("popup")
+            .classList.add("active");
+
+    }
+
+    function cerrarPopup(event) {
+
+        if (
+            !event ||
+            event.target.id === "popup"
+        ) {
+
+            document
+                .getElementById("popup")
+                .classList.remove("active");
+
+        }
+
+    }
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+                cerrarPopup();
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
