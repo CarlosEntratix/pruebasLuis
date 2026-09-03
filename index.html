@@ -1,545 +1,1101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Convenciones y Parques Puebla</title>
+<title>Corral Grande - Parque Acuático</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #fff;
-            color: #444;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* =========================
-           HEADER
-        ========================= */
+html{
+    scroll-behavior:smooth;
+}
 
-        header {
-            height: 72px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 25px;
-            border-bottom: 1px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f8fb;
+    color:#333;
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* =========================
+   BARRA SUPERIOR
+========================= */
 
-        .logo-icon {
-            width: 55px;
-            height: 45px;
-            border: 2px solid #777;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-        }
+.topbar{
+    background:#0056a6;
+    color:white;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
 
-        .logo-text {
-            line-height: 1.05;
-        }
+.topbar a{
+    color:white;
+    text-decoration:none;
+}
 
-        .logo-text strong {
-            color: #9c234b;
-            font-size: 17px;
-            display: block;
-        }
+/* =========================
+   MENU
+========================= */
 
-        .logo-text span {
-            color: #777;
-            font-size: 10px;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:75px;
+    padding:0 20px;
 
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-size: 12px;
-            text-transform: uppercase;
-            transition: .2s;
-        }
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        nav a:hover {
-            color: #a02150;
-        }
+.logo{
+    font-size:25px;
+    font-weight:900;
+    color:#0056a6;
+    line-height:1;
+}
 
-        .puebla {
-            color: #a02150;
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+.logo span{
+    display:block;
+    color:#f6c400;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-top:4px;
+}
 
-        /* =========================
-           HERO
-        ========================= */
+.menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
 
-        .hero {
-            width: 100%;
-            max-width: 1100px;
-            height: 430px;
-            margin: auto;
-            position: relative;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,.1),
-                    rgba(0,0,0,.15)
-                ),
-                url("c.jpg") center / cover;
-        }
+.menu a{
+    color:#333;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
 
-        .hero-content {
-            position: absolute;
-            left: 40px;
-            bottom: 40px;
-            color: white;
-            max-width: 500px;
-        }
+.menu a:hover{
+    color:#0056a6;
+}
 
-        .hero-content h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 5px #000;
-        }
+.btn-comprar{
+    background:#f6c400;
+    color:#111 !important;
+    padding:13px 20px;
+    border-radius:30px;
+    font-weight:900 !important;
+}
 
-        .hero-content p {
-            font-size: 18px;
-            text-shadow: 1px 1px 4px #000;
-        }
+.btn-comprar:hover{
+    background:#ffd92e;
+    transform:translateY(-2px);
+}
 
-        .hero-button {
-            margin-top: 20px;
-            background: #a02150;
-            color: white;
-            border: 0;
-            padding: 13px 25px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+/* =========================
+   HERO
+========================= */
 
-        /* =========================
-           BUSCADOR
-        ========================= */
+.hero{
+    min-height:580px;
 
-        .search-section {
-            max-width: 1100px;
-            margin: 35px auto;
-            padding: 0 20px;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 
-        .section-title {
-            color: #9c234b;
-            font-size: 25px;
-            margin-bottom: 20px;
-        }
+    color:white;
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
+    background:
+        linear-gradient(
+            rgba(0,77,145,.55),
+            rgba(0,45,90,.72)
+        ),
+        url("https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg")
+        center/cover no-repeat;
+}
 
-        .card {
-            height: 180px;
-            background: #eee;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
+.hero-content{
+    max-width:850px;
+    padding:30px;
+}
 
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: .3s;
-        }
+.hero h1{
+    font-size:58px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:15px;
+    text-shadow:3px 4px 8px rgba(0,0,0,.4);
+}
 
-        .card:hover img {
-            transform: scale(1.08);
-        }
+.hero h2{
+    font-size:28px;
+    color:#ffd21a;
+    margin-bottom:20px;
+}
 
-        .card-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 12px;
-            color: white;
-            background: linear-gradient(
-                transparent,
-                rgba(0,0,0,.85)
-            );
-            font-weight: bold;
-        }
+.hero p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
 
-        /* =========================
-           BOTON POPUP
-        ========================= */
+.hero-btn{
+    display:inline-block;
+    background:#f6c400;
+    color:#111;
+    text-decoration:none;
+    padding:17px 35px;
+    border-radius:35px;
+    font-size:18px;
+    font-weight:900;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    transition:.3s;
+}
 
-        .popup-demo {
-            max-width: 1100px;
-            margin: 50px auto;
-            text-align: center;
-            padding: 40px;
-            background: #f7f7f7;
-        }
+.hero-btn:hover{
+    background:#fff;
+    transform:scale(1.05);
+}
 
-        .popup-demo h2 {
-            color: #9c234b;
-            margin-bottom: 15px;
-        }
+/* =========================
+   SECCIONES
+========================= */
 
-        .popup-button {
-              display: inline-block;
-              background: #9c234b;
-              border: none;
-              color: white;
-              padding: 15px 30px;
-              border-radius: 5px;
-              font-size: 16px;
-              cursor: pointer;
-              text-decoration: none;
-              font-weight: bold;
-          }
+section{
+    padding:75px 20px;
+}
 
-          .popup-button:hover {
-              background: #751837;
-              color: white;
-          }
+.container{
+    max-width:1200px;
+    margin:auto;
+}
 
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
 
-        /* =========================
-           MODAL
-        ========================= */
+.section-title h2{
+    color:#0056a6;
+    font-size:38px;
+    margin-bottom:10px;
+}
 
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.7);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+.section-title p{
+    color:#666;
+    font-size:17px;
+}
 
-        .modal.active {
-            display: flex;
-        }
+/* =========================
+   PRECIOS
+========================= */
 
-        .modal-content {
-            background: white;
-            width: 100%;
-            max-width: 550px;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            animation: aparecer .25s ease;
-        }
+#precios{
+    background:white;
+}
 
-        @keyframes aparecer {
-            from {
-                transform: scale(.8);
-                opacity: 0;
-            }
+.prices{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
 
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
+.price-card{
+    background:#f8fafc;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    border-top:6px solid #0056a6;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.3s;
+}
 
-        .modal-header {
-            background: #9c234b;
-            color: white;
-            padding: 20px;
-        }
+.price-card:hover{
+    transform:translateY(-8px);
+}
 
-        .modal-header h2 {
-            font-size: 25px;
-        }
+.price-card h3{
+    color:#0056a6;
+    font-size:20px;
+    margin-bottom:15px;
+}
 
-        .modal-body {
-            padding: 30px;
-        }
+.price{
+    font-size:40px;
+    font-weight:900;
+    color:#f0b900;
+    margin-bottom:10px;
+}
 
-        .modal-body img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
+.price-card p{
+    color:#666;
+    line-height:1.5;
+}
 
-        .close {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            color: white;
-            background: transparent;
-            border: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
+/* =========================
+   ATRACCIONES
+========================= */
 
-        .modal-action {
-            margin-top: 20px;
-            background: #9c234b;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+#atracciones{
+    background:#eef7fc;
+}
 
-        /* =========================
-           CHAT
-        ========================= */
+.attractions{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
 
-        .chat {
-            position: fixed;
-            left: 15px;
-            bottom: 15px;
-            background: #20c978;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 25px;
-            font-size: 13px;
-            box-shadow: 0 3px 10px rgba(0,0,0,.2);
-            z-index: 1500;
-        }
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+    transition:.3s;
+}
 
-        /* =========================
-           FOOTER
-        ========================= */
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
 
-        footer {
-            background: #333;
-            color: white;
-            padding: 35px;
-            text-align: center;
-            margin-top: 60px;
-        }
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+}
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+.card-content{
+    padding:20px;
+}
 
-        @media(max-width: 900px) {
+.card-content h3{
+    color:#0056a6;
+    font-size:21px;
+    margin-bottom:8px;
+}
 
-            header {
-                height: auto;
-                padding: 15px;
-                flex-direction: column;
-                gap: 15px;
-            }
+.card-content p{
+    color:#666;
+    line-height:1.5;
+    font-size:14px;
+}
 
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
+.card-link{
+    display:inline-block;
+    margin-top:15px;
+    color:#0056a6;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
+/* =========================
+   LLAMADO A COMPRA
+========================= */
 
-            .hero {
-                height: 350px;
-            }
-        }
+.buy-section{
+    background:
+        linear-gradient(
+            rgba(0,75,140,.90),
+            rgba(0,45,90,.90)
+        ),
+        url("https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-3.jpg")
+        center/cover no-repeat;
 
-        @media(max-width: 600px) {
+    color:white;
+    text-align:center;
+}
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
+.buy-section h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
 
-            .hero-content h1 {
-                font-size: 30px;
-            }
-        }
-    </style>
+.buy-section p{
+    font-size:19px;
+    margin-bottom:30px;
+}
+
+/* =========================
+   INFORMACION
+========================= */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.info-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.info-card h3{
+    color:#0056a6;
+    margin-bottom:12px;
+}
+
+.info-card p{
+    line-height:1.6;
+    color:#666;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#003b73;
+    color:white;
+    padding:45px 20px 20px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    color:#ffd21a;
+    margin-bottom:15px;
+}
+
+footer p{
+    line-height:1.7;
+    color:#e5e5e5;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.2);
+    text-align:center;
+    font-size:13px;
+    color:#ddd;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .prices{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .attractions{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .menu{
+        gap:12px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navbar{
+        min-height:auto;
+        padding:18px;
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .prices,
+    .attractions,
+    .info,
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 15px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+}
+
+</style>
 </head>
 <script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
-
 <body>
+
+<!-- =========================
+     BARRA SUPERIOR
+========================= -->
+
+<div class="topbar">
+
+    <div>
+        Parque Acuático Corral Grande
+    </div>
+
+    <div>
+        📞 01 (392) 924 2179 &nbsp; | &nbsp;
+        📱 392 121 1450
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MENU
+========================= -->
 
 <header>
 
+<nav class="navbar">
+
     <div class="logo">
-        <div class="logo-icon">🏛️</div>
-
-        <div class="logo-text">
-            <strong>CONVENCIONES<br>Y PARQUES</strong>
-            <span>Gobierno de Puebla</span>
-        </div>
+        CORRAL GRANDE
+        <span>PARQUE ACUÁTICO</span>
     </div>
 
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="#">Nosotros</a>
+    <div class="menu">
 
-        <!-- NUEVAS SUBPÁGINAS -->
-        <a href="ex-hacienda.html">Ex Hacienda de Chautla</a>
-        <a href="catrineras.html">Catrineras</a>
+        <a href="#inicio">Inicio</a>
 
-        <a href="#">Experiencias</a>
-        <a href="carrera.html">Expo Medicina</a>
-    </nav>
+        <a href="#atracciones">Atracciones</a>
 
-    <div class="puebla">
-        PUE<br>BLA
+        <a href="#precios">Precios</a>
+
+        <a href="calendario.html">Calendario</a>
+
+        <a href="#contacto">Contacto</a>
+
+        <a href="calendario.html" class="btn-comprar">
+            COMPRAR BOLETO
+        </a>
+
     </div>
+
+</nav>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section class="hero">
+<section class="hero" id="inicio">
 
     <div class="hero-content">
 
-        <h1>Experiencias en Puebla</h1>
+        <h1>¡Diversión para todos!</h1>
+
+        <h2>Corral Grande Parque Acuático</h2>
 
         <p>
-            Descubre nuestros recintos, parques
-            y experiencias culturales.
+            Disfruta albercas con aguas termales, toboganes,
+            alberca de olas y muchas atracciones para toda la familia.
+        </p>
+
+        <a href="https://tickets.payuticket.com/event/corral-grande-xf9gy4?recurrenceSelection=true" class="hero-btn">
+            🎟️ COMPRAR BOLETO
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRECIOS
+========================= -->
+
+<section id="precios">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Precios</h2>
+
+        <p>
+            Elige el boleto de acuerdo con la estatura del visitante.
         </p>
 
     </div>
 
-</section>
+
+    <div class="prices">
 
 
-<!-- EVENTOS -->
+        <div class="price-card">
 
-<section class="search-section">
+            <h3>MENOR DE 90 CM</h3>
 
-    <h2 class="section-title">
-        Lo más buscado
-    </h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <a
-              href="https://prueba.tuticket.com.mx/event/evento-1-5scb36?useEmbed=true"
-              class="vivenu-btn yourStylingClass">
-            <img src="1.jpeg">
-            <div class="card-title">
-                Eventos en Puebla
+            <div class="price">
+                $0
             </div>
-              </a>
+
+            <p>
+                Entrada GRATIS cualquier día de la semana.
+            </p>
+
         </div>
 
-        <div class="card">
-            <img src="2.jpeg">
-            <div class="card-title">
-                Catrineras
+
+        <div class="price-card">
+
+            <h3>BOLETO CHICO</h3>
+
+            <div class="price">
+                $135
             </div>
+
+            <p>
+                De 91 cm a 140 cm de estatura.
+            </p>
+
         </div>
 
-        <div class="card">
-            <img src="3.png">
-            <div class="card-title">
-                Teatro Principal
+
+        <div class="price-card">
+
+            <h3>BOLETO GRANDE</h3>
+
+            <div class="price">
+                $250
             </div>
+
+            <p>
+                Mayores de 140 cm de estatura.
+            </p>
+
         </div>
 
-        <div class="card">
-            <img src="4.jpeg">
-            <div class="card-title">
-                Ex Hacienda de Chautla
+
+        <div class="price-card">
+
+            <h3>INAPAM / INSEN</h3>
+
+            <div class="price">
+                $135
             </div>
+
+            <p>
+                Presentando credencial correspondiente.
+            </p>
+
         </div>
+
 
     </div>
 
-</section>
-
-
-<!-- DEMOSTRACION POPUP -->
-
-</section>
-
-
-<div class="chat">
-    💬 ¡Hola, ¿cómo te podemos ayudar?
 </div>
 
+</section>
+
+
+<!-- =========================
+     ATRACCIONES
+========================= -->
+
+<section id="atracciones">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Nuestras Atracciones</h2>
+
+        <p>
+            Conoce algunas de las atracciones de Corral Grande.
+        </p>
+
+    </div>
+
+
+    <div class="attractions">
+
+
+        <!-- ALBERCA DE OLAS -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-1.jpg"
+                alt="Alberca de Olas"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🌊 Alberca de Olas</h3>
+
+                <p>
+                    Disfruta de nuestra alberca de olas
+                    y vive la diversión en familia.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/alberca-de-olas/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALBERCA CASCADA -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg"
+                alt="Alberca Cascada"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>💦 Alberca Cascada</h3>
+
+                <p>
+                    Una de las principales atracciones
+                    del parque para disfrutar en familia.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/alberca-cascada/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MULTIPISTAS -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg"
+                alt="Multipistas"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🏁 Multipistas</h3>
+
+                <p>
+                    Tobogán de 4 carriles con un recorrido
+                    de 40 metros de pura diversión.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/multipistas/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- VERTIGO -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/vertigo-1.jpg"
+                alt="Vértigo"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🚀 Vértigo</h3>
+
+                <p>
+                    Atrévete con uno de los toboganes
+                    más emocionantes del parque.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/vertigo/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUKAS -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/stukas-1.jpg"
+                alt="Stukas"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🔥 Stukas</h3>
+
+                <p>
+                    Toboganes para quienes buscan
+                    adrenalina y velocidad.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/stukas/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALBERCA ARTICO -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/artico-1.jpg"
+                alt="Alberca Ártico"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>❄️ Alberca Ártico</h3>
+
+                <p>
+                    Atracción infantil con toboganes,
+                    puente flotante y poca profundidad.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/alberca-artico/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ATLANTIDA -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/atlantida-1.jpg"
+                alt="Atlántida"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/artico-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🏝️ Atlántida</h3>
+
+                <p>
+                    Atracción infantil con 12 toboganes
+                    y una profundidad máxima de 50 cm.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/atlantida/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- JUEGOS INFANTILES -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/juegos-1.jpg"
+                alt="Juegos Infantiles"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/atlantida-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🎠 Juegos Infantiles</h3>
+
+                <p>
+                    Columpios, carrusel, puente colgante
+                    y juegos para los pequeños.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/juegos-infantiles/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPRA
+========================= -->
+
+<section class="buy-section">
+
+<div class="container">
+
+    <h2>🎟️ ¡Compra tus boletos!</h2>
+
+    <p>
+        Selecciona el día que quieres visitar el parque
+        y continúa con tu compra.
+    </p>
+
+    <a href="calendario.html" class="hero-btn">
+        VER CALENDARIO
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INFORMACION
+========================= -->
+
+<section id="contacto">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Información</h2>
+
+        <p>
+            Todo lo que necesitas para planear tu visita.
+        </p>
+
+    </div>
+
+
+    <div class="info">
+
+
+        <div class="info-card">
+
+            <h3>📍 Ubicación</h3>
+
+            <p>
+                Km. 95 Carretera Guadalajara - La Barca,
+                en Jamay, Jalisco.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>🕘 Horario</h3>
+
+            <p>
+                Abierto todos los días del año.
+                <br><br>
+                9:30 AM - 6:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>📞 Contacto</h3>
+
+            <p>
+                01 (392) 924 2179
+                <br>
+                01 (392) 924 0708
+                <br><br>
+                WhatsApp: 392 121 1450
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    Gobierno del Estado de Puebla ·
-    Convenciones y Parques
+<div class="footer-content">
+
+
+    <div>
+
+        <h3>Corral Grande</h3>
+
+        <p>
+            Parque Acuático con albercas de aguas
+            termales, toboganes y atracciones para
+            toda la familia.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Enlaces</h3>
+
+        <p>
+            <a href="#inicio">Inicio</a>
+        </p>
+
+        <p>
+            <a href="#atracciones">Atracciones</a>
+        </p>
+
+        <p>
+            <a href="#precios">Precios</a>
+        </p>
+
+        <p>
+            <a href="calendario.html">Comprar boletos</a>
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Contacto</h3>
+
+        <p>
+            Jamay, Jalisco
+            <br>
+            01 (392) 924 2179
+            <br>
+            392 121 1450
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Demo de sistema de boletaje -
+    Corral Grande Parque Acuático
+
+</div>
 
 </footer>
 
-
-<script>
-
-    function abrirPopup() {
-
-        document
-            .getElementById("popup")
-            .classList.add("active");
-
-    }
-
-    function cerrarPopup(event) {
-
-        if (
-            !event ||
-            event.target.id === "popup"
-        ) {
-
-            document
-                .getElementById("popup")
-                .classList.remove("active");
-
-        }
-
-    }
-
-    document.addEventListener(
-        "keydown",
-        function(event) {
-
-            if (event.key === "Escape") {
-                cerrarPopup();
-            }
-
-        }
-    );
-
-</script>
 
 </body>
 </html>
