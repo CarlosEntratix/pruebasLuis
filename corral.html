@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Corral Grande - Parque Acuático</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f8fb;
+    color:#333;
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
+.topbar{
+    background:#0056a6;
+    color:white;
+    padding:8px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.topbar a{
+    color:white;
+    text-decoration:none;
+}
+
+/* =========================
+   MENU
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    min-height:75px;
+    padding:0 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    color:#0056a6;
+    line-height:1;
+}
+
+.logo span{
+    display:block;
+    color:#f6c400;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-top:4px;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.menu a{
+    color:#333;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#0056a6;
+}
+
+.btn-comprar{
+    background:#f6c400;
+    color:#111 !important;
+    padding:13px 20px;
+    border-radius:30px;
+    font-weight:900 !important;
+}
+
+.btn-comprar:hover{
+    background:#ffd92e;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:580px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            rgba(0,77,145,.55),
+            rgba(0,45,90,.72)
+        ),
+        url("https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg")
+        center/cover no-repeat;
+}
+
+.hero-content{
+    max-width:850px;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:58px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:15px;
+    text-shadow:3px 4px 8px rgba(0,0,0,.4);
+}
+
+.hero h2{
+    font-size:28px;
+    color:#ffd21a;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    background:#f6c400;
+    color:#111;
+    text-decoration:none;
+    padding:17px 35px;
+    border-radius:35px;
+    font-size:18px;
+    font-weight:900;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#fff;
+    transform:scale(1.05);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    padding:75px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#0056a6;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+    font-size:17px;
+}
+
+/* =========================
+   PRECIOS
+========================= */
+
+#precios{
+    background:white;
+}
+
+.prices{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.price-card{
+    background:#f8fafc;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    border-top:6px solid #0056a6;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.price-card:hover{
+    transform:translateY(-8px);
+}
+
+.price-card h3{
+    color:#0056a6;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:40px;
+    font-weight:900;
+    color:#f0b900;
+    margin-bottom:10px;
+}
+
+.price-card p{
+    color:#666;
+    line-height:1.5;
+}
+
+/* =========================
+   ATRACCIONES
+========================= */
+
+#atracciones{
+    background:#eef7fc;
+}
+
+.attractions{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:#0056a6;
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.card-content p{
+    color:#666;
+    line-height:1.5;
+    font-size:14px;
+}
+
+.card-link{
+    display:inline-block;
+    margin-top:15px;
+    color:#0056a6;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* =========================
+   LLAMADO A COMPRA
+========================= */
+
+.buy-section{
+    background:
+        linear-gradient(
+            rgba(0,75,140,.90),
+            rgba(0,45,90,.90)
+        ),
+        url("https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-3.jpg")
+        center/cover no-repeat;
+
+    color:white;
+    text-align:center;
+}
+
+.buy-section h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.buy-section p{
+    font-size:19px;
+    margin-bottom:30px;
+}
+
+/* =========================
+   INFORMACION
+========================= */
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.info-card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.info-card h3{
+    color:#0056a6;
+    margin-bottom:12px;
+}
+
+.info-card p{
+    line-height:1.6;
+    color:#666;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#003b73;
+    color:white;
+    padding:45px 20px 20px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    color:#ffd21a;
+    margin-bottom:15px;
+}
+
+footer p{
+    line-height:1.7;
+    color:#e5e5e5;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.2);
+    text-align:center;
+    font-size:13px;
+    color:#ddd;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .prices{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .attractions{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .menu{
+        gap:12px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navbar{
+        min-height:auto;
+        padding:18px;
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .prices,
+    .attractions,
+    .info,
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 15px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+<body>
+
+<!-- =========================
+     BARRA SUPERIOR
+========================= -->
+
+<div class="topbar">
+
+    <div>
+        Parque Acuático Corral Grande
+    </div>
+
+    <div>
+        📞 01 (392) 924 2179 &nbsp; | &nbsp;
+        📱 392 121 1450
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+    <div class="logo">
+        CORRAL GRANDE
+        <span>PARQUE ACUÁTICO</span>
+    </div>
+
+    <div class="menu">
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#atracciones">Atracciones</a>
+
+        <a href="#precios">Precios</a>
+
+        <a href="calendario.html">Calendario</a>
+
+        <a href="#contacto">Contacto</a>
+
+        <a href="calendario.html" class="btn-comprar">
+            COMPRAR BOLETO
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>¡Diversión para todos!</h1>
+
+        <h2>Corral Grande Parque Acuático</h2>
+
+        <p>
+            Disfruta albercas con aguas termales, toboganes,
+            alberca de olas y muchas atracciones para toda la familia.
+        </p>
+
+        <a href="https://tickets.payuticket.com/event/corral-grande-xf9gy4?recurrenceSelection=true" class="hero-btn">
+            🎟️ COMPRAR BOLETO
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRECIOS
+========================= -->
+
+<section id="precios">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Precios</h2>
+
+        <p>
+            Elige el boleto de acuerdo con la estatura del visitante.
+        </p>
+
+    </div>
+
+
+    <div class="prices">
+
+
+        <div class="price-card">
+
+            <h3>MENOR DE 90 CM</h3>
+
+            <div class="price">
+                $0
+            </div>
+
+            <p>
+                Entrada GRATIS cualquier día de la semana.
+            </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>BOLETO CHICO</h3>
+
+            <div class="price">
+                $135
+            </div>
+
+            <p>
+                De 91 cm a 140 cm de estatura.
+            </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>BOLETO GRANDE</h3>
+
+            <div class="price">
+                $250
+            </div>
+
+            <p>
+                Mayores de 140 cm de estatura.
+            </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>INAPAM / INSEN</h3>
+
+            <div class="price">
+                $135
+            </div>
+
+            <p>
+                Presentando credencial correspondiente.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ATRACCIONES
+========================= -->
+
+<section id="atracciones">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Nuestras Atracciones</h2>
+
+        <p>
+            Conoce algunas de las atracciones de Corral Grande.
+        </p>
+
+    </div>
+
+
+    <div class="attractions">
+
+
+        <!-- ALBERCA DE OLAS -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-1.jpg"
+                alt="Alberca de Olas"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🌊 Alberca de Olas</h3>
+
+                <p>
+                    Disfruta de nuestra alberca de olas
+                    y vive la diversión en familia.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/alberca-de-olas/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALBERCA CASCADA -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg"
+                alt="Alberca Cascada"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>💦 Alberca Cascada</h3>
+
+                <p>
+                    Una de las principales atracciones
+                    del parque para disfrutar en familia.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/alberca-cascada/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MULTIPISTAS -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg"
+                alt="Multipistas"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🏁 Multipistas</h3>
+
+                <p>
+                    Tobogán de 4 carriles con un recorrido
+                    de 40 metros de pura diversión.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/multipistas/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- VERTIGO -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/vertigo-1.jpg"
+                alt="Vértigo"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🚀 Vértigo</h3>
+
+                <p>
+                    Atrévete con uno de los toboganes
+                    más emocionantes del parque.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/vertigo/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- STUKAS -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/stukas-1.jpg"
+                alt="Stukas"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🔥 Stukas</h3>
+
+                <p>
+                    Toboganes para quienes buscan
+                    adrenalina y velocidad.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/stukas/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALBERCA ARTICO -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/artico-1.jpg"
+                alt="Alberca Ártico"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>❄️ Alberca Ártico</h3>
+
+                <p>
+                    Atracción infantil con toboganes,
+                    puente flotante y poca profundidad.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/alberca-artico/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ATLANTIDA -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/atlantida-1.jpg"
+                alt="Atlántida"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/artico-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🏝️ Atlántida</h3>
+
+                <p>
+                    Atracción infantil con 12 toboganes
+                    y una profundidad máxima de 50 cm.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/atlantida/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- JUEGOS INFANTILES -->
+
+        <div class="card">
+
+            <img
+                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/juegos-1.jpg"
+                alt="Juegos Infantiles"
+                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/atlantida-1.jpg';"
+            >
+
+            <div class="card-content">
+
+                <h3>🎠 Juegos Infantiles</h3>
+
+                <p>
+                    Columpios, carrusel, puente colgante
+                    y juegos para los pequeños.
+                </p>
+
+                <a
+                    href="https://corralgrande.com.mx/juegos-infantiles/"
+                    target="_blank"
+                    class="card-link">
+                    Ver atracción →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPRA
+========================= -->
+
+<section class="buy-section">
+
+<div class="container">
+
+    <h2>🎟️ ¡Compra tus boletos!</h2>
+
+    <p>
+        Selecciona el día que quieres visitar el parque
+        y continúa con tu compra.
+    </p>
+
+    <a href="calendario.html" class="hero-btn">
+        VER CALENDARIO
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INFORMACION
+========================= -->
+
+<section id="contacto">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>Información</h2>
+
+        <p>
+            Todo lo que necesitas para planear tu visita.
+        </p>
+
+    </div>
+
+
+    <div class="info">
+
+
+        <div class="info-card">
+
+            <h3>📍 Ubicación</h3>
+
+            <p>
+                Km. 95 Carretera Guadalajara - La Barca,
+                en Jamay, Jalisco.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>🕘 Horario</h3>
+
+            <p>
+                Abierto todos los días del año.
+                <br><br>
+                9:30 AM - 6:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>📞 Contacto</h3>
+
+            <p>
+                01 (392) 924 2179
+                <br>
+                01 (392) 924 0708
+                <br><br>
+                WhatsApp: 392 121 1450
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-content">
+
+
+    <div>
+
+        <h3>Corral Grande</h3>
+
+        <p>
+            Parque Acuático con albercas de aguas
+            termales, toboganes y atracciones para
+            toda la familia.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Enlaces</h3>
+
+        <p>
+            <a href="#inicio">Inicio</a>
+        </p>
+
+        <p>
+            <a href="#atracciones">Atracciones</a>
+        </p>
+
+        <p>
+            <a href="#precios">Precios</a>
+        </p>
+
+        <p>
+            <a href="calendario.html">Comprar boletos</a>
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Contacto</h3>
+
+        <p>
+            Jamay, Jalisco
+            <br>
+            01 (392) 924 2179
+            <br>
+            392 121 1450
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+    © 2026 Demo de sistema de boletaje -
+    Corral Grande Parque Acuático
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
