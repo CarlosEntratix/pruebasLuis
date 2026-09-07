@@ -1,974 +1,1733 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Corral Grande - Parque Acuático</title>
+<title>Centro de Graduaciones | Tours Expo Graduación</title>
+
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f8fb;
-    color:#333;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #ffffff;
 }
 
-/* =========================
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+:root {
+
+    --azul: #073f61;
+    --azul-claro: #0d587f;
+    --dorado: #b89552;
+    --dorado-claro: #d5bd8b;
+    --gris: #f5f5f5;
+    --texto: #333;
+
+}
+
+
+/* =====================================================
    BARRA SUPERIOR
-========================= */
+===================================================== */
 
-.topbar{
-    background:#0056a6;
-    color:white;
-    padding:8px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:14px;
+.topbar {
+
+    background: var(--azul);
+
+    color: white;
+
+    padding: 8px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 13px;
+
 }
 
-.topbar a{
-    color:white;
-    text-decoration:none;
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    background: white;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,.12);
+
 }
 
-/* =========================
-   MENU
-========================= */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:white;
-    box-shadow:0 3px 12px rgba(0,0,0,.15);
+.navbar {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    min-height: 85px;
+
+    padding: 10px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
 }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    min-height:75px;
-    padding:0 20px;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+/* LOGO */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
 }
 
-.logo{
-    font-size:25px;
-    font-weight:900;
-    color:#0056a6;
-    line-height:1;
+
+.logo img {
+
+    width: 190px;
+
+    height: auto;
+
 }
 
-.logo span{
-    display:block;
-    color:#f6c400;
-    font-size:13px;
-    letter-spacing:2px;
-    margin-top:4px;
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 23px;
+
 }
 
-.menu{
-    display:flex;
-    align-items:center;
-    gap:25px;
+
+.menu a {
+
+    color: var(--azul);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: .3s;
+
 }
 
-.menu a{
-    color:#333;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
+
+.menu a:hover {
+
+    color: var(--dorado);
+
 }
 
-.menu a:hover{
-    color:#0056a6;
+
+/* BOTÓN PRÓXIMAS GRADUACIONES */
+
+.btn-graduaciones {
+
+    background: var(--dorado);
+
+    color: white !important;
+
+    padding: 13px 18px;
+
+    border-radius: 5px;
+
+    font-weight: 900 !important;
+
 }
 
-.btn-comprar{
-    background:#f6c400;
-    color:#111 !important;
-    padding:13px 20px;
-    border-radius:30px;
-    font-weight:900 !important;
+
+.btn-graduaciones:hover {
+
+    background: var(--azul);
+
 }
 
-.btn-comprar:hover{
-    background:#ffd92e;
-    transform:translateY(-2px);
+
+/* BOTÓN COMPRAR */
+
+.btn-comprar {
+
+    background: var(--azul);
+
+    color: white !important;
+
+    padding: 13px 20px;
+
+    border-radius: 5px;
+
+    font-weight: 900 !important;
+
 }
 
-/* =========================
+
+.btn-comprar:hover {
+
+    background: var(--dorado);
+
+}
+
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
-.hero{
-    min-height:580px;
+.hero {
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+    min-height: 610px;
 
-    color:white;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 80px 20px;
+
 
     background:
+
         linear-gradient(
-            rgba(0,77,145,.55),
-            rgba(0,45,90,.72)
+            rgba(4,45,70,.70),
+            rgba(4,45,70,.78)
         ),
-        url("https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg")
-        center/cover no-repeat;
+
+        url("https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-scaled.jpg")
+
+        center / cover no-repeat;
+
 }
 
-.hero-content{
-    max-width:850px;
-    padding:30px;
+
+.hero-content {
+
+    max-width: 900px;
+
 }
 
-.hero h1{
-    font-size:58px;
-    font-weight:900;
-    text-transform:uppercase;
-    margin-bottom:15px;
-    text-shadow:3px 4px 8px rgba(0,0,0,.4);
+
+.hero h1 {
+
+    font-size: clamp(42px, 7vw, 75px);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        2px 3px 8px rgba(0,0,0,.4);
+
 }
 
-.hero h2{
-    font-size:28px;
-    color:#ffd21a;
-    margin-bottom:20px;
+
+.hero h1 span {
+
+    color: var(--dorado-claro);
+
 }
 
-.hero p{
-    font-size:20px;
-    line-height:1.6;
-    margin-bottom:30px;
+
+.hero h2 {
+
+    font-size: 27px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
 }
 
-.hero-btn{
-    display:inline-block;
-    background:#f6c400;
-    color:#111;
-    text-decoration:none;
-    padding:17px 35px;
-    border-radius:35px;
-    font-size:18px;
-    font-weight:900;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
-    transition:.3s;
+
+.hero p {
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    margin-bottom: 35px;
+
 }
 
-.hero-btn:hover{
-    background:#fff;
-    transform:scale(1.05);
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
 }
 
-/* =========================
+
+.hero-button {
+
+    display: inline-block;
+
+    padding: 17px 32px;
+
+    background: var(--dorado);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: 900;
+
+    transition: .3s;
+
+}
+
+
+.hero-button:hover {
+
+    background: white;
+
+    color: var(--azul);
+
+}
+
+
+.hero-button.secondary {
+
+    background: transparent;
+
+    border: 2px solid white;
+
+}
+
+
+.hero-button.secondary:hover {
+
+    background: white;
+
+}
+
+
+/* =====================================================
    SECCIONES
-========================= */
+===================================================== */
 
-section{
-    padding:75px 20px;
+section {
+
+    padding: 80px 20px;
+
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
+
+.container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
 }
 
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
 }
 
-.section-title h2{
-    color:#0056a6;
-    font-size:38px;
-    margin-bottom:10px;
+
+.section-title h2 {
+
+    color: var(--azul);
+
+    font-size: 40px;
+
+    margin-bottom: 12px;
+
 }
 
-.section-title p{
-    color:#666;
-    font-size:17px;
+
+.section-title h2 span {
+
+    color: var(--dorado);
+
 }
 
-/* =========================
-   PRECIOS
-========================= */
 
-#precios{
-    background:white;
+.section-title p {
+
+    color: #666;
+
+    font-size: 17px;
+
 }
 
-.prices{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+
+/* =====================================================
+   INTRODUCCIÓN
+===================================================== */
+
+.intro {
+
+    background: white;
+
 }
 
-.price-card{
-    background:#f8fafc;
-    border-radius:18px;
-    padding:30px 20px;
-    text-align:center;
-    border-top:6px solid #0056a6;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-    transition:.3s;
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
 }
 
-.price-card:hover{
-    transform:translateY(-8px);
+
+.intro-image img {
+
+    width: 100%;
+
+    border-radius: 8px;
+
+    display: block;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
+
 }
 
-.price-card h3{
-    color:#0056a6;
-    font-size:20px;
-    margin-bottom:15px;
+
+.intro-text h2 {
+
+    color: var(--azul);
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+
 }
 
-.price{
-    font-size:40px;
-    font-weight:900;
-    color:#f0b900;
-    margin-bottom:10px;
+
+.intro-text h2 span {
+
+    color: var(--dorado);
+
 }
 
-.price-card p{
-    color:#666;
-    line-height:1.5;
+
+.intro-text p {
+
+    color: #555;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+    font-size: 16px;
+
 }
 
-/* =========================
-   ATRACCIONES
-========================= */
 
-#atracciones{
-    background:#eef7fc;
+.intro-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    background: var(--azul);
+
+    color: white;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
 }
 
-.attractions{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+
+/* =====================================================
+   SERVICIOS
+===================================================== */
+
+.services {
+
+    background: var(--gris);
+
 }
 
-.card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-    transition:.3s;
+
+.service-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+.service-card {
+
+    background: white;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.08);
+
+    transition: .3s;
+
 }
 
-.card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    display:block;
+
+.service-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+
 }
 
-.card-content{
-    padding:20px;
+
+.service-card img {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+
 }
 
-.card-content h3{
-    color:#0056a6;
-    font-size:21px;
-    margin-bottom:8px;
+
+.service-content {
+
+    padding: 25px;
+
 }
 
-.card-content p{
-    color:#666;
-    line-height:1.5;
-    font-size:14px;
+
+.service-content h3 {
+
+    color: var(--azul);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
 }
 
-.card-link{
-    display:inline-block;
-    margin-top:15px;
-    color:#0056a6;
-    text-decoration:none;
-    font-weight:bold;
+
+.service-content p {
+
+    color: #666;
+
+    line-height: 1.6;
+
 }
 
-/* =========================
-   LLAMADO A COMPRA
-========================= */
 
-.buy-section{
+/* =====================================================
+   PRODUCTOS
+===================================================== */
+
+.products {
+
+    background: white;
+
+}
+
+
+.product-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.product {
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+}
+
+
+.product img {
+
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.product-content {
+
+    padding: 25px;
+
+}
+
+
+.product-content h3 {
+
+    color: var(--azul);
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+
+}
+
+
+.product-content p {
+
+    color: #666;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   PRÓXIMAS GRADUACIONES
+===================================================== */
+
+.upcoming {
+
     background:
+
         linear-gradient(
-            rgba(0,75,140,.90),
-            rgba(0,45,90,.90)
+            rgba(7,63,97,.94),
+            rgba(7,63,97,.94)
         ),
-        url("https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-3.jpg")
-        center/cover no-repeat;
 
-    color:white;
-    text-align:center;
+        url("https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-scaled.jpg")
+
+        center / cover no-repeat;
+
+    color: white;
+
+    text-align: center;
+
 }
 
-.buy-section h2{
-    font-size:42px;
-    margin-bottom:15px;
+
+.upcoming h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
 }
 
-.buy-section p{
-    font-size:19px;
-    margin-bottom:30px;
+
+.upcoming h2 span {
+
+    color: var(--dorado-claro);
+
 }
 
-/* =========================
-   INFORMACION
-========================= */
 
-.info{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+.upcoming p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+
 }
 
-.info-card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+.upcoming-button {
+
+    display: inline-block;
+
+    background: var(--dorado);
+
+    color: white;
+
+    padding: 17px 35px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    transition: .3s;
+
 }
 
-.info-card h3{
-    color:#0056a6;
-    margin-bottom:12px;
+
+.upcoming-button:hover {
+
+    background: white;
+
+    color: var(--azul);
+
 }
 
-.info-card p{
-    line-height:1.6;
-    color:#666;
+
+/* =====================================================
+   UNIVERSIDADES
+===================================================== */
+
+.universidades {
+
+    background: #f8f8f8;
+
+    text-align: center;
+
 }
 
-/* =========================
+
+.universidades-image {
+
+    max-width: 900px;
+
+    width: 100%;
+
+    margin: auto;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.info-card {
+
+    text-align: center;
+
+    background: white;
+
+    padding: 35px 25px;
+
+    border: 1px solid #e6e6e6;
+
+    border-radius: 8px;
+
+}
+
+
+.info-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.info-card h3 {
+
+    color: var(--azul);
+
+    margin-bottom: 12px;
+
+}
+
+
+.info-card p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
-footer{
-    background:#003b73;
-    color:white;
-    padding:45px 20px 20px;
+footer {
+
+    background: #052f49;
+
+    color: white;
+
+    padding: 55px 20px 20px;
+
 }
 
-.footer-content{
-    max-width:1200px;
-    margin:auto;
 
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
+.footer-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 50px;
+
 }
 
-footer h3{
-    color:#ffd21a;
-    margin-bottom:15px;
+
+.footer-column h3 {
+
+    color: var(--dorado-claro);
+
+    margin-bottom: 18px;
+
 }
 
-footer p{
-    line-height:1.7;
-    color:#e5e5e5;
+
+.footer-column p {
+
+    color: #d8e2e8;
+
+    line-height: 1.7;
+
+    margin-bottom: 8px;
+
 }
 
-footer a{
-    color:white;
-    text-decoration:none;
+
+.footer-column a {
+
+    color: white;
+
+    text-decoration: none;
+
 }
 
-.footer-bottom{
-    max-width:1200px;
-    margin:35px auto 0;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.2);
-    text-align:center;
-    font-size:13px;
-    color:#ddd;
+
+.footer-column a:hover {
+
+    color: var(--dorado-claro);
+
 }
 
-/* =========================
+
+.footer-bottom {
+
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.2);
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #bdcbd3;
+
+}
+
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
-@media(max-width:1000px){
+@media(max-width:1000px) {
 
-    .prices{
-        grid-template-columns:repeat(2,1fr);
+    .menu {
+
+        gap: 12px;
+
     }
 
-    .attractions{
-        grid-template-columns:repeat(2,1fr);
+    .menu a:not(.btn-graduaciones):not(.btn-comprar) {
+
+        display: none;
+
     }
 
-    .menu{
-        gap:12px;
+    .intro-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .service-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .info {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
 }
 
-@media(max-width:700px){
 
-    .topbar{
-        display:none;
+@media(max-width:650px) {
+
+    .topbar {
+
+        display: none;
+
     }
 
-    .navbar{
-        min-height:auto;
-        padding:18px;
-        flex-direction:column;
-        gap:18px;
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px;
+
     }
 
-    .menu{
-        flex-wrap:wrap;
-        justify-content:center;
+    .logo img {
+
+        width: 160px;
+
     }
 
-    .hero{
-        min-height:500px;
+    .menu {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
     }
 
-    .hero h1{
-        font-size:38px;
+    .hero {
+
+        min-height: 540px;
+
     }
 
-    .hero h2{
-        font-size:22px;
+    .hero h1 {
+
+        font-size: 42px;
+
     }
 
-    .hero p{
-        font-size:16px;
+    .hero h2 {
+
+        font-size: 21px;
+
     }
 
-    .prices,
-    .attractions,
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .section-title h2 {
+
+        font-size: 32px;
+
+    }
+
+    .service-grid,
+
+    .product-grid,
+
     .info,
-    .footer-content{
-        grid-template-columns:1fr;
-    }
 
-    section{
-        padding:55px 15px;
-    }
+    .footer-content {
 
-    .section-title h2{
-        font-size:30px;
+        grid-template-columns: 1fr;
+
     }
 
 }
 
 </style>
+<script type="text/javascript" src="https://vivenu.com/web/deliver/js/v1/embed.js"></script>
 </head>
-<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+
+
 <body>
 
-<!-- =========================
+
+<!-- =====================================================
      BARRA SUPERIOR
-========================= -->
+===================================================== -->
 
 <div class="topbar">
 
     <div>
-        Parque Acuático Corral Grande
+        Centro de Graduaciones
     </div>
 
     <div>
-        📞 01 (392) 924 2179 &nbsp; | &nbsp;
-        📱 392 121 1450
+        📍 Puebla, México &nbsp; | &nbsp;
+        📧 centrodegraduaciones@gmail.com
     </div>
 
 </div>
 
 
-<!-- =========================
+
+<!-- =====================================================
      MENU
-========================= -->
+===================================================== -->
 
 <header>
 
 <nav class="navbar">
 
-    <div class="logo">
-        CORRAL GRANDE
-        <span>PARQUE ACUÁTICO</span>
-    </div>
+
+    <a href="index.html" class="logo">
+
+        <img
+            src="https://centrodegraduaciones.com/wp-content/uploads/2020/09/LOGO-01.png"
+            alt="Centro de Graduaciones"
+        >
+
+    </a>
+
 
     <div class="menu">
 
-        <a href="#inicio">Inicio</a>
+        <a href="#inicio">
+            Inicio
+        </a>
 
-        <a href="#atracciones">Atracciones</a>
+        <a href="#tours">
+            Tours Expo
+        </a>
 
-        <a href="#precios">Precios</a>
+        <a href="#servicios">
+            Servicios
+        </a>
 
-        <a href="calendario.html">Calendario</a>
+        <!-- NUEVO BOTÓN -->
 
-        <a href="#contacto">Contacto</a>
+        <a
+            href="https://ticket.payuticket.com/seller/entratix-w057"
+            class="btn-graduaciones">
 
-        <a href="calendario.html" class="btn-comprar">
-            COMPRAR BOLETO
+            🎓 PRÓXIMAS GRADUACIONES
+
+        </a>
+
+        <a href="#contacto">
+            Contacto
         </a>
 
     </div>
+
 
 </nav>
 
 </header>
 
 
-<!-- =========================
+
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero" id="inicio">
 
+
     <div class="hero-content">
 
-        <h1>¡Diversión para todos!</h1>
 
-        <h2>Corral Grande Parque Acuático</h2>
+        <h1>
+
+            El gran día
+            <span>comienza aquí</span>
+
+        </h1>
+
+
+        <h2>
+            Tours Expo Graduación
+        </h2>
+
 
         <p>
-            Disfruta albercas con aguas termales, toboganes,
-            alberca de olas y muchas atracciones para toda la familia.
+
+            Todo lo que necesitas para celebrar
+            una graduación inolvidable.
+            Organizamos experiencias, eventos
+            y servicios especiales para los nuevos
+            profesionistas.
+
         </p>
 
-        <a href="https://tickets.payuticket.com/event/corral-grande-xf9gy4?recurrenceSelection=true" class="hero-btn">
-            🎟️ COMPRAR BOLETO
-        </a>
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#products"
+                class="hero-button">
+
+                🎓 VER PRÓXIMAS GRADUACIONES
+
+            </a>
+
+
+            <a
+                href="#servicios"
+                class="hero-button secondary">
+
+                CONOCER SERVICIOS
+
+            </a>
+
+
+        </div>
+
 
     </div>
+
 
 </section>
 
 
-<!-- =========================
-     PRECIOS
-========================= -->
 
-<section id="precios">
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro" id="tours">
+
 
 <div class="container">
+
+
+    <div class="intro-grid">
+
+
+        <div class="intro-image">
+
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-scaled.jpg"
+
+                alt="Tours Expo Graduación"
+
+            >
+
+
+        </div>
+
+
+
+        <div class="intro-text">
+
+
+            <h2>
+
+                Tours Expo
+                <span>Graduación</span>
+
+            </h2>
+
+
+            <p>
+
+                Tour Expo Graduación está enfocada en
+                cumplir las necesidades de los graduados,
+                ofreciendo experiencias y servicios únicos
+                e inolvidables.
+
+            </p>
+
+
+            <p>
+
+                Somos fabricantes y proveedores de
+                alumnos graduados de diferentes
+                instituciones educativas.
+
+            </p>
+
+
+            <p>
+
+                Contamos con modelos únicos y servicios
+                pensados para acompañarte en uno de los
+                momentos más importantes de tu vida.
+
+            </p>
+
+
+            <a
+                href="#servicios"
+                class="intro-button">
+
+                CONOCE NUESTROS SERVICIOS
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICIOS
+===================================================== -->
+
+<section class="services" id="servicios">
+
+
+<div class="container">
+
 
     <div class="section-title">
 
-        <h2>Precios</h2>
+        <h2>
+            Nuestros
+            <span>Servicios</span>
+        </h2>
 
         <p>
-            Elige el boleto de acuerdo con la estatura del visitante.
+            Todo para hacer de tu graduación
+            un momento inolvidable.
         </p>
 
     </div>
 
 
-    <div class="prices">
+    <div class="service-grid">
 
 
-        <div class="price-card">
+        <!-- FOTOGRAFÍA -->
 
-            <h3>MENOR DE 90 CM</h3>
+        <div class="service-card">
 
-            <div class="price">
-                $0
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-4-2-scaled.jpg"
+
+                alt="Fotografía panorámica"
+
+            >
+
+
+            <div class="service-content">
+
+                <h3>
+                    📸 Fotografía Panorámica
+                </h3>
+
+                <p>
+
+                    Fotografía panorámica de estudio
+                    y opciones para conservar el recuerdo
+                    de tu generación.
+
+                </p>
+
             </div>
 
-            <p>
-                Entrada GRATIS cualquier día de la semana.
-            </p>
 
         </div>
 
 
-        <div class="price-card">
 
-            <h3>BOLETO CHICO</h3>
+        <!-- DIPLOMAS -->
 
-            <div class="price">
-                $135
+        <div class="service-card">
+
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-2-scaled.jpg"
+
+                alt="Diplomas"
+
+            >
+
+
+            <div class="service-content">
+
+                <h3>
+                    🏆 Diplomas y Reconocimientos
+                </h3>
+
+                <p>
+
+                    Diseños y acabados especiales para
+                    reconocer el esfuerzo y celebrar
+                    el logro de cada graduado.
+
+                </p>
+
             </div>
 
-            <p>
-                De 91 cm a 140 cm de estatura.
-            </p>
 
         </div>
 
 
-        <div class="price-card">
 
-            <h3>BOLETO GRANDE</h3>
+        <!-- MARCOS -->
 
-            <div class="price">
-                $250
+        <div class="service-card">
+
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-5-5-scaled.jpg"
+
+                alt="Marcos para graduados"
+
+            >
+
+
+            <div class="service-content">
+
+                <h3>
+                    🖼️ Marcos
+                </h3>
+
+                <p>
+
+                    Contamos con más de 20 diferentes
+                    modelos de marcos para conservar
+                    los recuerdos de tu generación.
+
+                </p>
+
             </div>
 
-            <p>
-                Mayores de 140 cm de estatura.
-            </p>
 
         </div>
 
 
-        <div class="price-card">
 
-            <h3>INAPAM / INSEN</h3>
+        <!-- EVENTOS -->
 
-            <div class="price">
-                $135
+        <div class="service-card">
+
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-scaled.jpg"
+
+                alt="Organización de eventos"
+
+            >
+
+
+            <div class="service-content">
+
+                <h3>
+                    🎉 Organización de Eventos
+                </h3>
+
+                <p>
+
+                    Planeación y organización de eventos
+                    de graduación y celebraciones
+                    especiales.
+
+                </p>
+
             </div>
 
-            <p>
-                Presentando credencial correspondiente.
-            </p>
+
+        </div>
+
+
+
+        <!-- BANQUETES -->
+
+        <div class="service-card">
+
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-3-scaled.jpg"
+
+                alt="Banquetes"
+
+            >
+
+
+            <div class="service-content">
+
+                <h3>
+                    🍽️ Banquetes
+                </h3>
+
+                <p>
+
+                    Servicio de banquetes masivos
+                    para celebrar junto a tus compañeros,
+                    familiares y amigos.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PAQUETES -->
+
+        <div class="service-card">
+
+
+            <img
+
+                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-scaled.jpg"
+
+                alt="Paquetes para graduados"
+
+            >
+
+
+            <div class="service-content">
+
+                <h3>
+                    🎓 Paquetes para Graduados
+                </h3>
+
+                <p>
+
+                    Paquetes individuales y grupales
+                    diseñados para cubrir las necesidades
+                    de cada generación.
+
+                </p>
+
+            </div>
+
 
         </div>
 
 
     </div>
+
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     ATRACCIONES
-========================= -->
 
-<section id="atracciones">
+<!-- =====================================================
+     PRODUCTOS
+===================================================== -->
+<section class="products" id="products">
+
 
 <div class="container">
+
 
     <div class="section-title">
 
-        <h2>Nuestras Atracciones</h2>
+        <h2>
+            Proximas Graduaciones
+        </h2>
 
         <p>
-            Conoce algunas de las atracciones de Corral Grande.
+            Recuerdos que conservarás para toda la vida.
         </p>
 
     </div>
 
 
-    <div class="attractions">
+    <div class="product-grid">
 
 
-        <!-- ALBERCA DE OLAS -->
+        <!-- DIPLOMA -->
 
-        <div class="card">
+        <div class="product">
+
 
             <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-1.jpg"
-                alt="Alberca de Olas"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+
+                src="gra.jpg"
+
+                alt="Diploma de graduación"
+
             >
 
-            <div class="card-content">
 
-                <h3>🌊 Alberca de Olas</h3>
+            <div class="product-content">
 
-                <p>
-                    Disfruta de nuestra alberca de olas
-                    y vive la diversión en familia.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/alberca-de-olas/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
+                <h3><a
+                    href="https://ticket.payuticket.com/event/graduacion-1-wwadb5?useEmbed=true"
+                    class="btn-graduaciones vivenu-btn yourStylingClass">
+                    Anahuac
                 </a>
+                </h3>
 
             </div>
+
 
         </div>
 
 
-        <!-- ALBERCA CASCADA -->
 
-        <div class="card">
+        <!-- RECONOCIMIENTO -->
+
+        <div class="product">
+
 
             <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg"
-                alt="Alberca Cascada"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/olas-1.jpg';"
+
+                src="g.jpg"
+
+                alt="Reconocimiento"
+
             >
 
-            <div class="card-content">
 
-                <h3>💦 Alberca Cascada</h3>
+            <div class="product-content">
 
-                <p>
-                    Una de las principales atracciones
-                    del parque para disfrutar en familia.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/alberca-cascada/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
+                <h3><a
+                    href=""
+                    class="btn-graduaciones vivenu-btn yourStylingClass">
+                    Oriente
                 </a>
+                </h3>
 
             </div>
+
 
         </div>
 
 
-        <!-- MULTIPISTAS -->
 
-        <div class="card">
+        <!-- FOTO -->
+
+        <div class="product">
+
 
             <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg"
-                alt="Multipistas"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
+
+                src="gr.jpg"
+
+                alt="Fotografía de graduación"
+
             >
 
-            <div class="card-content">
 
-                <h3>🏁 Multipistas</h3>
+            <div class="product-content">
 
-                <p>
-                    Tobogán de 4 carriles con un recorrido
-                    de 40 metros de pura diversión.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/multipistas/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
+                <h3><a
+                    href=""
+                    class="btn-graduaciones vivenu-btn yourStylingClass">
+                    Tac de Monterrey
                 </a>
+                </h3>
 
             </div>
 
-        </div>
-
-
-        <!-- VERTIGO -->
-
-        <div class="card">
-
-            <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/vertigo-1.jpg"
-                alt="Vértigo"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg';"
-            >
-
-            <div class="card-content">
-
-                <h3>🚀 Vértigo</h3>
-
-                <p>
-                    Atrévete con uno de los toboganes
-                    más emocionantes del parque.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/vertigo/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- STUKAS -->
-
-        <div class="card">
-
-            <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/stukas-1.jpg"
-                alt="Stukas"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2017/02/multipistas-1.jpg';"
-            >
-
-            <div class="card-content">
-
-                <h3>🔥 Stukas</h3>
-
-                <p>
-                    Toboganes para quienes buscan
-                    adrenalina y velocidad.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/stukas/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- ALBERCA ARTICO -->
-
-        <div class="card">
-
-            <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/artico-1.jpg"
-                alt="Alberca Ártico"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/cascada-1.jpg';"
-            >
-
-            <div class="card-content">
-
-                <h3>❄️ Alberca Ártico</h3>
-
-                <p>
-                    Atracción infantil con toboganes,
-                    puente flotante y poca profundidad.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/alberca-artico/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- ATLANTIDA -->
-
-        <div class="card">
-
-            <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2016/08/atlantida-1.jpg"
-                alt="Atlántida"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/artico-1.jpg';"
-            >
-
-            <div class="card-content">
-
-                <h3>🏝️ Atlántida</h3>
-
-                <p>
-                    Atracción infantil con 12 toboganes
-                    y una profundidad máxima de 50 cm.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/atlantida/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- JUEGOS INFANTILES -->
-
-        <div class="card">
-
-            <img
-                src="https://corralgrande.com.mx/wp-content/uploads/2017/02/juegos-1.jpg"
-                alt="Juegos Infantiles"
-                onerror="this.src='https://corralgrande.com.mx/wp-content/uploads/2016/08/atlantida-1.jpg';"
-            >
-
-            <div class="card-content">
-
-                <h3>🎠 Juegos Infantiles</h3>
-
-                <p>
-                    Columpios, carrusel, puente colgante
-                    y juegos para los pequeños.
-                </p>
-
-                <a
-                    href="https://corralgrande.com.mx/juegos-infantiles/"
-                    target="_blank"
-                    class="card-link">
-                    Ver atracción →
-                </a>
-
-            </div>
 
         </div>
 
 
     </div>
 
+
 </div>
 
 </section>
 
 
-<!-- =========================
-     COMPRA
-========================= -->
+<!-- =====================================================
+     UNIVERSIDADES
+===================================================== -->
 
-<section class="buy-section">
+<section class="universidades">
+
 
 <div class="container">
 
-    <h2>🎟️ ¡Compra tus boletos!</h2>
 
-    <p>
-        Selecciona el día que quieres visitar el parque
-        y continúa con tu compra.
-    </p>
+    <div class="section-title">
 
-    <a href="calendario.html" class="hero-btn">
-        VER CALENDARIO
-    </a>
+        <h2>
+            Instituciones con las que
+            <span>colaboramos</span>
+        </h2>
+
+        <p>
+
+            Nuestra formalidad y calidad nos ha permitido
+            colaborar con diferentes universidades.
+
+        </p>
+
+    </div>
+
+
+    <img
+
+        class="universidades-image"
+
+        src="https://centrodegraduaciones.com/wp-content/uploads/2020/09/Colaboraciones-scaled.jpg"
+
+        alt="Universidades con las que colaboramos"
+
+    >
+
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     INFORMACION
-========================= -->
+
+<!-- =====================================================
+     INFORMACIÓN
+===================================================== -->
 
 <section id="contacto">
 
+
 <div class="container">
+
 
     <div class="section-title">
 
-        <h2>Información</h2>
+        <h2>
+            Visítanos
+        </h2>
 
         <p>
-            Todo lo que necesitas para planear tu visita.
+            Estamos para ayudarte a preparar
+            tu gran día.
         </p>
 
     </div>
@@ -979,123 +1738,192 @@ footer a{
 
         <div class="info-card">
 
-            <h3>📍 Ubicación</h3>
+            <div class="info-icon">
+                📍
+            </div>
+
+            <h3>
+                Ubicación
+            </h3>
 
             <p>
-                Km. 95 Carretera Guadalajara - La Barca,
-                en Jamay, Jalisco.
-            </p>
 
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>🕘 Horario</h3>
-
-            <p>
-                Abierto todos los días del año.
-                <br><br>
-                9:30 AM - 6:00 PM
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>📞 Contacto</h3>
-
-            <p>
-                01 (392) 924 2179
+                8 Sur No. 2506
                 <br>
-                01 (392) 924 0708
+                Col. Ladrillera de Benítez
+                <br>
+                72530 Puebla, México
+
+            </p>
+
+        </div>
+
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🕘
+            </div>
+
+            <h3>
+                Horarios
+            </h3>
+
+            <p>
+
+                Lunes a Viernes
+                <br>
+                9:00 AM - 3:00 PM
+
                 <br><br>
-                WhatsApp: 392 121 1450
+
+                Sábado
+                <br>
+                9:00 AM - 2:00 PM
+
+            </p>
+
+        </div>
+
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📧
+            </div>
+
+            <h3>
+                Contacto
+            </h3>
+
+            <p>
+
+                centrodegraduaciones@gmail.com
+
+                <br><br>
+
+                Facebook:
+                Tours Expo Graduación
+
             </p>
 
         </div>
 
 
     </div>
+
 
 </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
+
 
 <div class="footer-content">
 
 
-    <div>
+    <div class="footer-column">
 
-        <h3>Corral Grande</h3>
+        <h3>
+            Centro de Graduaciones
+        </h3>
 
         <p>
-            Parque Acuático con albercas de aguas
-            termales, toboganes y atracciones para
-            toda la familia.
+
+            Tenemos todo para tu graduación.
+            Encuentra servicios, productos,
+            fotografía, eventos y paquetes
+            para celebrar este momento especial.
+
         </p>
 
     </div>
 
 
-    <div>
 
-        <h3>Enlaces</h3>
+    <div class="footer-column">
+
+        <h3>
+            Enlaces
+        </h3>
 
         <p>
-            <a href="#inicio">Inicio</a>
+            <a href="#inicio">
+                Inicio
+            </a>
         </p>
 
         <p>
-            <a href="#atracciones">Atracciones</a>
+            <a href="#tours">
+                Tours Expo
+            </a>
         </p>
 
         <p>
-            <a href="#precios">Precios</a>
+            <a href="#servicios">
+                Servicios
+            </a>
         </p>
 
         <p>
-            <a href="calendario.html">Comprar boletos</a>
+            <a href="https://ticket.payuticket.com/seller/entratix-w057/section/new-shop-section-9c6r">
+                Próximas Graduaciones
+            </a>
         </p>
 
     </div>
 
 
-    <div>
 
-        <h3>Contacto</h3>
+    <div class="footer-column">
+
+        <h3>
+            Información
+        </h3>
 
         <p>
-            Jamay, Jalisco
-            <br>
-            01 (392) 924 2179
-            <br>
-            392 121 1450
+            📍 Puebla, México
+        </p>
+
+        <p>
+            📧 centrodegraduaciones@gmail.com
+        </p>
+
+        <p>
+            Lunes a Viernes: 9:00 AM - 3:00 PM
+        </p>
+
+        <p>
+            Sábado: 9:00 AM - 2:00 PM
         </p>
 
     </div>
 
 
 </div>
+
 
 
 <div class="footer-bottom">
 
-    © 2026 Demo de sistema de boletaje -
-    Corral Grande Parque Acuático
+    © 2026 Centro de Graduaciones
+    | Demo de sistema de boletaje
 
 </div>
+
 
 </footer>
 
 
 </body>
+
 </html>
