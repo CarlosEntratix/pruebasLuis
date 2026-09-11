@@ -4,11 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Centro de Graduaciones | Tours Expo Graduación</title>
-
+<title>Hologram Zoo CDMX | Experiencia Inmersiva</title>
 
 <style>
 
@@ -28,23 +26,23 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #222;
-    background: #ffffff;
+    background: #050b0e;
+    color: white;
 }
 
 
 /* =====================================================
-   COLORES
+   VARIABLES
 ===================================================== */
 
 :root {
 
-    --azul: #073f61;
-    --azul-claro: #0d587f;
-    --dorado: #b89552;
-    --dorado-claro: #d5bd8b;
-    --gris: #f5f5f5;
-    --texto: #333;
+    --verde: #19c37d;
+    --verde-claro: #6fffc0;
+    --azul: #0b6bff;
+    --negro: #050b0e;
+    --gris: #111b20;
+    --gris-claro: #d7e1e5;
 
 }
 
@@ -55,11 +53,11 @@ body {
 
 .topbar {
 
-    background: var(--azul);
+    background: #071419;
 
-    color: white;
+    color: #dce7eb;
 
-    padding: 8px 5%;
+    padding: 9px 5%;
 
     display: flex;
 
@@ -68,6 +66,8 @@ body {
     align-items: center;
 
     font-size: 13px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
 
 }
 
@@ -78,28 +78,30 @@ body {
 
 header {
 
-    background: white;
-
     position: sticky;
 
     top: 0;
 
     z-index: 1000;
 
-    box-shadow: 0 3px 15px rgba(0,0,0,.12);
+    background: rgba(5,11,14,.95);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
 
 }
 
 
 .navbar {
 
-    max-width: 1250px;
+    max-width: 1200px;
 
     margin: auto;
 
-    min-height: 85px;
+    min-height: 80px;
 
-    padding: 10px 25px;
+    padding: 10px 20px;
 
     display: flex;
 
@@ -110,26 +112,39 @@ header {
 }
 
 
-/* LOGO */
-
 .logo {
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
     text-decoration: none;
+
+    color: white;
+
+    font-weight: 900;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
 
 }
 
 
-.logo img {
+.logo span {
 
-    width: 190px;
+    color: var(--verde);
 
-    height: auto;
+}
+
+
+.logo-small {
+
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9fb0b7;
+
+    margin-top: 4px;
 
 }
 
@@ -140,14 +155,14 @@ header {
 
     align-items: center;
 
-    gap: 23px;
+    gap: 25px;
 
 }
 
 
 .menu a {
 
-    color: var(--azul);
+    color: white;
 
     text-decoration: none;
 
@@ -162,31 +177,33 @@ header {
 
 .menu a:hover {
 
-    color: var(--dorado);
+    color: var(--verde);
 
 }
 
 
-/* BOTÓN PRÓXIMAS GRADUACIONES */
+/* BOTÓN PRÓXIMAS */
 
-.btn-graduaciones {
+.btn-proximas {
 
-    background: var(--dorado);
+    background: var(--verde);
 
-    color: white !important;
+    color: #03100b !important;
 
-    padding: 13px 18px;
+    padding: 12px 17px;
 
-    border-radius: 5px;
+    border-radius: 25px;
 
     font-weight: 900 !important;
 
 }
 
 
-.btn-graduaciones:hover {
+.btn-proximas:hover {
 
-    background: var(--azul);
+    background: white;
+
+    color: #03100b !important;
 
 }
 
@@ -195,13 +212,13 @@ header {
 
 .btn-comprar {
 
-    background: var(--azul);
+    background: white;
 
-    color: white !important;
+    color: #071419 !important;
 
-    padding: 13px 20px;
+    padding: 12px 20px;
 
-    border-radius: 5px;
+    border-radius: 25px;
 
     font-weight: 900 !important;
 
@@ -210,7 +227,7 @@ header {
 
 .btn-comprar:hover {
 
-    background: var(--dorado);
+    background: var(--verde);
 
 }
 
@@ -221,7 +238,7 @@ header {
 
 .hero {
 
-    min-height: 610px;
+    min-height: 650px;
 
     display: flex;
 
@@ -231,19 +248,16 @@ header {
 
     text-align: center;
 
-    color: white;
-
     padding: 80px 20px;
-
 
     background:
 
         linear-gradient(
-            rgba(4,45,70,.70),
-            rgba(4,45,70,.78)
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.82)
         ),
 
-        url("https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-scaled.jpg")
+        url("https://hologramzoocdmx.com/_astro/hero-poster-video_t1gtyd_Z1JRmp4.webp")
 
         center / cover no-repeat;
 
@@ -259,25 +273,25 @@ header {
 
 .hero h1 {
 
-    font-size: clamp(42px, 7vw, 75px);
+    font-size: clamp(45px, 7vw, 78px);
 
     line-height: 1;
 
-    text-transform: uppercase;
-
     font-weight: 900;
+
+    text-transform: uppercase;
 
     margin-bottom: 20px;
 
     text-shadow:
-        2px 3px 8px rgba(0,0,0,.4);
+        0 5px 20px rgba(0,0,0,.7);
 
 }
 
 
 .hero h1 span {
 
-    color: var(--dorado-claro);
+    color: var(--verde);
 
 }
 
@@ -286,20 +300,22 @@ header {
 
     font-size: 27px;
 
-    font-weight: normal;
+    margin-bottom: 20px;
 
-    margin-bottom: 25px;
+    color: var(--verde-claro);
 
 }
 
 
 .hero p {
 
-    font-size: 20px;
+    font-size: 19px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 
-    max-width: 750px;
+    color: #edf5f7;
+
+    max-width: 760px;
 
     margin: auto;
 
@@ -321,48 +337,52 @@ header {
 }
 
 
-.hero-button {
+.hero-btn {
 
     display: inline-block;
 
-    padding: 17px 32px;
-
-    background: var(--dorado);
-
-    color: white;
-
     text-decoration: none;
 
-    border-radius: 5px;
+    padding: 16px 30px;
+
+    border-radius: 30px;
 
     font-weight: 900;
+
+    background: var(--verde);
+
+    color: #03100b;
 
     transition: .3s;
 
 }
 
 
-.hero-button:hover {
+.hero-btn:hover {
+
+    transform: translateY(-3px);
 
     background: white;
-
-    color: var(--azul);
 
 }
 
 
-.hero-button.secondary {
+.hero-btn.secondary {
 
     background: transparent;
 
     border: 2px solid white;
 
+    color: white;
+
 }
 
 
-.hero-button.secondary:hover {
+.hero-btn.secondary:hover {
 
     background: white;
+
+    color: black;
 
 }
 
@@ -398,9 +418,7 @@ section {
 
 .section-title h2 {
 
-    color: var(--azul);
-
-    font-size: 40px;
+    font-size: 42px;
 
     margin-bottom: 12px;
 
@@ -409,14 +427,14 @@ section {
 
 .section-title h2 span {
 
-    color: var(--dorado);
+    color: var(--verde);
 
 }
 
 
 .section-title p {
 
-    color: #666;
+    color: #aebdc3;
 
     font-size: 17px;
 
@@ -424,46 +442,44 @@ section {
 
 
 /* =====================================================
-   INTRODUCCIÓN
+   EXPERIENCIA
 ===================================================== */
 
-.intro {
+.experiencia {
 
-    background: white;
+    background: #081318;
 
 }
 
 
-.intro-grid {
+.experience-grid {
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 50px;
+    gap: 45px;
 
     align-items: center;
 
 }
 
 
-.intro-image img {
+.experience-image img {
 
     width: 100%;
 
-    border-radius: 8px;
+    border-radius: 15px;
 
     display: block;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.15);
+        0 15px 40px rgba(0,0,0,.45);
 
 }
 
 
-.intro-text h2 {
-
-    color: var(--azul);
+.experience-text h2 {
 
     font-size: 38px;
 
@@ -472,16 +488,16 @@ section {
 }
 
 
-.intro-text h2 span {
+.experience-text h2 span {
 
-    color: var(--dorado);
+    color: var(--verde);
 
 }
 
 
-.intro-text p {
+.experience-text p {
 
-    color: #555;
+    color: #b9c7cc;
 
     line-height: 1.8;
 
@@ -492,81 +508,73 @@ section {
 }
 
 
-.intro-button {
+.highlight {
 
-    display: inline-block;
+    margin-top: 25px;
 
-    margin-top: 15px;
+    padding: 20px;
 
-    background: var(--azul);
+    border-left: 4px solid var(--verde);
 
-    color: white;
-
-    padding: 14px 25px;
-
-    text-decoration: none;
+    background: rgba(25,195,125,.08);
 
     border-radius: 5px;
-
-    font-weight: bold;
 
 }
 
 
 /* =====================================================
-   SERVICIOS
+   ATRACCIONES
 ===================================================== */
 
-.services {
+.atracciones {
 
-    background: var(--gris);
+    background: #050b0e;
 
 }
 
 
-.service-grid {
+.cards {
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(4,1fr);
 
-    gap: 25px;
+    gap: 22px;
 
 }
 
 
-.service-card {
+.card {
 
-    background: white;
+    background: var(--gris);
 
-    border-radius: 8px;
+    border-radius: 15px;
 
     overflow: hidden;
 
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.08);
+    border: 1px solid rgba(255,255,255,.08);
 
     transition: .3s;
 
 }
 
 
-.service-card:hover {
+.card:hover {
 
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.15);
+    border-color: var(--verde);
 
 }
 
 
-.service-card img {
+.card img {
 
     width: 100%;
 
-    height: 230px;
+    height: 220px;
 
     object-fit: cover;
 
@@ -575,230 +583,117 @@ section {
 }
 
 
-.service-content {
+.card-content {
 
-    padding: 25px;
+    padding: 22px;
 
 }
 
 
-.service-content h3 {
+.card-content h3 {
 
-    color: var(--azul);
-
-    font-size: 22px;
+    font-size: 21px;
 
     margin-bottom: 10px;
 
 }
 
 
-.service-content p {
+.card-content p {
 
-    color: #666;
+    color: #aebdc3;
 
     line-height: 1.6;
+
+    font-size: 14px;
 
 }
 
 
 /* =====================================================
-   PRODUCTOS
+   EXPERIENCIAS
 ===================================================== */
 
-.products {
+.experiencias {
 
-    background: white;
+    background: #0a171c;
 
 }
 
 
-.product-grid {
+.experiencias-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 25px;
 
 }
 
 
-.product {
+.experiencia-card {
 
-    border: 1px solid #e5e5e5;
+    background: #111f25;
 
-    border-radius: 8px;
+    padding: 30px;
 
-    overflow: hidden;
+    border-radius: 15px;
 
-}
-
-
-.product img {
-
-    width: 100%;
-
-    height: 250px;
-
-    object-fit: cover;
-
-    display: block;
+    border: 1px solid rgba(255,255,255,.08);
 
 }
 
 
-.product-content {
-
-    padding: 25px;
-
-}
-
-
-.product-content h3 {
-
-    color: var(--azul);
-
-    margin-bottom: 10px;
-
-    font-size: 22px;
-
-}
-
-
-.product-content p {
-
-    color: #666;
-
-    line-height: 1.6;
-
-}
-
-
-/* =====================================================
-   PRÓXIMAS GRADUACIONES
-===================================================== */
-
-.upcoming {
-
-    background:
-
-        linear-gradient(
-            rgba(7,63,97,.94),
-            rgba(7,63,97,.94)
-        ),
-
-        url("https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-scaled.jpg")
-
-        center / cover no-repeat;
-
-    color: white;
-
-    text-align: center;
-
-}
-
-
-.upcoming h2 {
+.experiencia-card .numero {
 
     font-size: 45px;
+
+    font-weight: 900;
+
+    color: var(--verde);
 
     margin-bottom: 15px;
 
 }
 
 
-.upcoming h2 span {
+.experiencia-card h3 {
 
-    color: var(--dorado-claro);
+    font-size: 23px;
+
+    margin-bottom: 12px;
 
 }
 
 
-.upcoming p {
+.experiencia-card p {
 
-    max-width: 750px;
-
-    margin: auto;
+    color: #aebdc3;
 
     line-height: 1.7;
 
-    font-size: 18px;
-
-    margin-bottom: 30px;
-
-}
-
-
-.upcoming-button {
-
-    display: inline-block;
-
-    background: var(--dorado);
-
-    color: white;
-
-    padding: 17px 35px;
-
-    border-radius: 5px;
-
-    text-decoration: none;
-
-    font-size: 17px;
-
-    font-weight: 900;
-
-    transition: .3s;
-
-}
-
-
-.upcoming-button:hover {
-
-    background: white;
-
-    color: var(--azul);
-
 }
 
 
 /* =====================================================
-   UNIVERSIDADES
+   INFO
 ===================================================== */
 
-.universidades {
+.info-section {
 
-    background: #f8f8f8;
-
-    text-align: center;
+    background: #050b0e;
 
 }
 
-
-.universidades-image {
-
-    max-width: 900px;
-
-    width: 100%;
-
-    margin: auto;
-
-    display: block;
-
-}
-
-
-/* =====================================================
-   INFORMACIÓN
-===================================================== */
 
 .info {
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 25px;
 
@@ -809,13 +704,13 @@ section {
 
     text-align: center;
 
-    background: white;
+    background: #101b20;
 
     padding: 35px 25px;
 
-    border: 1px solid #e6e6e6;
+    border-radius: 15px;
 
-    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.08);
 
 }
 
@@ -831,7 +726,7 @@ section {
 
 .info-card h3 {
 
-    color: var(--azul);
+    color: var(--verde);
 
     margin-bottom: 12px;
 
@@ -840,9 +735,92 @@ section {
 
 .info-card p {
 
-    color: #666;
+    color: #b5c3c8;
 
     line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   PRÓXIMAS VISITAS
+===================================================== */
+
+.proximas {
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,30,30,.92),
+            rgba(0,10,15,.95)
+        ),
+
+        url("https://hologramzoocdmx.com/_astro/el_viaje_total_rajyxh_1QMKMI.webp")
+
+        center / cover no-repeat;
+
+}
+
+
+.proximas h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.proximas h2 span {
+
+    color: var(--verde);
+
+}
+
+
+.proximas p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #d5e0e4;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+}
+
+
+.proximas-btn {
+
+    display: inline-block;
+
+    background: var(--verde);
+
+    color: #03100b;
+
+    padding: 17px 35px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    transition: .3s;
+
+}
+
+
+.proximas-btn:hover {
+
+    background: white;
 
 }
 
@@ -853,16 +831,14 @@ section {
 
 footer {
 
-    background: #052f49;
-
-    color: white;
+    background: #03080b;
 
     padding: 55px 20px 20px;
 
 }
 
 
-.footer-content {
+.footer-grid {
 
     max-width: 1200px;
 
@@ -873,14 +849,14 @@ footer {
     grid-template-columns:
         2fr 1fr 1fr;
 
-    gap: 50px;
+    gap: 40px;
 
 }
 
 
 .footer-column h3 {
 
-    color: var(--dorado-claro);
+    color: var(--verde);
 
     margin-bottom: 18px;
 
@@ -889,7 +865,7 @@ footer {
 
 .footer-column p {
 
-    color: #d8e2e8;
+    color: #9eabb0;
 
     line-height: 1.7;
 
@@ -900,7 +876,7 @@ footer {
 
 .footer-column a {
 
-    color: white;
+    color: #cdd7db;
 
     text-decoration: none;
 
@@ -909,7 +885,7 @@ footer {
 
 .footer-column a:hover {
 
-    color: var(--dorado-claro);
+    color: var(--verde);
 
 }
 
@@ -918,18 +894,17 @@ footer {
 
     max-width: 1200px;
 
-    margin: 40px auto 0;
+    margin: 35px auto 0;
 
     padding-top: 20px;
 
-    border-top:
-        1px solid rgba(255,255,255,.2);
+    border-top: 1px solid rgba(255,255,255,.1);
 
     text-align: center;
 
-    font-size: 13px;
+    color: #78858a;
 
-    color: #bdcbd3;
+    font-size: 13px;
 
 }
 
@@ -940,49 +915,29 @@ footer {
 
 @media(max-width:1000px) {
 
+    .cards {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
     .menu {
 
-        gap: 12px;
+        gap: 10px;
 
     }
 
-    .menu a:not(.btn-graduaciones):not(.btn-comprar) {
+    .menu a:not(.btn-proximas):not(.btn-comprar) {
 
         display: none;
-
-    }
-
-    .intro-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .service-grid {
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
-    .product-grid {
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
-    .info {
-
-        grid-template-columns:
-            repeat(2,1fr);
 
     }
 
 }
 
 
-@media(max-width:650px) {
+@media(max-width:700px) {
 
     .topbar {
 
@@ -996,19 +951,11 @@ footer {
 
         gap: 15px;
 
-        padding: 15px;
-
-    }
-
-    .logo img {
-
-        width: 160px;
+        padding: 18px;
 
     }
 
     .menu {
-
-        width: 100%;
 
         justify-content: center;
 
@@ -1018,13 +965,13 @@ footer {
 
     .hero {
 
-        min-height: 540px;
+        min-height: 570px;
 
     }
 
     .hero h1 {
 
-        font-size: 42px;
+        font-size: 43px;
 
     }
 
@@ -1040,28 +987,40 @@ footer {
 
     }
 
+    .experience-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cards,
+
+    .experiencias-grid,
+
+    .info,
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    section {
+
+        padding: 60px 15px;
+
+    }
+
     .section-title h2 {
 
         font-size: 32px;
 
     }
 
-    .service-grid,
-
-    .product-grid,
-
-    .info,
-
-    .footer-content {
-
-        grid-template-columns: 1fr;
-
-    }
-
 }
 
 </style>
-<script type="text/javascript" src="https://vivenu.com/web/deliver/js/v1/embed.js"></script>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
 </head>
 
 
@@ -1075,12 +1034,12 @@ footer {
 <div class="topbar">
 
     <div>
-        Centro de Graduaciones
+        Hologram Zoo CDMX
     </div>
 
     <div>
-        📍 Puebla, México &nbsp; | &nbsp;
-        📧 centrodegraduaciones@gmail.com
+        📍 Ciudad de México &nbsp; | &nbsp;
+        🕐 10:00 AM - 7:00 PM
     </div>
 
 </div>
@@ -1088,7 +1047,7 @@ footer {
 
 
 <!-- =====================================================
-     MENU
+     HEADER / MENU
 ===================================================== -->
 
 <header>
@@ -1098,44 +1057,49 @@ footer {
 
     <a href="index.html" class="logo">
 
-        <img
-            src="https://centrodegraduaciones.com/wp-content/uploads/2020/09/LOGO-01.png"
-            alt="Centro de Graduaciones"
-        >
+        HOLOGRAM
+        <span>ZOO</span>
+
+        <span class="logo-small">
+            CIUDAD DE MÉXICO
+        </span>
 
     </a>
 
 
     <div class="menu">
 
+
         <a href="#inicio">
             Inicio
         </a>
 
-        <a href="#tours">
-            Tours Expo
+
+        <a href="#experiencia">
+            La experiencia
         </a>
 
-        <a href="#servicios">
-            Servicios
+
+        <a href="#atracciones">
+            Experiencias
         </a>
 
-        <!-- NUEVO BOTÓN -->
 
         <a
-            href="https://ticket.payuticket.com/seller/entratix-w057"
-            class="btn-graduaciones">
+            href="calendario.html"
+            class="btn-proximas">
 
-            🎓 PRÓXIMAS GRADUACIONES
+            📅 PRÓXIMAS VISITAS
 
         </a>
+
 
         <a href="#contacto">
-            Contacto
+            Información
         </a>
 
-    </div>
 
+    </div>
 
 </nav>
 
@@ -1150,142 +1114,51 @@ footer {
 <section class="hero" id="inicio">
 
 
-    <div class="hero-content">
+<div class="hero-content">
 
 
-        <h1>
+    <h1>
 
-            El gran día
-            <span>comienza aquí</span>
+        Aquí lo imposible
+        <span>cobra vida</span>
 
-        </h1>
+    </h1>
 
 
-        <h2>
-            Tours Expo Graduación
-        </h2>
+    <h2>
+        El primer zoológico holográfico de Latinoamérica
+    </h2>
 
 
-        <p>
+    <p>
 
-            Todo lo que necesitas para celebrar
-            una graduación inolvidable.
-            Organizamos experiencias, eventos
-            y servicios especiales para los nuevos
-            profesionistas.
+        Explora África, el Ártico y la era de los dinosaurios
+        sin salir de la Ciudad de México. Vive encuentros con
+        animales a tamaño real mediante una experiencia
+        inmersiva, educativa y sorprendente.
 
-        </p>
+    </p>
 
 
-        <div class="hero-buttons">
+    <div class="hero-buttons">
 
 
-            <a
-                href="#products"
-                class="hero-button">
+        <a
+            href="https://tickets.payuticket.com/event/hologram-zoo-snn3wd?recurrenceSelection=true"
+            class="hero-btn">
 
-                🎓 VER PRÓXIMAS GRADUACIONES
+            🎟️ COMPRAR BOLETOS
 
-            </a>
+        </a>
 
 
-            <a
-                href="#servicios"
-                class="hero-button secondary">
+        <a
+            href="#atracciones"
+            class="hero-btn secondary">
 
-                CONOCER SERVICIOS
+            EXPLORAR EXPERIENCIAS
 
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     INTRO
-===================================================== -->
-
-<section class="intro" id="tours">
-
-
-<div class="container">
-
-
-    <div class="intro-grid">
-
-
-        <div class="intro-image">
-
-
-            <img
-
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-scaled.jpg"
-
-                alt="Tours Expo Graduación"
-
-            >
-
-
-        </div>
-
-
-
-        <div class="intro-text">
-
-
-            <h2>
-
-                Tours Expo
-                <span>Graduación</span>
-
-            </h2>
-
-
-            <p>
-
-                Tour Expo Graduación está enfocada en
-                cumplir las necesidades de los graduados,
-                ofreciendo experiencias y servicios únicos
-                e inolvidables.
-
-            </p>
-
-
-            <p>
-
-                Somos fabricantes y proveedores de
-                alumnos graduados de diferentes
-                instituciones educativas.
-
-            </p>
-
-
-            <p>
-
-                Contamos con modelos únicos y servicios
-                pensados para acompañarte en uno de los
-                momentos más importantes de tu vida.
-
-            </p>
-
-
-            <a
-                href="#servicios"
-                class="intro-button">
-
-                CONOCE NUESTROS SERVICIOS
-
-            </a>
-
-
-        </div>
+        </a>
 
 
     </div>
@@ -1298,238 +1171,68 @@ footer {
 
 
 <!-- =====================================================
-     SERVICIOS
+     EXPERIENCIA
 ===================================================== -->
 
-<section class="services" id="servicios">
+<section class="experiencia" id="experiencia">
 
 
 <div class="container">
 
 
-    <div class="section-title">
+<div class="experience-grid">
 
-        <h2>
-            Nuestros
-            <span>Servicios</span>
-        </h2>
 
-        <p>
-            Todo para hacer de tu graduación
-            un momento inolvidable.
-        </p>
+    <div class="experience-image">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/Untitled_design_37_xyj3bl_p3F1t.webp"
+
+            alt="Experiencia Hologram Zoo"
+
+        >
+
 
     </div>
 
 
-    <div class="service-grid">
 
+    <div class="experience-text">
 
-        <!-- FOTOGRAFÍA -->
 
-        <div class="service-card">
+        <h2>
 
+            Viaja por el tiempo
+            <span>sin salir de CDMX</span>
 
-            <img
+        </h2>
 
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-4-2-scaled.jpg"
 
-                alt="Fotografía panorámica"
+        <p>
 
-            >
+            Adéntrate en un mundo donde los animales
+            aparecen frente a ti a tamaño real gracias
+            a tecnología inmersiva y sistemas avanzados
+            de proyección.
 
+        </p>
 
-            <div class="service-content">
 
-                <h3>
-                    📸 Fotografía Panorámica
-                </h3>
+        <p>
 
-                <p>
+            Conoce especies de diferentes lugares del
+            planeta y descubre escenarios que parecen
+            cobrar vida frente a tus ojos.
 
-                    Fotografía panorámica de estudio
-                    y opciones para conservar el recuerdo
-                    de tu generación.
+        </p>
 
-                </p>
 
-            </div>
+        <div class="highlight">
 
-
-        </div>
-
-
-
-        <!-- DIPLOMAS -->
-
-        <div class="service-card">
-
-
-            <img
-
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-2-scaled.jpg"
-
-                alt="Diplomas"
-
-            >
-
-
-            <div class="service-content">
-
-                <h3>
-                    🏆 Diplomas y Reconocimientos
-                </h3>
-
-                <p>
-
-                    Diseños y acabados especiales para
-                    reconocer el esfuerzo y celebrar
-                    el logro de cada graduado.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- MARCOS -->
-
-        <div class="service-card">
-
-
-            <img
-
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-5-5-scaled.jpg"
-
-                alt="Marcos para graduados"
-
-            >
-
-
-            <div class="service-content">
-
-                <h3>
-                    🖼️ Marcos
-                </h3>
-
-                <p>
-
-                    Contamos con más de 20 diferentes
-                    modelos de marcos para conservar
-                    los recuerdos de tu generación.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- EVENTOS -->
-
-        <div class="service-card">
-
-
-            <img
-
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-scaled.jpg"
-
-                alt="Organización de eventos"
-
-            >
-
-
-            <div class="service-content">
-
-                <h3>
-                    🎉 Organización de Eventos
-                </h3>
-
-                <p>
-
-                    Planeación y organización de eventos
-                    de graduación y celebraciones
-                    especiales.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- BANQUETES -->
-
-        <div class="service-card">
-
-
-            <img
-
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-copia-3-scaled.jpg"
-
-                alt="Banquetes"
-
-            >
-
-
-            <div class="service-content">
-
-                <h3>
-                    🍽️ Banquetes
-                </h3>
-
-                <p>
-
-                    Servicio de banquetes masivos
-                    para celebrar junto a tus compañeros,
-                    familiares y amigos.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- PAQUETES -->
-
-        <div class="service-card">
-
-
-            <img
-
-                src="https://centrodegraduaciones.com/wp-content/uploads/2020/10/web-Tour-expo-grad_Mesa-de-trabajo-1-scaled.jpg"
-
-                alt="Paquetes para graduados"
-
-            >
-
-
-            <div class="service-content">
-
-                <h3>
-                    🎓 Paquetes para Graduados
-                </h3>
-
-                <p>
-
-                    Paquetes individuales y grupales
-                    diseñados para cubrir las necesidades
-                    de cada generación.
-
-                </p>
-
-            </div>
-
+            ✨ Una experiencia tecnológica e inmersiva
+            para todas las edades.
 
         </div>
 
@@ -1539,120 +1242,171 @@ footer {
 
 </div>
 
+</div>
+
 </section>
 
 
 
 <!-- =====================================================
-     PRODUCTOS
+     ATRACCIONES
 ===================================================== -->
-<section class="products" id="products">
+
+<section class="atracciones" id="atracciones">
 
 
 <div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            Proximas Graduaciones
-        </h2>
+    <h2>
+        Explora nuestras
+        <span>experiencias</span>
+    </h2>
 
-        <p>
-            Recuerdos que conservarás para toda la vida.
-        </p>
+    <p>
+        Elige el mundo que quieres descubrir.
+    </p>
+
+</div>
+
+
+
+<div class="cards">
+
+
+    <!-- AFRICA -->
+
+    <div class="card">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/Untitled_design_37_xyj3bl_p3F1t.webp"
+
+            alt="África"
+
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🦁 África
+            </h3>
+
+            <p>
+
+                Camina entre animales salvajes y
+                descubre leones, elefantes, jirafas
+                e hipopótamos en un entorno inmersivo.
+
+            </p>
+
+        </div>
+
 
     </div>
 
 
-    <div class="product-grid">
+
+    <!-- ARTICO -->
+
+    <div class="card">
 
 
-        <!-- DIPLOMA -->
+        <img
 
-        <div class="product">
+            src="https://hologramzoocdmx.com/_astro/Arctic_n8ptwd_UO9vH.webp"
 
+            alt="Ártico"
 
-            <img
-
-                src="gra.jpg"
-
-                alt="Diploma de graduación"
-
-            >
+        >
 
 
-            <div class="product-content">
+        <div class="card-content">
 
-                <h3><a
-                    href="https://ticket.payuticket.com/event/graduacion-1-wwadb5?useEmbed=true"
-                    class="btn-graduaciones vivenu-btn yourStylingClass">
-                    Anahuac
-                </a>
-                </h3>
+            <h3>
+                🐧 Ártico
+            </h3>
 
-            </div>
+            <p>
 
+                Descubre osos polares, pingüinos
+                y una impresionante ballena holográfica
+                gigante.
 
-        </div>
-
-
-
-        <!-- RECONOCIMIENTO -->
-
-        <div class="product">
-
-
-            <img
-
-                src="g.jpg"
-
-                alt="Reconocimiento"
-
-            >
-
-
-            <div class="product-content">
-
-                <h3><a
-                    href=""
-                    class="btn-graduaciones vivenu-btn yourStylingClass">
-                    Oriente
-                </a>
-                </h3>
-
-            </div>
-
+            </p>
 
         </div>
 
 
-
-        <!-- FOTO -->
-
-        <div class="product">
+    </div>
 
 
-            <img
 
-                src="gr.jpg"
+    <!-- DINOSAURIOS -->
 
-                alt="Fotografía de graduación"
-
-            >
+    <div class="card">
 
 
-            <div class="product-content">
+        <img
 
-                <h3><a
-                    href=""
-                    class="btn-graduaciones vivenu-btn yourStylingClass">
-                    Tac de Monterrey
-                </a>
-                </h3>
+            src="https://hologramzoocdmx.com/_astro/dinos_1_aajsfs_ZHri3e.webp"
 
-            </div>
+            alt="Dinosaurios"
 
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🦖 Dinosaurios
+            </h3>
+
+            <p>
+
+                Retrocede millones de años y camina
+                entre dinosaurios que parecen estar
+                realmente vivos.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- VIAJE TOTAL -->
+
+    <div class="card">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/el_viaje_total_rajyxh_1QMKMI.webp"
+
+            alt="El viaje total"
+
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🌎 El viaje total
+            </h3>
+
+            <p>
+
+                Combina diferentes mundos en una sola
+                visita y vive la experiencia completa.
+
+            </p>
 
         </div>
 
@@ -1662,46 +1416,104 @@ footer {
 
 </div>
 
+</div>
+
 </section>
 
 
+
 <!-- =====================================================
-     UNIVERSIDADES
+     EXPERIENCIAS DISPONIBLES
 ===================================================== -->
 
-<section class="universidades">
+<section class="experiencias">
 
 
 <div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            Instituciones con las que
-            <span>colaboramos</span>
-        </h2>
+    <h2>
+        Vive la experiencia
+    </h2>
+
+    <p>
+        Elige cómo quieres disfrutar Hologram Zoo.
+    </p>
+
+</div>
+
+
+
+<div class="experiencias-grid">
+
+
+    <div class="experiencia-card">
+
+        <div class="numero">
+            01
+        </div>
+
+        <h3>
+            África
+        </h3>
 
         <p>
 
-            Nuestra formalidad y calidad nos ha permitido
-            colaborar con diferentes universidades.
+            Explora la sabana y observa animales
+            como leones, elefantes y jirafas mediante
+            proyecciones holográficas.
 
         </p>
 
     </div>
 
 
-    <img
 
-        class="universidades-image"
+    <div class="experiencia-card">
 
-        src="https://centrodegraduaciones.com/wp-content/uploads/2020/09/Colaboraciones-scaled.jpg"
+        <div class="numero">
+            02
+        </div>
 
-        alt="Universidades con las que colaboramos"
+        <h3>
+            Ártico
+        </h3>
 
-    >
+        <p>
 
+            Viaja a los polos y encuentra pingüinos,
+            osos polares y una enorme ballena holográfica.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="experiencia-card">
+
+        <div class="numero">
+            03
+        </div>
+
+        <h3>
+            Dinosaurios
+        </h3>
+
+        <p>
+
+            Retrocede hasta la era jurásica y vive
+            un encuentro cercano con dinosaurios
+            a tamaño real.
+
+        </p>
+
+    </div>
+
+
+</div>
 
 </div>
 
@@ -1713,106 +1525,205 @@ footer {
      INFORMACIÓN
 ===================================================== -->
 
-<section id="contacto">
+<section class="info-section" id="contacto">
 
 
 <div class="container">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            Visítanos
-        </h2>
+    <h2>
+        Información útil
+    </h2>
+
+    <p>
+        Todo lo que necesitas saber antes de tu visita.
+    </p>
+
+</div>
+
+
+
+<div class="info">
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            🕐
+        </div>
+
+        <h3>
+            Horario
+        </h3>
 
         <p>
-            Estamos para ayudarte a preparar
-            tu gran día.
+
+            Lunes a domingo
+            <br>
+            10:00 AM a 7:00 PM
+
         </p>
 
     </div>
 
 
-    <div class="info">
 
+    <div class="info-card">
 
-        <div class="info-card">
-
-            <div class="info-icon">
-                📍
-            </div>
-
-            <h3>
-                Ubicación
-            </h3>
-
-            <p>
-
-                8 Sur No. 2506
-                <br>
-                Col. Ladrillera de Benítez
-                <br>
-                72530 Puebla, México
-
-            </p>
-
+        <div class="info-icon">
+            ⏱️
         </div>
 
+        <h3>
+            Duración
+        </h3>
 
+        <p>
 
-        <div class="info-card">
+            Aproximadamente
+            <br>
+            45 minutos por experiencia.
 
-            <div class="info-icon">
-                🕘
-            </div>
-
-            <h3>
-                Horarios
-            </h3>
-
-            <p>
-
-                Lunes a Viernes
-                <br>
-                9:00 AM - 3:00 PM
-
-                <br><br>
-
-                Sábado
-                <br>
-                9:00 AM - 2:00 PM
-
-            </p>
-
-        </div>
-
-
-
-        <div class="info-card">
-
-            <div class="info-icon">
-                📧
-            </div>
-
-            <h3>
-                Contacto
-            </h3>
-
-            <p>
-
-                centrodegraduaciones@gmail.com
-
-                <br><br>
-
-                Facebook:
-                Tours Expo Graduación
-
-            </p>
-
-        </div>
-
+        </p>
 
     </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            👨‍👩‍👧‍👦
+        </div>
+
+        <h3>
+            Para todas las edades
+        </h3>
+
+        <p>
+
+            Una experiencia ideal
+            para niños, familias y adultos.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            ♿
+        </div>
+
+        <h3>
+            Accesibilidad
+        </h3>
+
+        <p>
+
+            Contamos con rampas y
+            acceso en un solo piso.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            📍
+        </div>
+
+        <h3>
+            Ubicación
+        </h3>
+
+        <p>
+
+            Ferrocarril de Cuernavaca s/n
+            <br>
+            Col. Irrigación
+            <br>
+            Miguel Hidalgo, CDMX
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            📸
+        </div>
+
+        <h3>
+            Photobooth
+        </h3>
+
+        <p>
+
+            Completa tu visita capturando
+            fotografías y videos digitales.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRÓXIMAS VISITAS
+===================================================== -->
+
+<section class="proximas">
+
+
+<div class="container">
+
+
+    <h2>
+
+        Próximas
+        <span>visitas</span>
+
+    </h2>
+
+
+    <p>
+
+        Consulta las fechas disponibles,
+        selecciona tu experiencia y reserva
+        tus boletos para Hologram Zoo CDMX.
+
+    </p>
+
+
+    <!-- ESTE BOTÓN ABRE CALENDARIO.HTML -->
+
+    <a
+
+        href="calendario.html"
+
+        class="proximas-btn">
+
+        📅 VER PRÓXIMAS VISITAS
+
+    </a>
 
 
 </div>
@@ -1828,21 +1739,26 @@ footer {
 <footer>
 
 
-<div class="footer-content">
+<div class="footer-grid">
 
 
     <div class="footer-column">
 
         <h3>
-            Centro de Graduaciones
+            Hologram Zoo CDMX
         </h3>
 
         <p>
 
-            Tenemos todo para tu graduación.
-            Encuentra servicios, productos,
-            fotografía, eventos y paquetes
-            para celebrar este momento especial.
+            El primer zoológico holográfico
+            de Latinoamérica.
+
+        </p>
+
+        <p>
+
+            Vive una experiencia inmersiva
+            donde lo imposible cobra vida.
 
         </p>
 
@@ -1853,7 +1769,7 @@ footer {
     <div class="footer-column">
 
         <h3>
-            Enlaces
+            Navegación
         </h3>
 
         <p>
@@ -1863,20 +1779,20 @@ footer {
         </p>
 
         <p>
-            <a href="#tours">
-                Tours Expo
+            <a href="#experiencia">
+                La experiencia
             </a>
         </p>
 
         <p>
-            <a href="#servicios">
-                Servicios
+            <a href="#atracciones">
+                Experiencias
             </a>
         </p>
 
         <p>
-            <a href="https://ticket.payuticket.com/seller/entratix-w057/section/new-shop-section-9c6r">
-                Próximas Graduaciones
+            <a href="calendario.html">
+                Próximas visitas
             </a>
         </p>
 
@@ -1887,23 +1803,20 @@ footer {
     <div class="footer-column">
 
         <h3>
-            Información
+            Visítanos
         </h3>
 
         <p>
-            📍 Puebla, México
+            📍 Ferrocarril de Cuernavaca s/n
         </p>
 
         <p>
-            📧 centrodegraduaciones@gmail.com
+            Col. Irrigación,
+            Miguel Hidalgo, CDMX
         </p>
 
         <p>
-            Lunes a Viernes: 9:00 AM - 3:00 PM
-        </p>
-
-        <p>
-            Sábado: 9:00 AM - 2:00 PM
+            🕐 10:00 AM - 7:00 PM
         </p>
 
     </div>
@@ -1915,8 +1828,9 @@ footer {
 
 <div class="footer-bottom">
 
-    © 2026 Centro de Graduaciones
-    | Demo de sistema de boletaje
+    Hologram Zoo CDMX © 2026
+    <br><br>
+    Demo de sistema de boletaje
 
 </div>
 
