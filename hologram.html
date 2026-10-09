@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hologram Zoo CDMX | Experiencia Inmersiva</title>
+
+<style>
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050b0e;
+    color: white;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --verde: #19c37d;
+    --verde-claro: #6fffc0;
+    --azul: #0b6bff;
+    --negro: #050b0e;
+    --gris: #111b20;
+    --gris-claro: #d7e1e5;
+
+}
+
+
+/* =====================================================
+   BARRA SUPERIOR
+===================================================== */
+
+.topbar {
+
+    background: #071419;
+
+    color: #dce7eb;
+
+    padding: 9px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(5,11,14,.95);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.navbar {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    min-height: 80px;
+
+    padding: 10px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.logo {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: 900;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.logo span {
+
+    color: var(--verde);
+
+}
+
+
+.logo-small {
+
+    display: block;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #9fb0b7;
+
+    margin-top: 4px;
+
+}
+
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+
+.menu a:hover {
+
+    color: var(--verde);
+
+}
+
+
+/* BOTÓN PRÓXIMAS */
+
+.btn-proximas {
+
+    background: var(--verde);
+
+    color: #03100b !important;
+
+    padding: 12px 17px;
+
+    border-radius: 25px;
+
+    font-weight: 900 !important;
+
+}
+
+
+.btn-proximas:hover {
+
+    background: white;
+
+    color: #03100b !important;
+
+}
+
+
+/* BOTÓN COMPRAR */
+
+.btn-comprar {
+
+    background: white;
+
+    color: #071419 !important;
+
+    padding: 12px 20px;
+
+    border-radius: 25px;
+
+    font-weight: 900 !important;
+
+}
+
+
+.btn-comprar:hover {
+
+    background: var(--verde);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.82)
+        ),
+
+        url("https://hologramzoocdmx.com/_astro/hero-poster-video_t1gtyd_Z1JRmp4.webp")
+
+        center / cover no-repeat;
+
+}
+
+
+.hero-content {
+
+    max-width: 900px;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(45px, 7vw, 78px);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,.7);
+
+}
+
+
+.hero h1 span {
+
+    color: var(--verde);
+
+}
+
+
+.hero h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 20px;
+
+    color: var(--verde-claro);
+
+}
+
+
+.hero p {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #edf5f7;
+
+    max-width: 760px;
+
+    margin: auto;
+
+    margin-bottom: 35px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 16px 30px;
+
+    border-radius: 30px;
+
+    font-weight: 900;
+
+    background: var(--verde);
+
+    color: #03100b;
+
+    transition: .3s;
+
+}
+
+
+.hero-btn:hover {
+
+    transform: translateY(-3px);
+
+    background: white;
+
+}
+
+
+.hero-btn.secondary {
+
+    background: transparent;
+
+    border: 2px solid white;
+
+    color: white;
+
+}
+
+
+.hero-btn.secondary:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+section {
+
+    padding: 80px 20px;
+
+}
+
+
+.container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.section-title h2 span {
+
+    color: var(--verde);
+
+}
+
+
+.section-title p {
+
+    color: #aebdc3;
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================================
+   EXPERIENCIA
+===================================================== */
+
+.experiencia {
+
+    background: #081318;
+
+}
+
+
+.experience-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+}
+
+
+.experience-image img {
+
+    width: 100%;
+
+    border-radius: 15px;
+
+    display: block;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
+
+}
+
+
+.experience-text h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.experience-text h2 span {
+
+    color: var(--verde);
+
+}
+
+
+.experience-text p {
+
+    color: #b9c7cc;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+    font-size: 16px;
+
+}
+
+
+.highlight {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 4px solid var(--verde);
+
+    background: rgba(25,195,125,.08);
+
+    border-radius: 5px;
+
+}
+
+
+/* =====================================================
+   ATRACCIONES
+===================================================== */
+
+.atracciones {
+
+    background: #050b0e;
+
+}
+
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 22px;
+
+}
+
+
+.card {
+
+    background: var(--gris);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    transition: .3s;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--verde);
+
+}
+
+
+.card img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.card-content {
+
+    padding: 22px;
+
+}
+
+
+.card-content h3 {
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.card-content p {
+
+    color: #aebdc3;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   EXPERIENCIAS
+===================================================== */
+
+.experiencias {
+
+    background: #0a171c;
+
+}
+
+
+.experiencias-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.experiencia-card {
+
+    background: #111f25;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.experiencia-card .numero {
+
+    font-size: 45px;
+
+    font-weight: 900;
+
+    color: var(--verde);
+
+    margin-bottom: 15px;
+
+}
+
+
+.experiencia-card h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.experiencia-card p {
+
+    color: #aebdc3;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.info-section {
+
+    background: #050b0e;
+
+}
+
+
+.info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.info-card {
+
+    text-align: center;
+
+    background: #101b20;
+
+    padding: 35px 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+}
+
+
+.info-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.info-card h3 {
+
+    color: var(--verde);
+
+    margin-bottom: 12px;
+
+}
+
+
+.info-card p {
+
+    color: #b5c3c8;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   PRÓXIMAS VISITAS
+===================================================== */
+
+.proximas {
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,30,30,.92),
+            rgba(0,10,15,.95)
+        ),
+
+        url("https://hologramzoocdmx.com/_astro/el_viaje_total_rajyxh_1QMKMI.webp")
+
+        center / cover no-repeat;
+
+}
+
+
+.proximas h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.proximas h2 span {
+
+    color: var(--verde);
+
+}
+
+
+.proximas p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #d5e0e4;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+}
+
+
+.proximas-btn {
+
+    display: inline-block;
+
+    background: var(--verde);
+
+    color: #03100b;
+
+    padding: 17px 35px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    transition: .3s;
+
+}
+
+
+.proximas-btn:hover {
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    background: #03080b;
+
+    padding: 55px 20px 20px;
+
+}
+
+
+.footer-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 40px;
+
+}
+
+
+.footer-column h3 {
+
+    color: var(--verde);
+
+    margin-bottom: 18px;
+
+}
+
+
+.footer-column p {
+
+    color: #9eabb0;
+
+    line-height: 1.7;
+
+    margin-bottom: 8px;
+
+}
+
+
+.footer-column a {
+
+    color: #cdd7db;
+
+    text-decoration: none;
+
+}
+
+
+.footer-column a:hover {
+
+    color: var(--verde);
+
+}
+
+
+.footer-bottom {
+
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    text-align: center;
+
+    color: #78858a;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px) {
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .menu {
+
+        gap: 10px;
+
+    }
+
+    .menu a:not(.btn-proximas):not(.btn-comprar) {
+
+        display: none;
+
+    }
+
+}
+
+
+@media(max-width:700px) {
+
+    .topbar {
+
+        display: none;
+
+    }
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px;
+
+    }
+
+    .menu {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+    .hero {
+
+        min-height: 570px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 43px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 21px;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .experience-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cards,
+
+    .experiencias-grid,
+
+    .info,
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    section {
+
+        padding: 60px 15px;
+
+    }
+
+    .section-title h2 {
+
+        font-size: 32px;
+
+    }
+
+}
+
+</style>
+<script type="text/javascript" src="https://vivenu.dev/web/deliver/js/v1/embed.js"></script>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BARRA SUPERIOR
+===================================================== -->
+
+<div class="topbar">
+
+    <div>
+        Hologram Zoo CDMX
+    </div>
+
+    <div>
+        📍 Ciudad de México &nbsp; | &nbsp;
+        🕐 10:00 AM - 7:00 PM
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HEADER / MENU
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+
+    <a href="index.html" class="logo">
+
+        HOLOGRAM
+        <span>ZOO</span>
+
+        <span class="logo-small">
+            CIUDAD DE MÉXICO
+        </span>
+
+    </a>
+
+
+    <div class="menu">
+
+
+        <a href="#inicio">
+            Inicio
+        </a>
+
+
+        <a href="#experiencia">
+            La experiencia
+        </a>
+
+
+        <a href="#atracciones">
+            Experiencias
+        </a>
+
+
+        <a
+            href="calendario.html"
+            class="btn-proximas">
+
+            📅 PRÓXIMAS VISITAS
+
+        </a>
+
+
+        <a href="#contacto">
+            Información
+        </a>
+
+
+    </div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+
+<div class="hero-content">
+
+
+    <h1>
+
+        Aquí lo imposible
+        <span>cobra vida</span>
+
+    </h1>
+
+
+    <h2>
+        El primer zoológico holográfico de Latinoamérica
+    </h2>
+
+
+    <p>
+
+        Explora África, el Ártico y la era de los dinosaurios
+        sin salir de la Ciudad de México. Vive encuentros con
+        animales a tamaño real mediante una experiencia
+        inmersiva, educativa y sorprendente.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+
+        <a
+            href="https://tickets.payuticket.com/event/hologram-zoo-snn3wd?recurrenceSelection=true"
+            class="hero-btn">
+
+            🎟️ COMPRAR BOLETOS
+
+        </a>
+
+
+        <a
+            href="#atracciones"
+            class="hero-btn secondary">
+
+            EXPLORAR EXPERIENCIAS
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCIA
+===================================================== -->
+
+<section class="experiencia" id="experiencia">
+
+
+<div class="container">
+
+
+<div class="experience-grid">
+
+
+    <div class="experience-image">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/Untitled_design_37_xyj3bl_p3F1t.webp"
+
+            alt="Experiencia Hologram Zoo"
+
+        >
+
+
+    </div>
+
+
+
+    <div class="experience-text">
+
+
+        <h2>
+
+            Viaja por el tiempo
+            <span>sin salir de CDMX</span>
+
+        </h2>
+
+
+        <p>
+
+            Adéntrate en un mundo donde los animales
+            aparecen frente a ti a tamaño real gracias
+            a tecnología inmersiva y sistemas avanzados
+            de proyección.
+
+        </p>
+
+
+        <p>
+
+            Conoce especies de diferentes lugares del
+            planeta y descubre escenarios que parecen
+            cobrar vida frente a tus ojos.
+
+        </p>
+
+
+        <div class="highlight">
+
+            ✨ Una experiencia tecnológica e inmersiva
+            para todas las edades.
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ATRACCIONES
+===================================================== -->
+
+<section class="atracciones" id="atracciones">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Explora nuestras
+        <span>experiencias</span>
+    </h2>
+
+    <p>
+        Elige el mundo que quieres descubrir.
+    </p>
+
+</div>
+
+
+
+<div class="cards">
+
+
+    <!-- AFRICA -->
+
+    <div class="card">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/Untitled_design_37_xyj3bl_p3F1t.webp"
+
+            alt="África"
+
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🦁 África
+            </h3>
+
+            <p>
+
+                Camina entre animales salvajes y
+                descubre leones, elefantes, jirafas
+                e hipopótamos en un entorno inmersivo.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ARTICO -->
+
+    <div class="card">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/Arctic_n8ptwd_UO9vH.webp"
+
+            alt="Ártico"
+
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🐧 Ártico
+            </h3>
+
+            <p>
+
+                Descubre osos polares, pingüinos
+                y una impresionante ballena holográfica
+                gigante.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- DINOSAURIOS -->
+
+    <div class="card">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/dinos_1_aajsfs_ZHri3e.webp"
+
+            alt="Dinosaurios"
+
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🦖 Dinosaurios
+            </h3>
+
+            <p>
+
+                Retrocede millones de años y camina
+                entre dinosaurios que parecen estar
+                realmente vivos.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- VIAJE TOTAL -->
+
+    <div class="card">
+
+
+        <img
+
+            src="https://hologramzoocdmx.com/_astro/el_viaje_total_rajyxh_1QMKMI.webp"
+
+            alt="El viaje total"
+
+        >
+
+
+        <div class="card-content">
+
+            <h3>
+                🌎 El viaje total
+            </h3>
+
+            <p>
+
+                Combina diferentes mundos en una sola
+                visita y vive la experiencia completa.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCIAS DISPONIBLES
+===================================================== -->
+
+<section class="experiencias">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Vive la experiencia
+    </h2>
+
+    <p>
+        Elige cómo quieres disfrutar Hologram Zoo.
+    </p>
+
+</div>
+
+
+
+<div class="experiencias-grid">
+
+
+    <div class="experiencia-card">
+
+        <div class="numero">
+            01
+        </div>
+
+        <h3>
+            África
+        </h3>
+
+        <p>
+
+            Explora la sabana y observa animales
+            como leones, elefantes y jirafas mediante
+            proyecciones holográficas.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="experiencia-card">
+
+        <div class="numero">
+            02
+        </div>
+
+        <h3>
+            Ártico
+        </h3>
+
+        <p>
+
+            Viaja a los polos y encuentra pingüinos,
+            osos polares y una enorme ballena holográfica.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="experiencia-card">
+
+        <div class="numero">
+            03
+        </div>
+
+        <h3>
+            Dinosaurios
+        </h3>
+
+        <p>
+
+            Retrocede hasta la era jurásica y vive
+            un encuentro cercano con dinosaurios
+            a tamaño real.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INFORMACIÓN
+===================================================== -->
+
+<section class="info-section" id="contacto">
+
+
+<div class="container">
+
+
+<div class="section-title">
+
+    <h2>
+        Información útil
+    </h2>
+
+    <p>
+        Todo lo que necesitas saber antes de tu visita.
+    </p>
+
+</div>
+
+
+
+<div class="info">
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            🕐
+        </div>
+
+        <h3>
+            Horario
+        </h3>
+
+        <p>
+
+            Lunes a domingo
+            <br>
+            10:00 AM a 7:00 PM
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            ⏱️
+        </div>
+
+        <h3>
+            Duración
+        </h3>
+
+        <p>
+
+            Aproximadamente
+            <br>
+            45 minutos por experiencia.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            👨‍👩‍👧‍👦
+        </div>
+
+        <h3>
+            Para todas las edades
+        </h3>
+
+        <p>
+
+            Una experiencia ideal
+            para niños, familias y adultos.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            ♿
+        </div>
+
+        <h3>
+            Accesibilidad
+        </h3>
+
+        <p>
+
+            Contamos con rampas y
+            acceso en un solo piso.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            📍
+        </div>
+
+        <h3>
+            Ubicación
+        </h3>
+
+        <p>
+
+            Ferrocarril de Cuernavaca s/n
+            <br>
+            Col. Irrigación
+            <br>
+            Miguel Hidalgo, CDMX
+
+        </p>
+
+    </div>
+
+
+
+    <div class="info-card">
+
+        <div class="info-icon">
+            📸
+        </div>
+
+        <h3>
+            Photobooth
+        </h3>
+
+        <p>
+
+            Completa tu visita capturando
+            fotografías y videos digitales.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRÓXIMAS VISITAS
+===================================================== -->
+
+<section class="proximas">
+
+
+<div class="container">
+
+
+    <h2>
+
+        Próximas
+        <span>visitas</span>
+
+    </h2>
+
+
+    <p>
+
+        Consulta las fechas disponibles,
+        selecciona tu experiencia y reserva
+        tus boletos para Hologram Zoo CDMX.
+
+    </p>
+
+
+    <!-- ESTE BOTÓN ABRE CALENDARIO.HTML -->
+
+    <a
+
+        href="calendario.html"
+
+        class="proximas-btn">
+
+        📅 VER PRÓXIMAS VISITAS
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+    <div class="footer-column">
+
+        <h3>
+            Hologram Zoo CDMX
+        </h3>
+
+        <p>
+
+            El primer zoológico holográfico
+            de Latinoamérica.
+
+        </p>
+
+        <p>
+
+            Vive una experiencia inmersiva
+            donde lo imposible cobra vida.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            Navegación
+        </h3>
+
+        <p>
+            <a href="#inicio">
+                Inicio
+            </a>
+        </p>
+
+        <p>
+            <a href="#experiencia">
+                La experiencia
+            </a>
+        </p>
+
+        <p>
+            <a href="#atracciones">
+                Experiencias
+            </a>
+        </p>
+
+        <p>
+            <a href="calendario.html">
+                Próximas visitas
+            </a>
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            Visítanos
+        </h3>
+
+        <p>
+            📍 Ferrocarril de Cuernavaca s/n
+        </p>
+
+        <p>
+            Col. Irrigación,
+            Miguel Hidalgo, CDMX
+        </p>
+
+        <p>
+            🕐 10:00 AM - 7:00 PM
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+    Hologram Zoo CDMX © 2026
+    <br><br>
+    Demo de sistema de boletaje
+
+</div>
+
+
+</footer>
+
+
+</body>
+
+</html>
